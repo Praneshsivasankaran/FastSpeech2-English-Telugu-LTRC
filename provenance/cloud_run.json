@@ -1,0 +1,25 @@
+{
+  "status": "both_temporary_pods_and_storage_terminated; temporary_ssh_key_removed",
+  "hardware": "2 separate NVIDIA RTX4090 24GB pods",
+  "image": "runpod/pytorch:2.4.0-py3.11-cuda12.4.1-devel-ubuntu22.04",
+  "torch": "2.4.1+cu124",
+  "initial_target_steps": 50000,
+  "bounded_target_steps": 10000,
+  "reason_stopped": "Validation total plateau after warmup; user prioritized low time and cost. No candidate met an unqualified speech-quality gate.",
+  "completed_trajectory_steps": {
+    "English": 8842,
+    "Telugu": 7451
+  },
+  "selected_steps": {
+    "English": 7000,
+    "Telugu": 2000
+  },
+  "selection_note": "See each checkpoints/selection.json. English best-available choice explicitly retains failed duration gate; Telugu remains minimum-total baseline.",
+  "resumption": "A bounded restart archived unsaved log tails: English434 and Telugu496 attempted updates. A CUDA RNG restoration error occurred before new updates and was corrected by moving saved RNG tensors to CPU; actual CUDA continuation and graceful saves then succeeded.",
+  "source_versions": {
+    "training_final.py": "7b0e872ae6b9a1cd8b9acd4077f97d298d3bb53d2bc167f2c215cb2fcb6e1e20",
+    "training_initial.py": "bd07aecb6a58fad259eb7b88b73668ede19df59afad3a935da7c0f785b68a5fd"
+  },
+  "generated_utc": "2026-11-05T11:44:56.817072+00:00",
+  "cleanup_verified_utc": "2026-11-05T11:55:37.184154+00:00"
+}

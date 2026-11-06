@@ -1,0 +1,5 @@
+# Optional, local-only ASR evaluation; not required for FastSpeech2 training.
+# Install separately: python -m pip install -r requirements-asr.txt
+# Model weights are not included; transcribe_results.py requires an explicit
+# --allow-model-download to fetch them. Every run records resolved versions.
+faster-whisper==1.2.1

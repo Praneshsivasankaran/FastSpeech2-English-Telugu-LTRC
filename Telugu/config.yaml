@@ -1,0 +1,74 @@
+language: te
+preprocess:
+  dataset: Telugu
+  path:
+    preprocessed_path: Telugu/preprocessed
+  preprocessing:
+    val_size: 512
+    text:
+      language: te
+      text_cleaners: []
+    audio:
+      sampling_rate: 22050
+      max_wav_value: 32768.0
+    stft:
+      filter_length: 1024
+      hop_length: 256
+      win_length: 1024
+    mel:
+      n_mel_channels: 80
+      mel_fmin: 0
+      mel_fmax: 8000
+    pitch:
+      feature: phoneme_level
+      normalization: true
+    energy:
+      feature: phoneme_level
+      normalization: true
+model:
+  transformer:
+    encoder_layer: 4
+    encoder_head: 2
+    encoder_hidden: 256
+    decoder_layer: 6
+    decoder_head: 2
+    decoder_hidden: 256
+    conv_filter_size: 1024
+    conv_kernel_size:
+    - 9
+    - 1
+    encoder_dropout: 0.2
+    decoder_dropout: 0.2
+  variance_predictor:
+    filter_size: 256
+    kernel_size: 3
+    dropout: 0.5
+  variance_embedding:
+    pitch_quantization: linear
+    energy_quantization: linear
+    n_bins: 256
+  multi_speaker: false
+  max_seq_len: 3000
+  vocoder:
+    model: HiFi-GAN
+    speaker: universal
+training:
+  seed: 20261105
+  device: cuda
+  cpu_threads: 4
+  batch_size: 16
+  learning_rate: 0.0001
+  steps: 50000
+  validate_every: 500
+  log_every: 20
+  grad_clip: 1.0
+  length_bucket_size: 64
+  precision: bf16
+  warmup_steps: 4000
+  peak_learning_rate: 0.001
+paths:
+  vocab: Telugu/preprocessed/vocab.json
+  train_manifest: Telugu/preprocessed/train.jsonl
+  val_manifest: Telugu/preprocessed/val.jsonl
+  checkpoint_dir: Telugu/checkpoints
+  result_dir: Results/Telugu

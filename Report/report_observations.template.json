@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "finalized": false,
+  "instructions": [
+    "Copy this file to Report/report_observations.json. Do not rename this unfilled template as a final observation record.",
+    "Complete every field after reviewing the production logs, prediction plots and final WAV measurements. Set finalized=true only when every sample has an explicit assessment.",
+    "For each sample choose assessment_mode=objective_only or listening. Copy wav_sha256 from the current Results/<language>/analysis.json. The builder rejects observations for different WAV bytes.",
+    "objective_only requires listening=null. It explicitly leaves pronunciation correctness, intelligibility, naturalness and perceived artifacts unassessed. Do not claim listening from statistical measurements.",
+    "listening requires an object with listened_to_final_wav=true, reviewer, reviewed_at (ISO 8601), pronunciation, intelligibility, naturalness, and artifacts. Enter only observations actually made on the identified final WAV.",
+    "Write objective_review.duration, pitch, energy and limitations for every sample. Discuss actual measured values or visible prediction behavior; distinguish predicted phone F0/energy from waveform F0/RMS. Note zero-duration phones and long SIL runs when present.",
+    "Write all report prose in Roman script. Keep each sample objective_review field to one or two concise sentences (preferably under 300 characters), and each language assessment to a few sentences. Exact Telugu source sentences remain unmodified in Telugu/test_samples.json.",
+    "The gate checks completeness, identity and basic schema. It cannot certify the truth of an observer's prose. Never fabricate listening, perceptual quality, convergence or native-speaker judgments.",
+    "Run python scripts/build_report.py --check-only before authoring. The final PDF must subsequently be rendered page by page and visually inspected."
+  ],
+  "scope_summary": null,
+  "cross_language_comparison": null,
+  "failure_cases": null,
+  "next_steps": null,
+  "language_assessments": {
+    "English": {
+      "training_interpretation": null,
+      "instability_or_overfitting": null,
+      "limitations": null
+    },
+    "Telugu": {
+      "training_interpretation": null,
+      "instability_or_overfitting": null,
+      "limitations": null
+    }
+  },
+  "samples": {
+    "E1": {"assessment_mode": null, "wav_sha256": null, "objective_review": {"duration": null, "pitch": null, "energy": null, "limitations": null}, "listening": null},
+    "E2a": {"assessment_mode": null, "wav_sha256": null, "objective_review": {"duration": null, "pitch": null, "energy": null, "limitations": null}, "listening": null},
+    "E2b": {"assessment_mode": null, "wav_sha256": null, "objective_review": {"duration": null, "pitch": null, "energy": null, "limitations": null}, "listening": null},
+    "E3": {"assessment_mode": null, "wav_sha256": null, "objective_review": {"duration": null, "pitch": null, "energy": null, "limitations": null}, "listening": null},
+    "E4": {"assessment_mode": null, "wav_sha256": null, "objective_review": {"duration": null, "pitch": null, "energy": null, "limitations": null}, "listening": null},
+    "T1": {"assessment_mode": null, "wav_sha256": null, "objective_review": {"duration": null, "pitch": null, "energy": null, "limitations": null}, "listening": null},
+    "T2a": {"assessment_mode": null, "wav_sha256": null, "objective_review": {"duration": null, "pitch": null, "energy": null, "limitations": null}, "listening": null},
+    "T2b": {"assessment_mode": null, "wav_sha256": null, "objective_review": {"duration": null, "pitch": null, "energy": null, "limitations": null}, "listening": null},
+    "T3": {"assessment_mode": null, "wav_sha256": null, "objective_review": {"duration": null, "pitch": null, "energy": null, "limitations": null}, "listening": null},
+    "T4": {"assessment_mode": null, "wav_sha256": null, "objective_review": {"duration": null, "pitch": null, "energy": null, "limitations": null}, "listening": null}
+  }
+}

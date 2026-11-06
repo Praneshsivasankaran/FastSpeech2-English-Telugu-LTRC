@@ -1,0 +1,18 @@
+# Python 3.11; tested on macOS arm64. CUDA wheel selection is host-specific.
+torch==2.15.0
+numpy==2.4.6
+scipy==1.17.1
+librosa==0.11.0
+soundfile==0.14.0
+matplotlib==3.11.2
+PyYAML==6.0.3
+pyworld==0.3.5
+setuptools==80.10.2
+bournemouth-forced-aligner==2.0.1
+espeakng-loader==0.2.4
+phonemizer==3.6.0
+huggingface-hub==2.4.0
+pyarrow==26.0.1
+unidecode==1.4.0
+inflect==7.6.0
+reportlab==5.1.0

@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "base_url": "https://github.com/Praneshsivasankaran/FastSpeech2-English-Telugu-LTRC/releases/download/assignment-v1",
+  "publication_status": "approved_pending_upload",
+  "assets": [
+    {
+      "name": "English_best.pt",
+      "sha256": "17ad591e4ef9e269df9e3da05737fb4ea52d35d1b5eec7f1229ff3231446afcc",
+      "size_bytes": 421596509,
+      "destinations": [
+        "English/checkpoints/best.pt"
+      ]
+    },
+    {
+      "name": "English_latest.pt",
+      "sha256": "48a2bc893c5192a7559408d4843a1d2f99b5bfab6196691edb636c6803ea7bac",
+      "size_bytes": 421638671,
+      "destinations": [
+        "English/checkpoints/latest.pt",
+        "English/checkpoints/selected.pt"
+      ]
+    },
+    {
+      "name": "Telugu_best.pt",
+      "sha256": "7f32328011ab47edda7eadc67dc4331ce4e1a9f11a74fdc771b79e638f72f0bf",
+      "size_bytes": 421207857,
+      "destinations": [
+        "Telugu/checkpoints/best.pt",
+        "Telugu/checkpoints/selected.pt"
+      ]
+    },
+    {
+      "name": "Telugu_latest.pt",
+      "sha256": "9320935fa44c5bf0a40022a3405d3cdf5a4427bff2e60c90f3769e8aed76635f",
+      "size_bytes": 421249563,
+      "destinations": [
+        "Telugu/checkpoints/latest.pt"
+      ]
+    }
+  ]
+}

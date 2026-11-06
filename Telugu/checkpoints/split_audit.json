@@ -1,0 +1,19 @@
+{
+  "production_duration_gate": true,
+  "train_examples": 1177,
+  "validation_examples": 241,
+  "train_seconds": 18005.32843750001,
+  "validation_seconds": 3614.102500000002,
+  "train_speakers": 1,
+  "validation_speakers": 1,
+  "train_speaker_ids": [
+    0
+  ],
+  "validation_speaker_ids": [
+    0
+  ],
+  "fingerprint_version": 2,
+  "overlap_checks": "passed",
+  "train_manifest_sha256": "9a5b93185e7fe6677b26912084893a1d68d3a57f90faabaf0490afaaa8ba3ea7",
+  "validation_manifest_sha256": "cac58a1f3c87829f81dc7352aed9814d2e22f7bc4bc2ab390b636e58ac46cefe"
+}

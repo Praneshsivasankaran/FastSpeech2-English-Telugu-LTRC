@@ -1,0 +1,1374 @@
+{
+  "status": "DIAGNOSTIC_ONLY_FINAL_ARTIFACTS_UNCHANGED",
+  "target_word_phonemes_and_predicted_durations": [
+    {
+      "id": "E1",
+      "language": "en",
+      "text": "The antidisestablishmentarianism movement gained considerable momentum during the parliamentary proceedings.",
+      "asr_hypothesis": "anti-disestablish Manurianism or maintain considerable momentum during the parliamentary proceedings.",
+      "current_frontend_matches_final_manifest_and_prediction": true,
+      "normalized_frontend_text": "The antidisestablishmentarianism movement gained considerable momentum during the parliamentary proceedings.",
+      "zero_duration_non_silence_phones": [],
+      "words": [
+        {
+          "word": "The",
+          "phones": [
+            "ð",
+            "ə"
+          ],
+          "duration_seconds": 0.17414966225624084,
+          "start_seconds": 0.04643990844488144,
+          "end_seconds": 0.22058957070112228,
+          "ipa": "ðə"
+        },
+        {
+          "word": "antidisestablishmentarianism",
+          "phones": [
+            "æ",
+            "n",
+            "t",
+            "ɪ",
+            "d",
+            "ɪ",
+            "s",
+            "ɪ",
+            "s",
+            "t",
+            "æ",
+            "b",
+            "l",
+            "ɪ",
+            "ʃ",
+            "m",
+            "ə",
+            "n",
+            "t",
+            "ɛ",
+            "ɹ",
+            "iə",
+            "n",
+            "ɪ",
+            "z",
+            "ə",
+            "m"
+          ],
+          "duration_seconds": 1.9620861634612083,
+          "start_seconds": 0.22058957070112228,
+          "end_seconds": 2.1826757341623306,
+          "ipa": "æntɪdɪsɪstæblɪʃməntɛɹiənɪzəm"
+        },
+        {
+          "word": "movement",
+          "phones": [
+            "m",
+            "uː",
+            "v",
+            "m",
+            "ə",
+            "n",
+            "t"
+          ],
+          "duration_seconds": 0.6037188172340393,
+          "start_seconds": 2.1826757341623306,
+          "end_seconds": 2.78639455139637,
+          "ipa": "muːvmənt"
+        },
+        {
+          "word": "gained",
+          "phones": [
+            "ɡ",
+            "eɪ",
+            "n",
+            "d"
+          ],
+          "duration_seconds": 0.3250793553888798,
+          "start_seconds": 2.78639455139637,
+          "end_seconds": 3.1114739067852497,
+          "ipa": "ɡeɪnd"
+        },
+        {
+          "word": "considerable",
+          "phones": [
+            "k",
+            "ə",
+            "n",
+            "s",
+            "ɪ",
+            "d",
+            "ɚ",
+            "ɹ",
+            "ə",
+            "b",
+            "əl"
+          ],
+          "duration_seconds": 0.6385487616062164,
+          "start_seconds": 3.12308388389647,
+          "end_seconds": 3.7616326455026865,
+          "ipa": "kənsɪdɚɹəbəl"
+        },
+        {
+          "word": "momentum",
+          "phones": [
+            "m",
+            "oʊ",
+            "m",
+            "ɛ",
+            "n",
+            "t",
+            "ə",
+            "m"
+          ],
+          "duration_seconds": 0.5921088382601738,
+          "start_seconds": 3.7616326455026865,
+          "end_seconds": 4.35374148376286,
+          "ipa": "moʊmɛntəm"
+        },
+        {
+          "word": "during",
+          "phones": [
+            "d",
+            "ʊɹ",
+            "ɹ",
+            "ɪ",
+            "ŋ"
+          ],
+          "duration_seconds": 0.4992290250957012,
+          "start_seconds": 4.365351460874081,
+          "end_seconds": 4.864580485969782,
+          "ipa": "dʊɹɹɪŋ"
+        },
+        {
+          "word": "the",
+          "phones": [
+            "ð",
+            "ə"
+          ],
+          "duration_seconds": 0.08126984164118767,
+          "start_seconds": 4.864580485969782,
+          "end_seconds": 4.9458503276109695,
+          "ipa": "ðə"
+        },
+        {
+          "word": "parliamentary",
+          "phones": [
+            "p",
+            "ɑːɹ",
+            "l",
+            "ə",
+            "m",
+            "ɛ",
+            "n",
+            "t",
+            "ɚ",
+            "ɹ",
+            "i"
+          ],
+          "duration_seconds": 0.8591383211314678,
+          "start_seconds": 4.95746030472219,
+          "end_seconds": 5.816598625853658,
+          "ipa": "pɑːɹləmɛntɚɹi"
+        },
+        {
+          "word": "proceedings",
+          "phones": [
+            "p",
+            "ɹ",
+            "ə",
+            "s",
+            "iː",
+            "d",
+            "ɪ",
+            "ŋ",
+            "z"
+          ],
+          "duration_seconds": 0.7198185846209526,
+          "start_seconds": 5.932698400691152,
+          "end_seconds": 6.652516985312104,
+          "ipa": "pɹəsiːdɪŋz"
+        }
+      ]
+    },
+    {
+      "id": "E2a",
+      "language": "en",
+      "text": "The orchestra's conduct during the ceremony was praised by the audience.",
+      "asr_hypothesis": "The orchestra's conduct during the ceremony was praised by the audience.",
+      "current_frontend_matches_final_manifest_and_prediction": true,
+      "normalized_frontend_text": "The orchestra's conduct during the ceremony was praised by the audience.",
+      "zero_duration_non_silence_phones": [],
+      "words": [
+        {
+          "word": "The",
+          "phones": [
+            "ð",
+            "ə"
+          ],
+          "duration_seconds": 0.1277097538113594,
+          "start_seconds": 0.05804988741874695,
+          "end_seconds": 0.18575964123010635,
+          "ipa": "ðə"
+        },
+        {
+          "word": "orchestra's",
+          "phones": [
+            "ɔːɹ",
+            "k",
+            "ᵻ",
+            "s",
+            "t",
+            "ɹ",
+            "ə",
+            "z"
+          ],
+          "duration_seconds": 0.7198185808956623,
+          "start_seconds": 0.18575964123010635,
+          "end_seconds": 0.9055782221257687,
+          "ipa": "ɔːɹkᵻstɹəz"
+        },
+        {
+          "word": "conduct",
+          "phones": [
+            "k",
+            "ɑː",
+            "n",
+            "d",
+            "ʌ",
+            "k",
+            "t"
+          ],
+          "duration_seconds": 0.5456689298152924,
+          "start_seconds": 0.917188199236989,
+          "end_seconds": 1.4628571290522814,
+          "ipa": "kɑːndʌkt"
+        },
+        {
+          "word": "during",
+          "phones": [
+            "d",
+            "ʊɹ",
+            "ɹ",
+            "ɪ",
+            "ŋ"
+          ],
+          "duration_seconds": 0.4643990956246853,
+          "start_seconds": 1.486077083274722,
+          "end_seconds": 1.9504761788994074,
+          "ipa": "dʊɹɹɪŋ"
+        },
+        {
+          "word": "the",
+          "phones": [
+            "ð",
+            "ə"
+          ],
+          "duration_seconds": 0.06965986639261246,
+          "start_seconds": 1.9504761788994074,
+          "end_seconds": 2.02013604529202,
+          "ipa": "ðə"
+        },
+        {
+          "word": "ceremony",
+          "phones": [
+            "s",
+            "ɛ",
+            "ɹ",
+            "ᵻ",
+            "m",
+            "ə",
+            "n",
+            "i"
+          ],
+          "duration_seconds": 0.5572789125144482,
+          "start_seconds": 2.02013604529202,
+          "end_seconds": 2.577414957806468,
+          "ipa": "sɛɹᵻməni"
+        },
+        {
+          "word": "was",
+          "phones": [
+            "w",
+            "ʌ",
+            "z"
+          ],
+          "duration_seconds": 0.3482993170619011,
+          "start_seconds": 2.577414957806468,
+          "end_seconds": 2.925714274868369,
+          "ipa": "wʌz"
+        },
+        {
+          "word": "praised",
+          "phones": [
+            "p",
+            "ɹ",
+            "eɪ",
+            "z",
+            "d"
+          ],
+          "duration_seconds": 0.4643990881741047,
+          "start_seconds": 2.925714274868369,
+          "end_seconds": 3.390113363042474,
+          "ipa": "pɹeɪzd"
+        },
+        {
+          "word": "by",
+          "phones": [
+            "b",
+            "aɪ"
+          ],
+          "duration_seconds": 0.22058957070112228,
+          "start_seconds": 3.390113363042474,
+          "end_seconds": 3.610702933743596,
+          "ipa": "baɪ"
+        },
+        {
+          "word": "the",
+          "phones": [
+            "ð",
+            "ə"
+          ],
+          "duration_seconds": 0.1160997748374939,
+          "start_seconds": 3.6223129108548164,
+          "end_seconds": 3.7384126856923103,
+          "ipa": "ðə"
+        },
+        {
+          "word": "audience",
+          "phones": [
+            "ɔː",
+            "d",
+            "iə",
+            "n",
+            "s"
+          ],
+          "duration_seconds": 0.5340589508414268,
+          "start_seconds": 3.7384126856923103,
+          "end_seconds": 4.272471636533737,
+          "ipa": "ɔːdiəns"
+        }
+      ]
+    },
+    {
+      "id": "E2b",
+      "language": "en",
+      "text": "The researchers will conduct an experiment to evaluate the proposed method.",
+      "asr_hypothesis": "The researchers will conduct an experiment to evaluate the proposed method.",
+      "current_frontend_matches_final_manifest_and_prediction": true,
+      "normalized_frontend_text": "The researchers will conduct an experiment to evaluate the proposed method.",
+      "zero_duration_non_silence_phones": [],
+      "words": [
+        {
+          "word": "The",
+          "phones": [
+            "ð",
+            "ə"
+          ],
+          "duration_seconds": 0.1160997748374939,
+          "start_seconds": 0.0,
+          "end_seconds": 0.1160997748374939,
+          "ipa": "ðə"
+        },
+        {
+          "word": "researchers",
+          "phones": [
+            "ɹ",
+            "ᵻ",
+            "s",
+            "ɜː",
+            "tʃ",
+            "ɚ",
+            "z"
+          ],
+          "duration_seconds": 0.7546485289931297,
+          "start_seconds": 0.1160997748374939,
+          "end_seconds": 0.8707483038306236,
+          "ipa": "ɹᵻsɜːtʃɚz"
+        },
+        {
+          "word": "will",
+          "phones": [
+            "w",
+            "ɪ",
+            "l"
+          ],
+          "duration_seconds": 0.2670294716954231,
+          "start_seconds": 0.8939682580530643,
+          "end_seconds": 1.1609977297484875,
+          "ipa": "wɪl"
+        },
+        {
+          "word": "conduct",
+          "phones": [
+            "k",
+            "ɑː",
+            "n",
+            "d",
+            "ʌ",
+            "k",
+            "t"
+          ],
+          "duration_seconds": 0.6733786948025227,
+          "start_seconds": 1.1726077068597078,
+          "end_seconds": 1.8459864016622305,
+          "ipa": "kɑːndʌkt"
+        },
+        {
+          "word": "an",
+          "phones": [
+            "æ",
+            "n"
+          ],
+          "duration_seconds": 0.22058957070112228,
+          "start_seconds": 1.8692063558846712,
+          "end_seconds": 2.0897959265857935,
+          "ipa": "æn"
+        },
+        {
+          "word": "experiment",
+          "phones": [
+            "ɛ",
+            "k",
+            "s",
+            "p",
+            "ɛ",
+            "ɹ",
+            "ɪ",
+            "m",
+            "ə",
+            "n",
+            "t"
+          ],
+          "duration_seconds": 0.8591383211314678,
+          "start_seconds": 2.101405903697014,
+          "end_seconds": 2.9605442248284817,
+          "ipa": "ɛkspɛɹɪmənt"
+        },
+        {
+          "word": "to",
+          "phones": [
+            "t",
+            "uː"
+          ],
+          "duration_seconds": 0.1277097463607788,
+          "start_seconds": 2.9605442248284817,
+          "end_seconds": 3.0882539711892605,
+          "ipa": "tuː"
+        },
+        {
+          "word": "evaluate",
+          "phones": [
+            "ɪ",
+            "v",
+            "æ",
+            "l",
+            "j",
+            "uː",
+            "eɪ",
+            "t"
+          ],
+          "duration_seconds": 0.6501587182283401,
+          "start_seconds": 3.0882539711892605,
+          "end_seconds": 3.7384126894176006,
+          "ipa": "ɪvæljuːeɪt"
+        },
+        {
+          "word": "the",
+          "phones": [
+            "ð",
+            "ə"
+          ],
+          "duration_seconds": 0.13931972905993462,
+          "start_seconds": 3.7384126894176006,
+          "end_seconds": 3.8777324184775352,
+          "ipa": "ðə"
+        },
+        {
+          "word": "proposed",
+          "phones": [
+            "p",
+            "ɹ",
+            "ə",
+            "p",
+            "oʊ",
+            "z",
+            "d"
+          ],
+          "duration_seconds": 0.6501587331295013,
+          "start_seconds": 3.8777324184775352,
+          "end_seconds": 4.527891151607037,
+          "ipa": "pɹəpoʊzd"
+        },
+        {
+          "word": "method",
+          "phones": [
+            "m",
+            "ɛ",
+            "θ",
+            "ə",
+            "d"
+          ],
+          "duration_seconds": 0.3482993245124817,
+          "start_seconds": 4.539501128718257,
+          "end_seconds": 4.887800453230739,
+          "ipa": "mɛθəd"
+        }
+      ]
+    },
+    {
+      "id": "E3",
+      "language": "en",
+      "text": "The rhyth m of the orchestra changed unexpectedly.",
+      "asr_hypothesis": "The rhythm of the order still has changed unexpectedly.",
+      "current_frontend_matches_final_manifest_and_prediction": true,
+      "normalized_frontend_text": "The rhyth m of the orchestra changed unexpectedly.",
+      "zero_duration_non_silence_phones": [],
+      "words": [
+        {
+          "word": "The",
+          "phones": [
+            "ð",
+            "ə"
+          ],
+          "duration_seconds": 0.09287981688976288,
+          "start_seconds": 0.0,
+          "end_seconds": 0.09287981688976288,
+          "ipa": "ðə"
+        },
+        {
+          "word": "rhyth",
+          "phones": [
+            "ɹ",
+            "ɪ",
+            "ð"
+          ],
+          "duration_seconds": 0.20897958427667618,
+          "start_seconds": 0.09287981688976288,
+          "end_seconds": 0.30185940116643906,
+          "ipa": "ɹɪð"
+        },
+        {
+          "word": "m",
+          "phones": [
+            "ɛ",
+            "m"
+          ],
+          "duration_seconds": 0.17414965480566025,
+          "start_seconds": 0.3134693782776594,
+          "end_seconds": 0.48761903308331966,
+          "ipa": "ɛm"
+        },
+        {
+          "word": "of",
+          "phones": [
+            "ʌ",
+            "v"
+          ],
+          "duration_seconds": 0.18575963377952576,
+          "start_seconds": 0.48761903308331966,
+          "end_seconds": 0.6733786668628454,
+          "ipa": "ʌv"
+        },
+        {
+          "word": "the",
+          "phones": [
+            "ð",
+            "ə"
+          ],
+          "duration_seconds": 0.09287982061505318,
+          "start_seconds": 0.6849886439740658,
+          "end_seconds": 0.777868464589119,
+          "ipa": "ðə"
+        },
+        {
+          "word": "orchestra",
+          "phones": [
+            "ɔːɹ",
+            "k",
+            "ᵻ",
+            "s",
+            "t",
+            "ɹ",
+            "ə"
+          ],
+          "duration_seconds": 0.6269387751817703,
+          "start_seconds": 0.777868464589119,
+          "end_seconds": 1.4048072397708893,
+          "ipa": "ɔːɹkᵻstɹə"
+        },
+        {
+          "word": "changed",
+          "phones": [
+            "tʃ",
+            "eɪ",
+            "n",
+            "dʒ",
+            "d"
+          ],
+          "duration_seconds": 0.41795918345451355,
+          "start_seconds": 1.42802719399333,
+          "end_seconds": 1.8459863774478436,
+          "ipa": "tʃeɪndʒd"
+        },
+        {
+          "word": "unexpectedly",
+          "phones": [
+            "ʌ",
+            "n",
+            "ɛ",
+            "k",
+            "s",
+            "p",
+            "ɛ",
+            "k",
+            "t",
+            "ᵻ",
+            "d",
+            "l",
+            "i"
+          ],
+          "duration_seconds": 0.9055782295763493,
+          "start_seconds": 1.857596354559064,
+          "end_seconds": 2.763174584135413,
+          "ipa": "ʌnɛkspɛktᵻdli"
+        }
+      ]
+    },
+    {
+      "id": "E4",
+      "language": "en",
+      "text": "The meeting will start at 10:45 AM on 12 November 2026, so andaroo should arrive on time.",
+      "asr_hypothesis": "The meeting will start at 10.45 a.m. on 12 November, 2026. So I'll never should arrive on time.",
+      "current_frontend_matches_final_manifest_and_prediction": true,
+      "normalized_frontend_text": "The meeting will start at 10:45 A M on 12 November 2026, so andaroo should arrive on time.",
+      "zero_duration_non_silence_phones": [],
+      "words": [
+        {
+          "word": "The",
+          "phones": [
+            "ð",
+            "ə"
+          ],
+          "duration_seconds": 0.10448979586362839,
+          "start_seconds": 0.05804988741874695,
+          "end_seconds": 0.16253968328237534,
+          "ipa": "ðə"
+        },
+        {
+          "word": "meeting",
+          "phones": [
+            "m",
+            "iː",
+            "ɾ",
+            "ɪ",
+            "ŋ"
+          ],
+          "duration_seconds": 0.4643990993499756,
+          "start_seconds": 0.16253968328237534,
+          "end_seconds": 0.6269387826323509,
+          "ipa": "miːɾɪŋ"
+        },
+        {
+          "word": "will",
+          "phones": [
+            "w",
+            "ɪ",
+            "l"
+          ],
+          "duration_seconds": 0.18575964123010635,
+          "start_seconds": 0.6269387826323509,
+          "end_seconds": 0.8126984238624573,
+          "ipa": "wɪl"
+        },
+        {
+          "word": "start",
+          "phones": [
+            "s",
+            "t",
+            "ɑːɹ",
+            "t"
+          ],
+          "duration_seconds": 0.3831292502582073,
+          "start_seconds": 0.8126984238624573,
+          "end_seconds": 1.1958276741206646,
+          "ipa": "stɑːɹt"
+        },
+        {
+          "word": "at",
+          "phones": [
+            "æ",
+            "t"
+          ],
+          "duration_seconds": 0.17414966225624084,
+          "start_seconds": 1.1958276741206646,
+          "end_seconds": 1.3699773363769054,
+          "ipa": "æt"
+        },
+        {
+          "word": "10:45",
+          "phones": [
+            "t",
+            "ɛ",
+            "n",
+            "f",
+            "ɔːɹ",
+            "ɾ",
+            "i",
+            "f",
+            "aɪ",
+            "v"
+          ],
+          "duration_seconds": 0.8823582641780376,
+          "start_seconds": 1.3699773363769054,
+          "end_seconds": 2.252335600554943,
+          "ipa": "tɛnfɔːɹɾifaɪv"
+        },
+        {
+          "word": "A",
+          "phones": [
+            "eɪ"
+          ],
+          "duration_seconds": 0.08126983791589737,
+          "start_seconds": 2.2639455776661634,
+          "end_seconds": 2.345215415582061,
+          "ipa": "eɪ"
+        },
+        {
+          "word": "M",
+          "phones": [
+            "ɛ",
+            "m"
+          ],
+          "duration_seconds": 0.22058957070112228,
+          "start_seconds": 2.345215415582061,
+          "end_seconds": 2.565804986283183,
+          "ipa": "ɛm"
+        },
+        {
+          "word": "on",
+          "phones": [
+            "ɔ",
+            "n"
+          ],
+          "duration_seconds": 0.22058957070112228,
+          "start_seconds": 2.5774149633944035,
+          "end_seconds": 2.7980045340955257,
+          "ipa": "ɔn"
+        },
+        {
+          "word": "12",
+          "phones": [
+            "t",
+            "w",
+            "ɛ",
+            "l",
+            "v"
+          ],
+          "duration_seconds": 0.29024943336844444,
+          "start_seconds": 2.809614511206746,
+          "end_seconds": 3.0998639445751905,
+          "ipa": "twɛlv"
+        },
+        {
+          "word": "November",
+          "phones": [
+            "n",
+            "oʊ",
+            "v",
+            "ɛ",
+            "m",
+            "b",
+            "ɚ"
+          ],
+          "duration_seconds": 0.5688888914883137,
+          "start_seconds": 3.0998639445751905,
+          "end_seconds": 3.668752836063504,
+          "ipa": "noʊvɛmbɚ"
+        },
+        {
+          "word": "2026",
+          "phones": [
+            "t",
+            "uː",
+            "θ",
+            "aʊ",
+            "z",
+            "ə",
+            "n",
+            "d",
+            "t",
+            "w",
+            "ɛ",
+            "n",
+            "t",
+            "i",
+            "s",
+            "ɪ",
+            "k",
+            "s"
+          ],
+          "duration_seconds": 1.2538775578141212,
+          "start_seconds": 3.668752836063504,
+          "end_seconds": 4.9226303938776255,
+          "ipa": "tuːθaʊzəndtwɛntisɪks"
+        },
+        {
+          "word": "so",
+          "phones": [
+            "s",
+            "oʊ"
+          ],
+          "duration_seconds": 0.3482993245124817,
+          "start_seconds": 5.375419521704316,
+          "end_seconds": 5.723718846216798,
+          "ipa": "soʊ"
+        },
+        {
+          "word": "andaroo",
+          "phones": [
+            "æ",
+            "n",
+            "d",
+            "ɐ",
+            "ɹ",
+            "uː"
+          ],
+          "duration_seconds": 0.4760090671479702,
+          "start_seconds": 5.735328823328018,
+          "end_seconds": 6.211337890475988,
+          "ipa": "ændɐɹuː"
+        },
+        {
+          "word": "should",
+          "phones": [
+            "ʃ",
+            "ʊ",
+            "d"
+          ],
+          "duration_seconds": 0.22058957070112228,
+          "start_seconds": 6.222947867587209,
+          "end_seconds": 6.443537438288331,
+          "ipa": "ʃʊd"
+        },
+        {
+          "word": "arrive",
+          "phones": [
+            "ɚ",
+            "ɹ",
+            "aɪ",
+            "v"
+          ],
+          "duration_seconds": 0.3715192712843418,
+          "start_seconds": 6.455147415399551,
+          "end_seconds": 6.826666686683893,
+          "ipa": "ɚɹaɪv"
+        },
+        {
+          "word": "on",
+          "phones": [
+            "ɔ",
+            "n"
+          ],
+          "duration_seconds": 0.20897959172725677,
+          "start_seconds": 6.826666686683893,
+          "end_seconds": 7.03564627841115,
+          "ipa": "ɔn"
+        },
+        {
+          "word": "time",
+          "phones": [
+            "t",
+            "aɪ",
+            "m"
+          ],
+          "duration_seconds": 0.27863945439457893,
+          "start_seconds": 7.03564627841115,
+          "end_seconds": 7.314285732805729,
+          "ipa": "taɪm"
+        }
+      ]
+    },
+    {
+      "id": "T1",
+      "language": "te",
+      "text": "న్యూరోఫార్మకోలాజికల్ పరిశోధనలో నూతన ఔషధాల ప్రభావాన్ని విశ్లేషించారు.",
+      "asr_hypothesis": "నివ్రు ధార్మా కోలాధి కల్ పరిసో ధనలో నోతన అఉషధాల ప్రభావాన్ని విస్లే శించారు",
+      "current_frontend_matches_final_manifest_and_prediction": true,
+      "normalized_frontend_text": "న్యూరోఫార్మకోలాజికల్ పరిశోధనలో నూతన ఔషధాల ప్రభావాన్ని విశ్లేషించారు.",
+      "zero_duration_non_silence_phones": [],
+      "words": [
+        {
+          "word": "న్యూరోఫార్మకోలాజికల్",
+          "phones": [
+            "n",
+            "j",
+            "uː",
+            "r",
+            "oː",
+            "pʰ",
+            "aː",
+            "r",
+            "m",
+            "a",
+            "k",
+            "oː",
+            "l",
+            "aː",
+            "ɟ",
+            "i",
+            "k",
+            "a",
+            "l"
+          ],
+          "duration_seconds": 1.6718367263674736,
+          "start_seconds": 0.29024943709373474,
+          "end_seconds": 1.9620861634612083,
+          "ipa": "njuːroːpʰaːrmakoːlaːɟikal"
+        },
+        {
+          "word": "పరిశోధనలో",
+          "phones": [
+            "p",
+            "a",
+            "r",
+            "i",
+            "ɕ",
+            "oː",
+            "dʰ",
+            "a",
+            "n",
+            "a",
+            "l",
+            "oː"
+          ],
+          "duration_seconds": 1.172607697546482,
+          "start_seconds": 1.9736961405724287,
+          "end_seconds": 3.146303838118911,
+          "ipa": "pariɕoːdʰanaloː"
+        },
+        {
+          "word": "నూతన",
+          "phones": [
+            "n",
+            "uː",
+            "t",
+            "a",
+            "n",
+            "a"
+          ],
+          "duration_seconds": 0.4992290250957012,
+          "start_seconds": 3.6107029374688864,
+          "end_seconds": 4.109931962564588,
+          "ipa": "nuːtana"
+        },
+        {
+          "word": "ఔషధాల",
+          "phones": [
+            "aʊ",
+            "ʂ",
+            "a",
+            "dʰ",
+            "aː",
+            "l",
+            "a"
+          ],
+          "duration_seconds": 0.603718813508749,
+          "start_seconds": 4.109931962564588,
+          "end_seconds": 4.713650776073337,
+          "ipa": "aʊʂadʰaːla"
+        },
+        {
+          "word": "ప్రభావాన్ని",
+          "phones": [
+            "p",
+            "r",
+            "a",
+            "bʰ",
+            "aː",
+            "ʋ",
+            "aː",
+            "n",
+            "n",
+            "i"
+          ],
+          "duration_seconds": 0.8707482889294624,
+          "start_seconds": 4.725260753184557,
+          "end_seconds": 5.596009042114019,
+          "ipa": "prabʰaːʋaːnni"
+        },
+        {
+          "word": "విశ్లేషించారు",
+          "phones": [
+            "ʋ",
+            "i",
+            "ɕ",
+            "l",
+            "eː",
+            "ʂ",
+            "i",
+            "n",
+            "c",
+            "aː",
+            "r",
+            "u"
+          ],
+          "duration_seconds": 0.9055782184004784,
+          "start_seconds": 6.025578197091818,
+          "end_seconds": 6.931156415492296,
+          "ipa": "ʋiɕleːʂincaːru"
+        }
+      ]
+    },
+    {
+      "id": "T3",
+      "language": "te",
+      "text": "పులి అడ విలో నిశ్శబ్దంగా నడిచింది.",
+      "asr_hypothesis": "పూలి తడవిలో నిస్షబ్దంగా నడి జింది.",
+      "current_frontend_matches_final_manifest_and_prediction": true,
+      "normalized_frontend_text": "పులి అడ విలో నిశ్శబ్దంగా నడిచింది.",
+      "zero_duration_non_silence_phones": [],
+      "words": [
+        {
+          "word": "పులి",
+          "phones": [
+            "p",
+            "u",
+            "l",
+            "i"
+          ],
+          "duration_seconds": 0.4876190349459648,
+          "start_seconds": 0.05804988741874695,
+          "end_seconds": 0.5456689223647118,
+          "ipa": "puli"
+        },
+        {
+          "word": "అడ",
+          "phones": [
+            "a",
+            "ɖ",
+            "a"
+          ],
+          "duration_seconds": 0.2321995459496975,
+          "start_seconds": 0.5921088308095932,
+          "end_seconds": 0.8243083767592907,
+          "ipa": "aɖa"
+        },
+        {
+          "word": "విలో",
+          "phones": [
+            "ʋ",
+            "i",
+            "l",
+            "oː"
+          ],
+          "duration_seconds": 0.3599093034863472,
+          "start_seconds": 0.835918353870511,
+          "end_seconds": 1.1958276573568583,
+          "ipa": "ʋiloː"
+        },
+        {
+          "word": "నిశ్శబ్దంగా",
+          "phones": [
+            "n",
+            "i",
+            "ɕ",
+            "ɕ",
+            "a",
+            "b",
+            "d",
+            "a",
+            "n",
+            "ɡ",
+            "aː"
+          ],
+          "duration_seconds": 0.7778684757649899,
+          "start_seconds": 1.381587291136384,
+          "end_seconds": 2.159455766901374,
+          "ipa": "niɕɕabdanɡaː"
+        },
+        {
+          "word": "నడిచింది",
+          "phones": [
+            "n",
+            "a",
+            "ɖ",
+            "i",
+            "c",
+            "i",
+            "n",
+            "d",
+            "i"
+          ],
+          "duration_seconds": 0.6733786836266518,
+          "start_seconds": 2.159455766901374,
+          "end_seconds": 2.8328344505280256,
+          "ipa": "naɖicindi"
+        }
+      ]
+    },
+    {
+      "id": "T4",
+      "language": "te",
+      "text": "ఈ సమావేశం 2026 నవంబర్ 12వ తేదీ ఉదయం 10:45 గంటలకు ప్రారంభమవుతుంది, సమయానికి సిద్ధంగా ఉంచండి.",
+      "asr_hypothesis": "ఈ సమావేసం రెండు వలిరవ్యారు నవంబర పన్న్యండవ తేది ఉదయం పదినలు హేదు గంటలకు ప్రారంభమవు తుంది సమయానికి సిధంగా ఉంచండి",
+      "current_frontend_matches_final_manifest_and_prediction": true,
+      "normalized_frontend_text": "ఈ సమావేశం 2026 నవంబర్ 12వ తేదీ ఉదయం 10:45 గంటలకు ప్రారంభమవుతుంది, సమయానికి సిద్ధంగా ఉంచండి.",
+      "zero_duration_non_silence_phones": [],
+      "words": [
+        {
+          "word": "ఈ",
+          "phones": [
+            "iː"
+          ],
+          "duration_seconds": 0.17414966225624084,
+          "start_seconds": 0.5572789311408997,
+          "end_seconds": 0.7314285933971405,
+          "ipa": "iː"
+        },
+        {
+          "word": "సమావేశం",
+          "phones": [
+            "s",
+            "a",
+            "m",
+            "aː",
+            "ʋ",
+            "eː",
+            "ɕ",
+            "a",
+            "n"
+          ],
+          "duration_seconds": 0.9171881973743439,
+          "start_seconds": 0.7314285933971405,
+          "end_seconds": 1.6486167907714844,
+          "ipa": "samaːʋeːɕan"
+        },
+        {
+          "word": "2026",
+          "phones": [
+            "r",
+            "e",
+            "n",
+            "ɖ",
+            "u",
+            "ʋ",
+            "e",
+            "l",
+            "a",
+            "i",
+            "r",
+            "a",
+            "ʋ",
+            "aɪ",
+            "aː",
+            "r",
+            "u"
+          ],
+          "duration_seconds": 1.1261678002774715,
+          "start_seconds": 1.915646255016327,
+          "end_seconds": 3.0418140552937984,
+          "ipa": "renɖuʋelairaʋaɪaːru"
+        },
+        {
+          "word": "నవంబర్",
+          "phones": [
+            "n",
+            "a",
+            "ʋ",
+            "a",
+            "n",
+            "b",
+            "a",
+            "r"
+          ],
+          "duration_seconds": 0.5688888840377331,
+          "start_seconds": 3.448163267225027,
+          "end_seconds": 4.01705215126276,
+          "ipa": "naʋanbar"
+        },
+        {
+          "word": "12వ",
+          "phones": [
+            "p",
+            "a",
+            "n",
+            "n",
+            "e",
+            "n",
+            "ɖ",
+            "a",
+            "ʋ",
+            "a"
+          ],
+          "duration_seconds": 0.6617687083780766,
+          "start_seconds": 4.051882084459066,
+          "end_seconds": 4.713650792837143,
+          "ipa": "pannenɖaʋa"
+        },
+        {
+          "word": "తేదీ",
+          "phones": [
+            "t",
+            "eː",
+            "d",
+            "iː"
+          ],
+          "duration_seconds": 0.5108389928936958,
+          "start_seconds": 4.748480726033449,
+          "end_seconds": 5.259319718927145,
+          "ipa": "teːdiː"
+        },
+        {
+          "word": "ఉదయం",
+          "phones": [
+            "u",
+            "d",
+            "a",
+            "j",
+            "a",
+            "n"
+          ],
+          "duration_seconds": 0.4527891092002392,
+          "start_seconds": 5.433469381183386,
+          "end_seconds": 5.886258490383625,
+          "ipa": "udajan"
+        },
+        {
+          "word": "10:45",
+          "phones": [
+            "p",
+            "a",
+            "d",
+            "i",
+            "n",
+            "a",
+            "l",
+            "u",
+            "bʰ",
+            "aɪ",
+            "aɪ",
+            "d",
+            "u"
+          ],
+          "duration_seconds": 0.9636281169950962,
+          "start_seconds": 5.886258490383625,
+          "end_seconds": 6.849886607378721,
+          "ipa": "padinalubʰaɪaɪdu"
+        },
+        {
+          "word": "గంటలకు",
+          "phones": [
+            "ɡ",
+            "a",
+            "n",
+            "ʈ",
+            "a",
+            "l",
+            "a",
+            "k",
+            "u"
+          ],
+          "duration_seconds": 0.6501587256789207,
+          "start_seconds": 7.337505649775267,
+          "end_seconds": 7.987664375454187,
+          "ipa": "ɡanʈalaku"
+        },
+        {
+          "word": "ప్రారంభమవుతుంది",
+          "phones": [
+            "p",
+            "r",
+            "aː",
+            "r",
+            "a",
+            "n",
+            "bʰ",
+            "a",
+            "m",
+            "a",
+            "ʋ",
+            "u",
+            "t",
+            "u",
+            "n",
+            "d",
+            "i"
+          ],
+          "duration_seconds": 1.3235374130308628,
+          "start_seconds": 8.126984108239412,
+          "end_seconds": 9.450521521270275,
+          "ipa": "praːranbʰamaʋutundi"
+        },
+        {
+          "word": "సమయానికి",
+          "phones": [
+            "s",
+            "a",
+            "m",
+            "a",
+            "j",
+            "aː",
+            "n",
+            "i",
+            "k",
+            "i"
+          ],
+          "duration_seconds": 0.8126984015107155,
+          "start_seconds": 9.833650760352612,
+          "end_seconds": 10.646349161863327,
+          "ipa": "samajaːniki"
+        },
+        {
+          "word": "సిద్ధంగా",
+          "phones": [
+            "s",
+            "i",
+            "d",
+            "dʰ",
+            "a",
+            "n",
+            "ɡ",
+            "aː"
+          ],
+          "duration_seconds": 0.5921088494360447,
+          "start_seconds": 10.692789070308208,
+          "end_seconds": 11.284897919744253,
+          "ipa": "siddʰanɡaː"
+        },
+        {
+          "word": "ఉంచండి",
+          "phones": [
+            "u",
+            "n",
+            "c",
+            "a",
+            "n",
+            "ɖ",
+            "i"
+          ],
+          "duration_seconds": 0.5572789087891579,
+          "start_seconds": 11.296507896855474,
+          "end_seconds": 11.853786805644631,
+          "ipa": "uncanɖi"
+        }
+      ]
+    }
+  ],
+  "isolated_frontend_probes": {
+    "en:conduct": "SIL k ɑː n d ʌ k t SIL",
+    "en:rhyth m": "SIL ɹ ɪ ð SIL ɛ m SIL",
+    "en:rhythm": "SIL ɹ ɪ ð ə m SIL",
+    "en:antidisestablishmentarianism": "SIL æ n t ɪ d ɪ s ɪ s t æ b l ɪ ʃ m ə n t ɛ ɹ iə n ɪ z ə m SIL",
+    "en:10:45 AM": "SIL t ɛ n f ɔːɹ ɾ i f aɪ v SIL eɪ SIL ɛ m SIL",
+    "en:10.45 a.m.": "SIL t ɛ n p ɔɪ n t f ɔːɹ f aɪ v SIL eɪ SIL ɛ m SIL",
+    "en:2026": "SIL t uː θ aʊ z ə n d t w ɛ n t i s ɪ k s SIL",
+    "en:12": "SIL t w ɛ l v SIL",
+    "te:న్యూరోఫార్మకోలాజికల్": "SIL n j uː r oː pʰ aː r m a k oː l aː ɟ i k a l SIL",
+    "te:పులి": "SIL p u l i SIL",
+    "te:పూలి": "SIL p uː l i SIL",
+    "te:అడ విలో": "SIL a ɖ a SIL ʋ i l oː SIL",
+    "te:అడవిలో": "SIL a ɖ a ʋ i l oː SIL",
+    "te:2026": "SIL r e n ɖ u ʋ e l a i r a ʋ aɪ aː r u SIL",
+    "te:12వ": "SIL p a n n e n ɖ a ʋ a SIL",
+    "te:10:45": "SIL p a d i n a l u bʰ aɪ aɪ d u SIL"
+  },
+  "backend_configuration_source": "    def set_backend(self, language='en'):\n        self.language = language\n        alt_codes = {'zh-CN': 'cmn', 'fr': 'fr-fr', 'en': 'en-us', 'uk': 'zle', 'sv-SE': 'sv', 'ga-IE': 'ga', 'cv': 'cu'}\n\n        if (language in alt_codes):\n            language = alt_codes[language]\n        if self.verbose >= 2:\n            print(f\"Setting espeak backend for language: {language}\")\n        self.backend = EspeakBackend(language=language, preserve_punctuation=False, tie=False, with_stress=False)\n        \n\n        # unicode_enable for languages with non-Latin scripts\n        # Check if the language code matches any in specical_unicode_langs\n        if any(lang in language for lang in specical_unicode_langs):\n            self.unicode_enable = True\n            if self.verbose >= 2:\n                print(f\"Unicode enabled for language: {language}\")\n"
+}

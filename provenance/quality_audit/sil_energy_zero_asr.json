@@ -1,0 +1,363 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-06T11:50:59.387950+00:00",
+  "language": "en",
+  "language_name": "English",
+  "interpretation": "These are ASR hypotheses and text-comparison error rates, not ground-truth transcripts or a pronunciation score. Errors can arise from the recognizer, the synthesized speech, or text conventions. A low WER/CER does not establish correct stress, homograph sense, pronunciation, naturalness, or timing. A high WER/CER does not by itself prove a TTS error. Human listening is required.",
+  "normalization": "Unicode NFC; casefold; remove apostrophes and zero-width joiners; replace other punctuation/symbols with spaces; collapse whitespace; preserve Unicode letters, combining marks and digits. No spelling repairs, number/date/time expansion, transliteration, or correction of the deliberate input anomalies. WER uses whitespace-separated words; CER uses Unicode code points excluding whitespace (not grapheme clusters, so Telugu vowel signs count separately).",
+  "source": {
+    "diagnostic_sha256": "470b76343bdb85513f3cf0fde7205f07eabbedbce4a878d8311fac3eaa9c94c6",
+    "checkpoint_step": 8842,
+    "protocol": {
+      "language": "English",
+      "checkpoint": "latest.pt",
+      "scope": "Fixed validation diagnostic only; no source/weights/final artifact changes",
+      "candidate": "Replace energy_predictor output with normalized linear energy0 ONLY at input SIL positions, before variance embedding",
+      "unchanged": [
+        "all non-SIL energy predictions",
+        "all pitch predictions",
+        "all duration predictions",
+        "all phoneme IDs",
+        "waveform samples are never directly masked"
+      ],
+      "zero_energy_normalized": -0.9761545263723915,
+      "probe_ids": [
+        "en_test-00000-of-00003_000970",
+        "en_test-00000-of-00003_002008",
+        "en_test-00001-of-00003_001541"
+      ]
+    }
+  },
+  "model": {
+    "engine": "faster-whisper / CTranslate2 local inference",
+    "requested_model": "large-v3-turbo",
+    "repository_id": "mobiuslabsgmbh/faster-whisper-large-v3-turbo",
+    "requested_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "resolved_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "revision_source": "Hugging Face cached snapshot directory; no network query",
+    "model_file_sha256": {
+      "config.json": "b0253ea6c0d3bea6b1e19e91a02acfd3b53f4467362efcb5a3e6b16c9b3a9b7e",
+      "model.bin": "e76620f83d5f5b69efd3d87e3dc180c1bd21df9fbebacfd4335e5e1efcc018da",
+      "preprocessor_config.json": "7ccc62c6f2765af1f3b46c00c9b5894426835a05021c8b9c01eecb6dfb542711",
+      "tokenizer.json": "297b13372ac43916285644fb9687add3cc62ee2a1adb60da3dc25cc94c1871fd",
+      "vocabulary.json": "c69260f2ab26d659b7c398f9a2b2b48ed0df16c3b47d7326782fd9cba71690c1"
+    },
+    "requested_device": "cpu",
+    "requested_compute_type": "int8",
+    "cpu_threads": 4,
+    "versions": {
+      "python": "3.11.18",
+      "faster-whisper": "1.2.1",
+      "ctranslate2": "4.8.5",
+      "huggingface-hub": "2.4.0",
+      "av": "18.1.0",
+      "tokenizers": "0.23.3",
+      "numpy": "2.4.6"
+    },
+    "audio_uploaded": false
+  },
+  "decoding": {
+    "language": "en",
+    "language_is_forced": true,
+    "task": "transcribe",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "initial_prompt": null,
+    "hotwords": null,
+    "note": "Reference text is not supplied as a decoding prompt."
+  },
+  "aggregate": {
+    "sample_count": 3,
+    "word_edit_distance": 2,
+    "reference_word_count": 26,
+    "wer": 0.07692307692307693,
+    "character_edit_distance": 4,
+    "reference_character_count": 134,
+    "cer": 0.029850746268656716,
+    "aggregation": "micro-average within this language"
+  },
+  "samples": [
+    {
+      "id": "en_test-00000-of-00003_000970",
+      "text": "Brazil, Cambodia, Japan, Spain, Greece.",
+      "language": "en",
+      "wav_path": "en_test-00000-of-00003_000970.wav",
+      "wav_sha256": "a257f6843cc68d8cbc5603d744994e1a9e8d95c65f0a5eb7e572208f5428979d",
+      "duration_seconds": 2.9257142857142857,
+      "asr_transcript": "Brazil, Cambodia, Japan, Spain, Greece.",
+      "segments": [
+        {
+          "start_seconds": 0.0,
+          "end_seconds": 2.8000000000000003,
+          "text": " Brazil, Cambodia, Japan, Spain, Greece."
+        }
+      ],
+      "metrics": {
+        "reference_normalized": "brazil cambodia japan spain greece",
+        "hypothesis_normalized": "brazil cambodia japan spain greece",
+        "word_edit_distance": 0,
+        "reference_word_count": 5,
+        "hypothesis_word_count": 5,
+        "wer": 0.0,
+        "character_edit_distance": 0,
+        "reference_character_count": 30,
+        "hypothesis_character_count": 30,
+        "cer": 0.0
+      }
+    },
+    {
+      "id": "en_test-00000-of-00003_002008",
+      "text": "eat seasonal fruits and use these flowers for worshipping and so on.",
+      "language": "en",
+      "wav_path": "en_test-00000-of-00003_002008.wav",
+      "wav_sha256": "aeb9dc9aad21329ce32211b0b783658c7400d48920dcc0ca32352d84da1a644f",
+      "duration_seconds": 4.876190476190477,
+      "asr_transcript": "Eat seasonal fruits and use these flowers for worshipping and so on.",
+      "segments": [
+        {
+          "start_seconds": 0.0,
+          "end_seconds": 4.82,
+          "text": " Eat seasonal fruits and use these flowers for worshipping and so on."
+        }
+      ],
+      "metrics": {
+        "reference_normalized": "eat seasonal fruits and use these flowers for worshipping and so on",
+        "hypothesis_normalized": "eat seasonal fruits and use these flowers for worshipping and so on",
+        "word_edit_distance": 0,
+        "reference_word_count": 12,
+        "hypothesis_word_count": 12,
+        "wer": 0.0,
+        "character_edit_distance": 0,
+        "reference_character_count": 56,
+        "hypothesis_character_count": 56,
+        "cer": 0.0
+      }
+    },
+    {
+      "id": "en_test-00001-of-00003_001541",
+      "text": "Especially this Yaksha Gana and its various versions are",
+      "language": "en",
+      "wav_path": "en_test-00001-of-00003_001541.wav",
+      "wav_sha256": "2f209b0e831b4f9ce2ca499f7dd3cf974ac098ca3ba5a5d4adf3a2148ce8ab8d",
+      "duration_seconds": 3.7151927437641725,
+      "asr_transcript": "especially this Akshayvama and its various versions are...",
+      "segments": [
+        {
+          "start_seconds": 0.0,
+          "end_seconds": 3.72,
+          "text": " especially this Akshayvama and its various versions are..."
+        }
+      ],
+      "metrics": {
+        "reference_normalized": "especially this yaksha gana and its various versions are",
+        "hypothesis_normalized": "especially this akshayvama and its various versions are",
+        "word_edit_distance": 2,
+        "reference_word_count": 9,
+        "hypothesis_word_count": 8,
+        "wer": 0.2222222222222222,
+        "character_edit_distance": 4,
+        "reference_character_count": 48,
+        "hypothesis_character_count": 48,
+        "cer": 0.08333333333333333
+      }
+    }
+  ],
+  "scope": "Bounded SIL-energy-zero diagnostic; no final artifacts changed.",
+  "baseline_aggregate": {
+    "sample_count": 3,
+    "word_edit_distance": 4,
+    "reference_word_count": 26,
+    "wer": 0.15384615384615385,
+    "character_edit_distance": 15,
+    "reference_character_count": 134,
+    "cer": 0.11194029850746269,
+    "aggregation": "micro-average within this language"
+  },
+  "baseline_samples": [
+    {
+      "id": "en_test-00000-of-00003_000970",
+      "text": "Brazil, Cambodia, Japan, Spain, Greece.",
+      "language": "en",
+      "wav_path": "en_test-00000-of-00003_000970.wav",
+      "wav_sha256": "a277b90d794ee15726828f27e8bb68f39c78af6914a731ee776a64d0fd353253",
+      "duration_seconds": 2.9257142857142857,
+      "asr_transcript": "Brazil, Cambodia, Japan, Spain, Greece.",
+      "segments": [
+        {
+          "start_seconds": 0.0,
+          "end_seconds": 2.8000000000000003,
+          "text": " Brazil, Cambodia, Japan, Spain, Greece."
+        }
+      ],
+      "metrics": {
+        "reference_normalized": "brazil cambodia japan spain greece",
+        "hypothesis_normalized": "brazil cambodia japan spain greece",
+        "word_edit_distance": 0,
+        "reference_word_count": 5,
+        "hypothesis_word_count": 5,
+        "wer": 0.0,
+        "character_edit_distance": 0,
+        "reference_character_count": 30,
+        "hypothesis_character_count": 30,
+        "cer": 0.0
+      }
+    },
+    {
+      "id": "en_test-00000-of-00003_002008",
+      "text": "eat seasonal fruits and use these flowers for worshipping and so on.",
+      "language": "en",
+      "wav_path": "en_test-00000-of-00003_002008.wav",
+      "wav_sha256": "e19d0a0e6a101c73f0249f87761715e37e1184aec1c70d835a6e4335093e4eb3",
+      "duration_seconds": 4.876190476190477,
+      "asr_transcript": "Keep seasonal fruits and use these flowers for worshipping and so on.",
+      "segments": [
+        {
+          "start_seconds": 0.0,
+          "end_seconds": 4.82,
+          "text": " Keep seasonal fruits and use these flowers for worshipping and so on."
+        }
+      ],
+      "metrics": {
+        "reference_normalized": "eat seasonal fruits and use these flowers for worshipping and so on",
+        "hypothesis_normalized": "keep seasonal fruits and use these flowers for worshipping and so on",
+        "word_edit_distance": 1,
+        "reference_word_count": 12,
+        "hypothesis_word_count": 12,
+        "wer": 0.08333333333333333,
+        "character_edit_distance": 3,
+        "reference_character_count": 56,
+        "hypothesis_character_count": 57,
+        "cer": 0.05357142857142857
+      }
+    },
+    {
+      "id": "en_test-00001-of-00003_001541",
+      "text": "Especially this Yaksha Gana and its various versions are",
+      "language": "en",
+      "wav_path": "en_test-00001-of-00003_001541.wav",
+      "wav_sha256": "c6cc3af7d081e2d234492392126f366179cd58e7174619f1c4a2297d16f2ffd0",
+      "duration_seconds": 3.7151927437641725,
+      "asr_transcript": "especially this faction one and its various Russians are...",
+      "segments": [
+        {
+          "start_seconds": 0.0,
+          "end_seconds": 3.68,
+          "text": " especially this faction one and its various Russians are..."
+        }
+      ],
+      "metrics": {
+        "reference_normalized": "especially this yaksha gana and its various versions are",
+        "hypothesis_normalized": "especially this faction one and its various russians are",
+        "word_edit_distance": 3,
+        "reference_word_count": 9,
+        "hypothesis_word_count": 9,
+        "wer": 0.3333333333333333,
+        "character_edit_distance": 12,
+        "reference_character_count": 48,
+        "hypothesis_character_count": 48,
+        "cer": 0.25
+      }
+    }
+  ],
+  "original_control": {
+    "scope": "Same recognizer/settings on original held-out recordings; reference text not supplied to decoder.",
+    "aggregate": {
+      "sample_count": 3,
+      "word_edit_distance": 2,
+      "reference_word_count": 26,
+      "wer": 0.07692307692307693,
+      "character_edit_distance": 2,
+      "reference_character_count": 134,
+      "cer": 0.014925373134328358,
+      "aggregation": "micro-average within this language"
+    },
+    "samples": [
+      {
+        "id": "en_test-00000-of-00003_000970",
+        "text": "Brazil, Cambodia, Japan, Spain, Greece.",
+        "language": "en",
+        "wav_path": "en_test-00000-of-00003_000970.wav",
+        "wav_sha256": "97d138733e9d50c164324c41b71fa4c04952fe723c3ec1a1d5b801e04fbcb469",
+        "duration_seconds": 5.974625,
+        "asr_transcript": "Brazil, Cambodia, Japan, Spain, Greece",
+        "segments": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 5.96,
+            "text": " Brazil, Cambodia, Japan, Spain, Greece"
+          }
+        ],
+        "metrics": {
+          "reference_normalized": "brazil cambodia japan spain greece",
+          "hypothesis_normalized": "brazil cambodia japan spain greece",
+          "word_edit_distance": 0,
+          "reference_word_count": 5,
+          "hypothesis_word_count": 5,
+          "wer": 0.0,
+          "character_edit_distance": 0,
+          "reference_character_count": 30,
+          "hypothesis_character_count": 30,
+          "cer": 0.0
+        }
+      },
+      {
+        "id": "en_test-00000-of-00003_002008",
+        "text": "eat seasonal fruits and use these flowers for worshipping and so on.",
+        "language": "en",
+        "wav_path": "en_test-00000-of-00003_002008.wav",
+        "wav_sha256": "4e67e99a2885855f621d68d5b13f4bf69272bb47906a87f1d0c1f69652d46fd2",
+        "duration_seconds": 5.30875,
+        "asr_transcript": "eat seasonal fruits and use these flowers for worshipping and so on.",
+        "segments": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 4.76,
+            "text": " eat seasonal fruits and use these flowers for worshipping and so on."
+          }
+        ],
+        "metrics": {
+          "reference_normalized": "eat seasonal fruits and use these flowers for worshipping and so on",
+          "hypothesis_normalized": "eat seasonal fruits and use these flowers for worshipping and so on",
+          "word_edit_distance": 0,
+          "reference_word_count": 12,
+          "hypothesis_word_count": 12,
+          "wer": 0.0,
+          "character_edit_distance": 0,
+          "reference_character_count": 56,
+          "hypothesis_character_count": 56,
+          "cer": 0.0
+        }
+      },
+      {
+        "id": "en_test-00001-of-00003_001541",
+        "text": "Especially this Yaksha Gana and its various versions are",
+        "language": "en",
+        "wav_path": "en_test-00001-of-00003_001541.wav",
+        "wav_sha256": "3415c9104675ce5249dcd3af4ad059d2ccb08f0bbb79d1a30332c68917acd048",
+        "duration_seconds": 4.1803125,
+        "asr_transcript": "especially this Ekshagana and its various versions are",
+        "segments": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 4.32,
+            "text": " especially this Ekshagana and its various versions are"
+          }
+        ],
+        "metrics": {
+          "reference_normalized": "especially this yaksha gana and its various versions are",
+          "hypothesis_normalized": "especially this ekshagana and its various versions are",
+          "word_edit_distance": 2,
+          "reference_word_count": 9,
+          "hypothesis_word_count": 8,
+          "wer": 0.2222222222222222,
+          "character_edit_distance": 2,
+          "reference_character_count": 48,
+          "hypothesis_character_count": 47,
+          "cer": 0.041666666666666664
+        }
+      }
+    ]
+  }
+}

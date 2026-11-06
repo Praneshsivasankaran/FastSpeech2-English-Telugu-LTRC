@@ -1,0 +1,214 @@
+{
+  "schema_version": null,
+  "language": "en",
+  "language_name": "English",
+  "interpretation": "These are ASR hypotheses and text-comparison error rates, not ground-truth transcripts or a pronunciation score. Errors can arise from the recognizer, the synthesized speech, or text conventions. A low WER/CER does not establish correct stress, homograph sense, pronunciation, naturalness, or timing. A high WER/CER does not by itself prove a TTS error. Human listening is required.",
+  "normalization": "Unicode NFC; casefold; remove apostrophes and zero-width joiners; replace other punctuation/symbols with spaces; collapse whitespace; preserve Unicode letters, combining marks and digits. No spelling repairs, number/date/time expansion, transliteration, or correction of the deliberate input anomalies. WER uses whitespace-separated words; CER uses Unicode code points excluding whitespace (not grapheme clusters, so Telugu vowel signs count separately).",
+  "model": {
+    "engine": "faster-whisper / CTranslate2 local inference",
+    "requested_model": "large-v3-turbo",
+    "repository_id": "mobiuslabsgmbh/faster-whisper-large-v3-turbo",
+    "requested_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "resolved_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "revision_source": "Hugging Face cached snapshot directory; no network query",
+    "model_file_sha256": {
+      "config.json": "b0253ea6c0d3bea6b1e19e91a02acfd3b53f4467362efcb5a3e6b16c9b3a9b7e",
+      "model.bin": "e76620f83d5f5b69efd3d87e3dc180c1bd21df9fbebacfd4335e5e1efcc018da",
+      "preprocessor_config.json": "7ccc62c6f2765af1f3b46c00c9b5894426835a05021c8b9c01eecb6dfb542711",
+      "tokenizer.json": "297b13372ac43916285644fb9687add3cc62ee2a1adb60da3dc25cc94c1871fd",
+      "vocabulary.json": "c69260f2ab26d659b7c398f9a2b2b48ed0df16c3b47d7326782fd9cba71690c1"
+    },
+    "requested_device": "cpu",
+    "requested_compute_type": "int8",
+    "cpu_threads": null,
+    "versions": {
+      "python": "3.11.18",
+      "faster-whisper": "1.2.1",
+      "ctranslate2": "4.8.5",
+      "huggingface-hub": "2.4.0",
+      "av": "18.1.0",
+      "tokenizers": "0.23.3",
+      "numpy": "2.4.6"
+    },
+    "audio_uploaded": null
+  },
+  "decoding": {
+    "language": "en",
+    "language_is_forced": null,
+    "task": "transcribe",
+    "beam_size": null,
+    "temperature": null,
+    "condition_on_previous_text": null,
+    "vad_filter": null,
+    "initial_prompt": null,
+    "hotwords": null,
+    "note": "Reference text is not supplied as a decoding prompt."
+  },
+  "aggregate": {
+    "sample_count": null,
+    "word_edit_distance": null,
+    "reference_word_count": null,
+    "wer": null,
+    "character_edit_distance": null,
+    "reference_character_count": null,
+    "cer": null,
+    "aggregation": "micro-average within this language"
+  },
+  "created_utc": "2026-11-06T12:01:12.371177+00:00",
+  "source": {
+    "samples_path": "test_samples.json",
+    "samples_sha256": "b1764a90ac2edd1d97bf37fd83c753a63dd2ac325dc31a21753b26ca9a987079",
+    "inference_manifest_path": "inference_manifest.json",
+    "inference_manifest_sha256": "68dd144ad8bd1d6afd118145b127418df9bac9a32cf5596b60aaae9f4afdcaca",
+    "checkpoint_sha256": "48a2bc893c5192a7559408d4843a1d2f99b5bfab6196691edb636c6803ea7bac"
+  },
+  "samples": [
+    {
+      "id": "E1",
+      "text": "The antidisestablishmentarianism movement gained considerable momentum during the parliamentary proceedings.",
+      "language": "en",
+      "wav_path": "E1.wav",
+      "wav_sha256": "3151530f01bc6666112ac85972831567a747c1464dd7877fa4ebcb7efa40e2eb",
+      "duration_seconds": null,
+      "asr_transcript": "then disestablish humanitarianism movement and considerable momentum during the parliamentary proceedings.",
+      "segments": [
+        {
+          "start_seconds": null,
+          "end_seconds": null,
+          "text": " then disestablish humanitarianism movement and considerable momentum during the parliamentary proceedings."
+        }
+      ],
+      "metrics": {
+        "reference_normalized": "the antidisestablishmentarianism movement gained considerable momentum during the parliamentary proceedings",
+        "hypothesis_normalized": "then disestablish humanitarianism movement and considerable momentum during the parliamentary proceedings",
+        "word_edit_distance": null,
+        "reference_word_count": null,
+        "hypothesis_word_count": null,
+        "wer": null,
+        "character_edit_distance": null,
+        "reference_character_count": null,
+        "hypothesis_character_count": null,
+        "cer": null
+      }
+    },
+    {
+      "id": "E2a",
+      "text": "The orchestra's conduct during the ceremony was praised by the audience.",
+      "language": "en",
+      "wav_path": "E2a.wav",
+      "wav_sha256": "3dd3601c70e9e37f13bc19edc0369ab99d9a903d7d629dad6c9ee1b888ba9f75",
+      "duration_seconds": null,
+      "asr_transcript": "The artist's contact during the ceremony was placed by the audience.",
+      "segments": [
+        {
+          "start_seconds": null,
+          "end_seconds": null,
+          "text": " The artist's contact during the ceremony was placed by the audience."
+        }
+      ],
+      "metrics": {
+        "reference_normalized": "the orchestras conduct during the ceremony was praised by the audience",
+        "hypothesis_normalized": "the artists contact during the ceremony was placed by the audience",
+        "word_edit_distance": null,
+        "reference_word_count": null,
+        "hypothesis_word_count": null,
+        "wer": null,
+        "character_edit_distance": null,
+        "reference_character_count": null,
+        "hypothesis_character_count": null,
+        "cer": null
+      }
+    },
+    {
+      "id": "E2b",
+      "text": "The researchers will conduct an experiment to evaluate the proposed method.",
+      "language": "en",
+      "wav_path": "E2b.wav",
+      "wav_sha256": "4ad4bdaa7dabade174fd09b67f5e529be9ca67b3a25107dba5bc4e75feb85719",
+      "duration_seconds": null,
+      "asr_transcript": "The researchers will conduct an experiment to evaluate the proposed method.",
+      "segments": [
+        {
+          "start_seconds": null,
+          "end_seconds": null,
+          "text": " The researchers will conduct an experiment to evaluate the proposed method."
+        }
+      ],
+      "metrics": {
+        "reference_normalized": "the researchers will conduct an experiment to evaluate the proposed method",
+        "hypothesis_normalized": "the researchers will conduct an experiment to evaluate the proposed method",
+        "word_edit_distance": null,
+        "reference_word_count": null,
+        "hypothesis_word_count": null,
+        "wer": null,
+        "character_edit_distance": null,
+        "reference_character_count": null,
+        "hypothesis_character_count": null,
+        "cer": null
+      }
+    },
+    {
+      "id": "E3",
+      "text": "The rhyth m of the orchestra changed unexpectedly.",
+      "language": "en",
+      "wav_path": "E3.wav",
+      "wav_sha256": "86923aa5c3c6dd11a8c567fa2948b8fae434e03d23fe3c60b50c4945449e3ecb",
+      "duration_seconds": null,
+      "asr_transcript": "the rhythm of the estrogen unexpectedly.",
+      "segments": [
+        {
+          "start_seconds": null,
+          "end_seconds": null,
+          "text": " the rhythm of the estrogen unexpectedly."
+        }
+      ],
+      "metrics": {
+        "reference_normalized": "the rhyth m of the orchestra changed unexpectedly",
+        "hypothesis_normalized": "the rhythm of the estrogen unexpectedly",
+        "word_edit_distance": null,
+        "reference_word_count": null,
+        "hypothesis_word_count": null,
+        "wer": null,
+        "character_edit_distance": null,
+        "reference_character_count": null,
+        "hypothesis_character_count": null,
+        "cer": null
+      }
+    },
+    {
+      "id": "E4",
+      "text": "The meeting will start at 10:45 AM on 12 November 2026, so andaroo should arrive on time.",
+      "language": "en",
+      "wav_path": "E4.wav",
+      "wav_sha256": "7a4f9ea147beb569880d075860582c8ba0214b57df54ebe8f4b58f55d791c544",
+      "duration_seconds": null,
+      "asr_transcript": "The meeting will start at 10.45am until November 2026, so Pandoro should arrive on time.",
+      "segments": [
+        {
+          "start_seconds": null,
+          "end_seconds": null,
+          "text": " The meeting will start at 10.45am until November 2026, so Pandoro should arrive on time."
+        }
+      ],
+      "metrics": {
+        "reference_normalized": "the meeting will start at 10 45 am on 12 november 2026 so andaroo should arrive on time",
+        "hypothesis_normalized": "the meeting will start at 10 45am until november 2026 so pandoro should arrive on time",
+        "word_edit_distance": null,
+        "reference_word_count": null,
+        "hypothesis_word_count": null,
+        "wer": null,
+        "character_edit_distance": null,
+        "reference_character_count": null,
+        "hypothesis_character_count": null,
+        "cer": null
+      }
+    }
+  ],
+  "transcript_provenance": {
+    "method": "reused_transcripts_for_byte_identical_audio",
+    "original_transcription_created_utc": "2026-11-06T11:58:41.766931+00:00",
+    "source_assessment_sha256": "e54a6679444bddfe61432665681e24f5052ad928bfb4c70f8b1d0c06145c59ef",
+    "source_evidence_file": "provenance/quality_audit/causal_energy_8842.json",
+    "validation": "All five audio SHA-256 hashes, exact reference texts, language and decoded durations match the prior local ASR run. Source manifest/sample hashes rebound to final published files."
+  }
+}

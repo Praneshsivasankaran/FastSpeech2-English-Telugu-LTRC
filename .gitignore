@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+data/
+*.parquet
+*.raw.npz
+English/preprocessed/features/
+Telugu/preprocessed/features/
+English/preprocessed/alignments/
+Telugu/preprocessed/alignments/
+vendor/FastSpeech2/.git/
+vendor/FastSpeech2/hifigan/*.pth.tar
+*.tmp
+*.log
+
+# Trained checkpoints are distributed as release assets, not Git blobs.
+English/checkpoints/*.pt
+Telugu/checkpoints/*.pt

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "english_0000",
+    "mps_warm_seconds": 0.2861547500360757,
+    "maximum_boundary_difference_seconds": 9.536743159066496e-09,
+    "mean_boundary_difference_seconds": 1.2025498503298398e-10,
+    "phone_match": true
+  },
+  {
+    "id": "english_0001",
+    "mps_warm_seconds": 0.23960962507408112,
+    "maximum_boundary_difference_seconds": 3.051757810901279e-07,
+    "mean_boundary_difference_seconds": 1.2371991125275455e-08,
+    "phone_match": true
+  },
+  {
+    "id": "telugu_0000",
+    "mps_warm_seconds": 0.2081367908976972,
+    "maximum_boundary_difference_seconds": 0.0,
+    "mean_boundary_difference_seconds": 0.0,
+    "phone_match": true
+  },
+  {
+    "id": "telugu_0004",
+    "mps_warm_seconds": 0.27387100004125386,
+    "maximum_boundary_difference_seconds": 0.0,
+    "mean_boundary_difference_seconds": 0.0,
+    "phone_match": true
+  }
+]

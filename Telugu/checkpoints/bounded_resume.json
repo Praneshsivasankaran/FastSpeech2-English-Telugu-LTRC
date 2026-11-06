@@ -1,0 +1,8 @@
+{
+  "timestamp_utc": "2026-11-05T11:37:57.350735+00:00",
+  "old_pid": 2116,
+  "saved_step": 7000,
+  "old_target_steps": 50000,
+  "new_target_steps": 10000,
+  "reason": "Bound ongoing runs after validation plateau; resume with tested graceful-stop and recovery support. Unsaved log tails preserved by resume reconciler."
+}

@@ -1,0 +1,9 @@
+# Linux CUDA training environment. Install separately from the macOS workflow.
+--extra-index-url https://download.pytorch.org/whl/cu124
+torch==2.4.1+cu124
+numpy==1.26.4
+scipy==1.17.1
+matplotlib==3.11.2
+PyYAML==6.0.3
+unidecode==1.4.0
+inflect==7.6.0

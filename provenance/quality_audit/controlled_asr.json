@@ -1,0 +1,1472 @@
+{
+  "status": "COMPLETE",
+  "scope": "Local cached ASR on existing matched frozen-validation diagnostic WAVs. Oracle/target-mel branches are diagnostic controls, not deployable TTS outputs and not changes to final selected results.",
+  "created_utc": "2026-11-06T09:23:35.848548+00:00",
+  "model_diagnostics_sha256": "7654e16c6834678896adc30062be8c2e2476de554b0374657a41c7e651b9030b",
+  "model": {
+    "engine": "faster-whisper / CTranslate2 local inference",
+    "requested_model": "large-v3-turbo",
+    "repository_id": "mobiuslabsgmbh/faster-whisper-large-v3-turbo",
+    "requested_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "resolved_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "revision_source": "Hugging Face cached snapshot directory; no network query",
+    "model_file_sha256": {
+      "config.json": "b0253ea6c0d3bea6b1e19e91a02acfd3b53f4467362efcb5a3e6b16c9b3a9b7e",
+      "model.bin": "e76620f83d5f5b69efd3d87e3dc180c1bd21df9fbebacfd4335e5e1efcc018da",
+      "preprocessor_config.json": "7ccc62c6f2765af1f3b46c00c9b5894426835a05021c8b9c01eecb6dfb542711",
+      "tokenizer.json": "297b13372ac43916285644fb9687add3cc62ee2a1adb60da3dc25cc94c1871fd",
+      "vocabulary.json": "c69260f2ab26d659b7c398f9a2b2b48ed0df16c3b47d7326782fd9cba71690c1"
+    },
+    "requested_device": "cpu",
+    "requested_compute_type": "int8",
+    "cpu_threads": 4,
+    "versions": {
+      "python": "3.11.18",
+      "faster-whisper": "1.2.1",
+      "ctranslate2": "4.8.5",
+      "huggingface-hub": "2.4.0",
+      "av": "18.1.0",
+      "tokenizers": "0.23.3",
+      "numpy": "2.4.6"
+    },
+    "audio_uploaded": false,
+    "actual_device": "cpu",
+    "actual_compute_type": "int8_float32"
+  },
+  "caveat": "These are ASR hypotheses and text-comparison error rates, not ground-truth transcripts or a pronunciation score. Errors can arise from the recognizer, the synthesized speech, or text conventions. A low WER/CER does not establish correct stress, homograph sense, pronunciation, naturalness, or timing. A high WER/CER does not by itself prove a TTS error. Human listening is required.",
+  "languages": {
+    "English": {
+      "original_recording_control": {
+        "scope": "Same recognizer/settings on original held-out recordings; reference text not supplied to decoder.",
+        "aggregate": {
+          "sample_count": 3,
+          "word_edit_distance": 2,
+          "reference_word_count": 26,
+          "wer": 0.07692307692307693,
+          "character_edit_distance": 2,
+          "reference_character_count": 134,
+          "cer": 0.014925373134328358,
+          "aggregation": "micro-average within this language"
+        },
+        "samples": [
+          {
+            "id": "en_test-00000-of-00003_000970",
+            "text": "Brazil, Cambodia, Japan, Spain, Greece.",
+            "language": "en",
+            "wav_path": "en_test-00000-of-00003_000970.wav",
+            "wav_sha256": "97d138733e9d50c164324c41b71fa4c04952fe723c3ec1a1d5b801e04fbcb469",
+            "duration_seconds": 5.974625,
+            "asr_transcript": "Brazil, Cambodia, Japan, Spain, Greece",
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 5.96,
+                "text": " Brazil, Cambodia, Japan, Spain, Greece"
+              }
+            ],
+            "metrics": {
+              "reference_normalized": "brazil cambodia japan spain greece",
+              "hypothesis_normalized": "brazil cambodia japan spain greece",
+              "word_edit_distance": 0,
+              "reference_word_count": 5,
+              "hypothesis_word_count": 5,
+              "wer": 0.0,
+              "character_edit_distance": 0,
+              "reference_character_count": 30,
+              "hypothesis_character_count": 30,
+              "cer": 0.0
+            }
+          },
+          {
+            "id": "en_test-00000-of-00003_002008",
+            "text": "eat seasonal fruits and use these flowers for worshipping and so on.",
+            "language": "en",
+            "wav_path": "en_test-00000-of-00003_002008.wav",
+            "wav_sha256": "4e67e99a2885855f621d68d5b13f4bf69272bb47906a87f1d0c1f69652d46fd2",
+            "duration_seconds": 5.30875,
+            "asr_transcript": "eat seasonal fruits and use these flowers for worshipping and so on.",
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 4.76,
+                "text": " eat seasonal fruits and use these flowers for worshipping and so on."
+              }
+            ],
+            "metrics": {
+              "reference_normalized": "eat seasonal fruits and use these flowers for worshipping and so on",
+              "hypothesis_normalized": "eat seasonal fruits and use these flowers for worshipping and so on",
+              "word_edit_distance": 0,
+              "reference_word_count": 12,
+              "hypothesis_word_count": 12,
+              "wer": 0.0,
+              "character_edit_distance": 0,
+              "reference_character_count": 56,
+              "hypothesis_character_count": 56,
+              "cer": 0.0
+            }
+          },
+          {
+            "id": "en_test-00001-of-00003_001541",
+            "text": "Especially this Yaksha Gana and its various versions are",
+            "language": "en",
+            "wav_path": "en_test-00001-of-00003_001541.wav",
+            "wav_sha256": "3415c9104675ce5249dcd3af4ad059d2ccb08f0bbb79d1a30332c68917acd048",
+            "duration_seconds": 4.1803125,
+            "asr_transcript": "especially this Ekshagana and its various versions are",
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 4.32,
+                "text": " especially this Ekshagana and its various versions are"
+              }
+            ],
+            "metrics": {
+              "reference_normalized": "especially this yaksha gana and its various versions are",
+              "hypothesis_normalized": "especially this ekshagana and its various versions are",
+              "word_edit_distance": 2,
+              "reference_word_count": 9,
+              "hypothesis_word_count": 8,
+              "wer": 0.2222222222222222,
+              "character_edit_distance": 2,
+              "reference_character_count": 48,
+              "hypothesis_character_count": 47,
+              "cer": 0.041666666666666664
+            }
+          }
+        ]
+      },
+      "original_control_report_sha256": "49818508f812f222dbd5e2b8623997bf40e486bf36417366ed2a2e41a74b999e",
+      "branches": {
+        "target_mel_reconstruction": {
+          "schema_version": 1,
+          "created_utc": "2026-11-06T09:29:42.620847+00:00",
+          "language": "en",
+          "language_name": "English",
+          "interpretation": "These are ASR hypotheses and text-comparison error rates, not ground-truth transcripts or a pronunciation score. Errors can arise from the recognizer, the synthesized speech, or text conventions. A low WER/CER does not establish correct stress, homograph sense, pronunciation, naturalness, or timing. A high WER/CER does not by itself prove a TTS error. Human listening is required.",
+          "normalization": "Unicode NFC; casefold; remove apostrophes and zero-width joiners; replace other punctuation/symbols with spaces; collapse whitespace; preserve Unicode letters, combining marks and digits. No spelling repairs, number/date/time expansion, transliteration, or correction of the deliberate input anomalies. WER uses whitespace-separated words; CER uses Unicode code points excluding whitespace (not grapheme clusters, so Telugu vowel signs count separately).",
+          "source": {
+            "diagnostic_branch": "target_mel_reconstruction",
+            "checkpoint_step": null,
+            "checkpoint_sha256": null,
+            "model_diagnostics_sha256": "7654e16c6834678896adc30062be8c2e2476de554b0374657a41c7e651b9030b"
+          },
+          "model": {
+            "engine": "faster-whisper / CTranslate2 local inference",
+            "requested_model": "large-v3-turbo",
+            "repository_id": "mobiuslabsgmbh/faster-whisper-large-v3-turbo",
+            "requested_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+            "resolved_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+            "revision_source": "Hugging Face cached snapshot directory; no network query",
+            "model_file_sha256": {
+              "config.json": "b0253ea6c0d3bea6b1e19e91a02acfd3b53f4467362efcb5a3e6b16c9b3a9b7e",
+              "model.bin": "e76620f83d5f5b69efd3d87e3dc180c1bd21df9fbebacfd4335e5e1efcc018da",
+              "preprocessor_config.json": "7ccc62c6f2765af1f3b46c00c9b5894426835a05021c8b9c01eecb6dfb542711",
+              "tokenizer.json": "297b13372ac43916285644fb9687add3cc62ee2a1adb60da3dc25cc94c1871fd",
+              "vocabulary.json": "c69260f2ab26d659b7c398f9a2b2b48ed0df16c3b47d7326782fd9cba71690c1"
+            },
+            "requested_device": "cpu",
+            "requested_compute_type": "int8",
+            "cpu_threads": 4,
+            "versions": {
+              "python": "3.11.18",
+              "faster-whisper": "1.2.1",
+              "ctranslate2": "4.8.5",
+              "huggingface-hub": "2.4.0",
+              "av": "18.1.0",
+              "tokenizers": "0.23.3",
+              "numpy": "2.4.6"
+            },
+            "audio_uploaded": false,
+            "actual_device": "cpu",
+            "actual_compute_type": "int8_float32"
+          },
+          "decoding": {
+            "language": "en",
+            "language_is_forced": true,
+            "task": "transcribe",
+            "beam_size": 5,
+            "temperature": 0.0,
+            "condition_on_previous_text": false,
+            "vad_filter": false,
+            "initial_prompt": null,
+            "hotwords": null,
+            "note": "Reference text is not supplied as a decoding prompt."
+          },
+          "aggregate": {
+            "sample_count": 3,
+            "word_edit_distance": 2,
+            "reference_word_count": 26,
+            "wer": 0.07692307692307693,
+            "character_edit_distance": 5,
+            "reference_character_count": 134,
+            "cer": 0.03731343283582089,
+            "aggregation": "micro-average within this language"
+          },
+          "samples": [
+            {
+              "id": "en_test-00000-of-00003_000970",
+              "text": "Brazil, Cambodia, Japan, Spain, Greece.",
+              "language": "en",
+              "wav_path": "en_test-00000-of-00003_000970.wav",
+              "wav_sha256": "0828153be49c07d50eb06a935fbf509cd7a0b5fc30b8dedfd7c31bf94a650d56",
+              "duration_seconds": 5.979138321995465,
+              "asr_transcript": "Brazil, Cambodia, Japan, Spain, Greece",
+              "segments": [
+                {
+                  "start_seconds": 0.0,
+                  "end_seconds": 5.8,
+                  "text": " Brazil, Cambodia, Japan, Spain, Greece"
+                }
+              ],
+              "metrics": {
+                "reference_normalized": "brazil cambodia japan spain greece",
+                "hypothesis_normalized": "brazil cambodia japan spain greece",
+                "word_edit_distance": 0,
+                "reference_word_count": 5,
+                "hypothesis_word_count": 5,
+                "wer": 0.0,
+                "character_edit_distance": 0,
+                "reference_character_count": 30,
+                "hypothesis_character_count": 30,
+                "cer": 0.0
+              }
+            },
+            {
+              "id": "en_test-00000-of-00003_002008",
+              "text": "eat seasonal fruits and use these flowers for worshipping and so on.",
+              "language": "en",
+              "wav_path": "en_test-00000-of-00003_002008.wav",
+              "wav_sha256": "0521d5bdc5b227afdc1c17d3ba46f7708a4a5132a2a20571f86c3a9c813b180f",
+              "duration_seconds": 5.317369614512471,
+              "asr_transcript": "eat seasonal fruits and use these flowers for worshipping and so on.",
+              "segments": [
+                {
+                  "start_seconds": 0.0,
+                  "end_seconds": 4.76,
+                  "text": " eat seasonal fruits and use these flowers for worshipping and so on."
+                }
+              ],
+              "metrics": {
+                "reference_normalized": "eat seasonal fruits and use these flowers for worshipping and so on",
+                "hypothesis_normalized": "eat seasonal fruits and use these flowers for worshipping and so on",
+                "word_edit_distance": 0,
+                "reference_word_count": 12,
+                "hypothesis_word_count": 12,
+                "wer": 0.0,
+                "character_edit_distance": 0,
+                "reference_character_count": 56,
+                "hypothesis_character_count": 56,
+                "cer": 0.0
+              }
+            },
+            {
+              "id": "en_test-00001-of-00003_001541",
+              "text": "Especially this Yaksha Gana and its various versions are",
+              "language": "en",
+              "wav_path": "en_test-00001-of-00003_001541.wav",
+              "wav_sha256": "1fe89018b6e4317c1c6efae1f19282fd5ad06ac59a9ab868c56b973f8a08ec13",
+              "duration_seconds": 4.191201814058957,
+              "asr_transcript": "Especially this Ekstra Gaana and its various versions are...",
+              "segments": [
+                {
+                  "start_seconds": 0.0,
+                  "end_seconds": 4.18,
+                  "text": " Especially this Ekstra Gaana and its various versions are..."
+                }
+              ],
+              "metrics": {
+                "reference_normalized": "especially this yaksha gana and its various versions are",
+                "hypothesis_normalized": "especially this ekstra gaana and its various versions are",
+                "word_edit_distance": 2,
+                "reference_word_count": 9,
+                "hypothesis_word_count": 9,
+                "wer": 0.2222222222222222,
+                "character_edit_distance": 5,
+                "reference_character_count": 48,
+                "hypothesis_character_count": 49,
+                "cer": 0.10416666666666667
+              }
+            }
+          ],
+          "runtime_seconds": 29.383107500034384
+        },
+        "selected_ground_truth_duration": {
+          "schema_version": 1,
+          "created_utc": "2026-11-06T09:50:28.381584+00:00",
+          "language": "en",
+          "language_name": "English",
+          "interpretation": "These are ASR hypotheses and text-comparison error rates, not ground-truth transcripts or a pronunciation score. Errors can arise from the recognizer, the synthesized speech, or text conventions. A low WER/CER does not establish correct stress, homograph sense, pronunciation, naturalness, or timing. A high WER/CER does not by itself prove a TTS error. Human listening is required.",
+          "normalization": "Unicode NFC; casefold; remove apostrophes and zero-width joiners; replace other punctuation/symbols with spaces; collapse whitespace; preserve Unicode letters, combining marks and digits. No spelling repairs, number/date/time expansion, transliteration, or correction of the deliberate input anomalies. WER uses whitespace-separated words; CER uses Unicode code points excluding whitespace (not grapheme clusters, so Telugu vowel signs count separately).",
+          "source": {
+            "diagnostic_branch": "selected_ground_truth_duration",
+            "checkpoint_step": 7000,
+            "checkpoint_sha256": "44cf8b5d39856ffc337d734507001f5bd1d944d542780868ca09a4d5f719cdcf",
+            "model_diagnostics_sha256": "7654e16c6834678896adc30062be8c2e2476de554b0374657a41c7e651b9030b"
+          },
+          "model": {
+            "engine": "faster-whisper / CTranslate2 local inference",
+            "requested_model": "large-v3-turbo",
+            "repository_id": "mobiuslabsgmbh/faster-whisper-large-v3-turbo",
+            "requested_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+            "resolved_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+            "revision_source": "Hugging Face cached snapshot directory; no network query",
+            "model_file_sha256": {
+              "config.json": "b0253ea6c0d3bea6b1e19e91a02acfd3b53f4467362efcb5a3e6b16c9b3a9b7e",
+              "model.bin": "e76620f83d5f5b69efd3d87e3dc180c1bd21df9fbebacfd4335e5e1efcc018da",
+              "preprocessor_config.json": "7ccc62c6f2765af1f3b46c00c9b5894426835a05021c8b9c01eecb6dfb542711",
+              "tokenizer.json": "297b13372ac43916285644fb9687add3cc62ee2a1adb60da3dc25cc94c1871fd",
+              "vocabulary.json": "c69260f2ab26d659b7c398f9a2b2b48ed0df16c3b47d7326782fd9cba71690c1"
+            },
+            "requested_device": "cpu",
+            "requested_compute_type": "int8",
+            "cpu_threads": 4,
+            "versions": {
+              "python": "3.11.18",
+              "faster-whisper": "1.2.1",
+              "ctranslate2": "4.8.5",
+              "huggingface-hub": "2.4.0",
+              "av": "18.1.0",
+              "tokenizers": "0.23.3",
+              "numpy": "2.4.6"
+            },
+            "audio_uploaded": false,
+            "actual_device": "cpu",
+            "actual_compute_type": "int8_float32"
+          },
+          "decoding": {
+            "language": "en",
+            "language_is_forced": true,
+            "task": "transcribe",
+            "beam_size": 5,
+            "temperature": 0.0,
+            "condition_on_previous_text": false,
+            "vad_filter": false,
+            "initial_prompt": null,
+            "hotwords": null,
+            "note": "Reference text is not supplied as a decoding prompt."
+          },
+          "aggregate": {
+            "sample_count": 3,
+            "word_edit_distance": 14,
+            "reference_word_count": 26,
+            "wer": 0.5384615384615384,
+            "character_edit_distance": 51,
+            "reference_character_count": 134,
+            "cer": 0.3805970149253731,
+            "aggregation": "micro-average within this language"
+          },
+          "samples": [
+            {
+              "id": "en_test-00000-of-00003_000970",
+              "text": "Brazil, Cambodia, Japan, Spain, Greece.",
+              "language": "en",
+              "wav_path": "en_test-00000-of-00003_000970.wav",
+              "wav_sha256": "8458667f98eb06e600b2c2f3c7a7c209775daa5e94df536376bfee9ac52e20d4",
+              "duration_seconds": 5.979138321995465,
+              "asr_transcript": "Brazil downloaded Japan, Spain, and Greece.",
+              "segments": [
+                {
+                  "start_seconds": 0.0,
+                  "end_seconds": 5.86,
+                  "text": " Brazil downloaded Japan, Spain, and Greece."
+                }
+              ],
+              "metrics": {
+                "reference_normalized": "brazil cambodia japan spain greece",
+                "hypothesis_normalized": "brazil downloaded japan spain and greece",
+                "word_edit_distance": 2,
+                "reference_word_count": 5,
+                "hypothesis_word_count": 6,
+                "wer": 0.4,
+                "character_edit_distance": 11,
+                "reference_character_count": 30,
+                "hypothesis_character_count": 35,
+                "cer": 0.36666666666666664
+              }
+            },
+            {
+              "id": "en_test-00000-of-00003_002008",
+              "text": "eat seasonal fruits and use these flowers for worshipping and so on.",
+              "language": "en",
+              "wav_path": "en_test-00000-of-00003_002008.wav",
+              "wav_sha256": "af5ab4da2f7fc5557896a2f8aaae367b58062d87e564e2c87e7bc62a2a64b1f7",
+              "duration_seconds": 5.317369614512471,
+              "asr_transcript": "We eat seasonal fruits and use these gloves for shipping and so on.",
+              "segments": [
+                {
+                  "start_seconds": 0.0,
+                  "end_seconds": 4.82,
+                  "text": " We eat seasonal fruits and use these gloves for shipping and so on."
+                }
+              ],
+              "metrics": {
+                "reference_normalized": "eat seasonal fruits and use these flowers for worshipping and so on",
+                "hypothesis_normalized": "we eat seasonal fruits and use these gloves for shipping and so on",
+                "word_edit_distance": 3,
+                "reference_word_count": 12,
+                "hypothesis_word_count": 13,
+                "wer": 0.25,
+                "character_edit_distance": 8,
+                "reference_character_count": 56,
+                "hypothesis_character_count": 54,
+                "cer": 0.14285714285714285
+              }
+            },
+            {
+              "id": "en_test-00001-of-00003_001541",
+              "text": "Especially this Yaksha Gana and its various versions are",
+              "language": "en",
+              "wav_path": "en_test-00001-of-00003_001541.wav",
+              "wav_sha256": "14d3b3e5b714e3bf689f0d1075bd0d1bd32172454f6e3e7ba093ebe13cd8a78c",
+              "duration_seconds": 4.191201814058957,
+              "asr_transcript": "This is really dissectional and it's really so-and-sa-ha.",
+              "segments": [
+                {
+                  "start_seconds": 0.0,
+                  "end_seconds": 4.16,
+                  "text": " This is really dissectional and it's really so-and-sa-ha."
+                }
+              ],
+              "metrics": {
+                "reference_normalized": "especially this yaksha gana and its various versions are",
+                "hypothesis_normalized": "this is really dissectional and its really so and sa ha",
+                "word_edit_distance": 9,
+                "reference_word_count": 9,
+                "hypothesis_word_count": 11,
+                "wer": 1.0,
+                "character_edit_distance": 32,
+                "reference_character_count": 48,
+                "hypothesis_character_count": 45,
+                "cer": 0.6666666666666666
+              }
+            }
+          ],
+          "runtime_seconds": 27.110979125020094
+        },
+        "diagnostic_final_free": {
+          "schema_version": 1,
+          "created_utc": "2026-11-06T10:41:14.930559+00:00",
+          "language": "en",
+          "language_name": "English",
+          "interpretation": "These are ASR hypotheses and text-comparison error rates, not ground-truth transcripts or a pronunciation score. Errors can arise from the recognizer, the synthesized speech, or text conventions. A low WER/CER does not establish correct stress, homograph sense, pronunciation, naturalness, or timing. A high WER/CER does not by itself prove a TTS error. Human listening is required.",
+          "normalization": "Unicode NFC; casefold; remove apostrophes and zero-width joiners; replace other punctuation/symbols with spaces; collapse whitespace; preserve Unicode letters, combining marks and digits. No spelling repairs, number/date/time expansion, transliteration, or correction of the deliberate input anomalies. WER uses whitespace-separated words; CER uses Unicode code points excluding whitespace (not grapheme clusters, so Telugu vowel signs count separately).",
+          "source": {
+            "diagnostic_branch": "diagnostic_final_free",
+            "checkpoint_step": 8842,
+            "checkpoint_sha256": "48a2bc893c5192a7559408d4843a1d2f99b5bfab6196691edb636c6803ea7bac",
+            "model_diagnostics_sha256": "7654e16c6834678896adc30062be8c2e2476de554b0374657a41c7e651b9030b"
+          },
+          "model": {
+            "engine": "faster-whisper / CTranslate2 local inference",
+            "requested_model": "large-v3-turbo",
+            "repository_id": "mobiuslabsgmbh/faster-whisper-large-v3-turbo",
+            "requested_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+            "resolved_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+            "revision_source": "Hugging Face cached snapshot directory; no network query",
+            "model_file_sha256": {
+              "config.json": "b0253ea6c0d3bea6b1e19e91a02acfd3b53f4467362efcb5a3e6b16c9b3a9b7e",
+              "model.bin": "e76620f83d5f5b69efd3d87e3dc180c1bd21df9fbebacfd4335e5e1efcc018da",
+              "preprocessor_config.json": "7ccc62c6f2765af1f3b46c00c9b5894426835a05021c8b9c01eecb6dfb542711",
+              "tokenizer.json": "297b13372ac43916285644fb9687add3cc62ee2a1adb60da3dc25cc94c1871fd",
+              "vocabulary.json": "c69260f2ab26d659b7c398f9a2b2b48ed0df16c3b47d7326782fd9cba71690c1"
+            },
+            "requested_device": "cpu",
+            "requested_compute_type": "int8",
+            "cpu_threads": 4,
+            "versions": {
+              "python": "3.11.18",
+              "faster-whisper": "1.2.1",
+              "ctranslate2": "4.8.5",
+              "huggingface-hub": "2.4.0",
+              "av": "18.1.0",
+              "tokenizers": "0.23.3",
+              "numpy": "2.4.6"
+            },
+            "audio_uploaded": false,
+            "actual_device": "cpu",
+            "actual_compute_type": "int8_float32"
+          },
+          "decoding": {
+            "language": "en",
+            "language_is_forced": true,
+            "task": "transcribe",
+            "beam_size": 5,
+            "temperature": 0.0,
+            "condition_on_previous_text": false,
+            "vad_filter": false,
+            "initial_prompt": null,
+            "hotwords": null,
+            "note": "Reference text is not supplied as a decoding prompt."
+          },
+          "aggregate": {
+            "sample_count": 3,
+            "word_edit_distance": 4,
+            "reference_word_count": 26,
+            "wer": 0.15384615384615385,
+            "character_edit_distance": 15,
+            "reference_character_count": 134,
+            "cer": 0.11194029850746269,
+            "aggregation": "micro-average within this language"
+          },
+          "samples": [
+            {
+              "id": "en_test-00000-of-00003_000970",
+              "text": "Brazil, Cambodia, Japan, Spain, Greece.",
+              "language": "en",
+              "wav_path": "en_test-00000-of-00003_000970.wav",
+              "wav_sha256": "a277b90d794ee15726828f27e8bb68f39c78af6914a731ee776a64d0fd353253",
+              "duration_seconds": 2.9257142857142857,
+              "asr_transcript": "Brazil, Cambodia, Japan, Spain, Greece.",
+              "segments": [
+                {
+                  "start_seconds": 0.0,
+                  "end_seconds": 2.8000000000000003,
+                  "text": " Brazil, Cambodia, Japan, Spain, Greece."
+                }
+              ],
+              "metrics": {
+                "reference_normalized": "brazil cambodia japan spain greece",
+                "hypothesis_normalized": "brazil cambodia japan spain greece",
+                "word_edit_distance": 0,
+                "reference_word_count": 5,
+                "hypothesis_word_count": 5,
+                "wer": 0.0,
+                "character_edit_distance": 0,
+                "reference_character_count": 30,
+                "hypothesis_character_count": 30,
+                "cer": 0.0
+              }
+            },
+            {
+              "id": "en_test-00000-of-00003_002008",
+              "text": "eat seasonal fruits and use these flowers for worshipping and so on.",
+              "language": "en",
+              "wav_path": "en_test-00000-of-00003_002008.wav",
+              "wav_sha256": "e19d0a0e6a101c73f0249f87761715e37e1184aec1c70d835a6e4335093e4eb3",
+              "duration_seconds": 4.876190476190477,
+              "asr_transcript": "Keep seasonal fruits and use these flowers for worshipping and so on.",
+              "segments": [
+                {
+                  "start_seconds": 0.0,
+                  "end_seconds": 4.82,
+                  "text": " Keep seasonal fruits and use these flowers for worshipping and so on."
+                }
+              ],
+              "metrics": {
+                "reference_normalized": "eat seasonal fruits and use these flowers for worshipping and so on",
+                "hypothesis_normalized": "keep seasonal fruits and use these flowers for worshipping and so on",
+                "word_edit_distance": 1,
+                "reference_word_count": 12,
+                "hypothesis_word_count": 12,
+                "wer": 0.08333333333333333,
+                "character_edit_distance": 3,
+                "reference_character_count": 56,
+                "hypothesis_character_count": 57,
+                "cer": 0.05357142857142857
+              }
+            },
+            {
+              "id": "en_test-00001-of-00003_001541",
+              "text": "Especially this Yaksha Gana and its various versions are",
+              "language": "en",
+              "wav_path": "en_test-00001-of-00003_001541.wav",
+              "wav_sha256": "c6cc3af7d081e2d234492392126f366179cd58e7174619f1c4a2297d16f2ffd0",
+              "duration_seconds": 3.7151927437641725,
+              "asr_transcript": "especially this faction one and its various Russians are...",
+              "segments": [
+                {
+                  "start_seconds": 0.0,
+                  "end_seconds": 3.68,
+                  "text": " especially this faction one and its various Russians are..."
+                }
+              ],
+              "metrics": {
+                "reference_normalized": "especially this yaksha gana and its various versions are",
+                "hypothesis_normalized": "especially this faction one and its various russians are",
+                "word_edit_distance": 3,
+                "reference_word_count": 9,
+                "hypothesis_word_count": 9,
+                "wer": 0.3333333333333333,
+                "character_edit_distance": 12,
+                "reference_character_count": 48,
+                "hypothesis_character_count": 48,
+                "cer": 0.25
+              }
+            }
+          ],
+          "runtime_seconds": 27.126935209031217
+        },
+        "diagnostic_final_ground_truth_duration": {
+          "schema_version": 1,
+          "created_utc": "2026-11-06T11:21:09.553327+00:00",
+          "language": "en",
+          "language_name": "English",
+          "interpretation": "These are ASR hypotheses and text-comparison error rates, not ground-truth transcripts or a pronunciation score. Errors can arise from the recognizer, the synthesized speech, or text conventions. A low WER/CER does not establish correct stress, homograph sense, pronunciation, naturalness, or timing. A high WER/CER does not by itself prove a TTS error. Human listening is required.",
+          "normalization": "Unicode NFC; casefold; remove apostrophes and zero-width joiners; replace other punctuation/symbols with spaces; collapse whitespace; preserve Unicode letters, combining marks and digits. No spelling repairs, number/date/time expansion, transliteration, or correction of the deliberate input anomalies. WER uses whitespace-separated words; CER uses Unicode code points excluding whitespace (not grapheme clusters, so Telugu vowel signs count separately).",
+          "source": {
+            "diagnostic_branch": "diagnostic_final_ground_truth_duration",
+            "checkpoint_step": 8842,
+            "checkpoint_sha256": "48a2bc893c5192a7559408d4843a1d2f99b5bfab6196691edb636c6803ea7bac",
+            "model_diagnostics_sha256": "7654e16c6834678896adc30062be8c2e2476de554b0374657a41c7e651b9030b"
+          },
+          "model": {
+            "engine": "faster-whisper / CTranslate2 local inference",
+            "requested_model": "large-v3-turbo",
+            "repository_id": "mobiuslabsgmbh/faster-whisper-large-v3-turbo",
+            "requested_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+            "resolved_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+            "revision_source": "Hugging Face cached snapshot directory; no network query",
+            "model_file_sha256": {
+              "config.json": "b0253ea6c0d3bea6b1e19e91a02acfd3b53f4467362efcb5a3e6b16c9b3a9b7e",
+              "model.bin": "e76620f83d5f5b69efd3d87e3dc180c1bd21df9fbebacfd4335e5e1efcc018da",
+              "preprocessor_config.json": "7ccc62c6f2765af1f3b46c00c9b5894426835a05021c8b9c01eecb6dfb542711",
+              "tokenizer.json": "297b13372ac43916285644fb9687add3cc62ee2a1adb60da3dc25cc94c1871fd",
+              "vocabulary.json": "c69260f2ab26d659b7c398f9a2b2b48ed0df16c3b47d7326782fd9cba71690c1"
+            },
+            "requested_device": "cpu",
+            "requested_compute_type": "int8",
+            "cpu_threads": 4,
+            "versions": {
+              "python": "3.11.18",
+              "faster-whisper": "1.2.1",
+              "ctranslate2": "4.8.5",
+              "huggingface-hub": "2.4.0",
+              "av": "18.1.0",
+              "tokenizers": "0.23.3",
+              "numpy": "2.4.6"
+            },
+            "audio_uploaded": false,
+            "actual_device": "cpu",
+            "actual_compute_type": "int8_float32"
+          },
+          "decoding": {
+            "language": "en",
+            "language_is_forced": true,
+            "task": "transcribe",
+            "beam_size": 5,
+            "temperature": 0.0,
+            "condition_on_previous_text": false,
+            "vad_filter": false,
+            "initial_prompt": null,
+            "hotwords": null,
+            "note": "Reference text is not supplied as a decoding prompt."
+          },
+          "aggregate": {
+            "sample_count": 3,
+            "word_edit_distance": 11,
+            "reference_word_count": 26,
+            "wer": 0.4230769230769231,
+            "character_edit_distance": 44,
+            "reference_character_count": 134,
+            "cer": 0.3283582089552239,
+            "aggregation": "micro-average within this language"
+          },
+          "samples": [
+            {
+              "id": "en_test-00000-of-00003_000970",
+              "text": "Brazil, Cambodia, Japan, Spain, Greece.",
+              "language": "en",
+              "wav_path": "en_test-00000-of-00003_000970.wav",
+              "wav_sha256": "6caf4c846d831e1e725abc471da5b498bb51971acc8f1e76a4cedce6bc7fa97f",
+              "duration_seconds": 5.979138321995465,
+              "asr_transcript": "Brazil, Cambodia, Japan, Spain, the West.",
+              "segments": [
+                {
+                  "start_seconds": 0.0,
+                  "end_seconds": 5.94,
+                  "text": " Brazil, Cambodia, Japan, Spain, the West."
+                }
+              ],
+              "metrics": {
+                "reference_normalized": "brazil cambodia japan spain greece",
+                "hypothesis_normalized": "brazil cambodia japan spain the west",
+                "word_edit_distance": 2,
+                "reference_word_count": 5,
+                "hypothesis_word_count": 6,
+                "wer": 0.4,
+                "character_edit_distance": 5,
+                "reference_character_count": 30,
+                "hypothesis_character_count": 31,
+                "cer": 0.16666666666666666
+              }
+            },
+            {
+              "id": "en_test-00000-of-00003_002008",
+              "text": "eat seasonal fruits and use these flowers for worshipping and so on.",
+              "language": "en",
+              "wav_path": "en_test-00000-of-00003_002008.wav",
+              "wav_sha256": "2ae85cc6973ae6645c77137e58d1228bdd23bb30f8d97d7a3a31765933fc1f45",
+              "duration_seconds": 5.317369614512471,
+              "asr_transcript": "In seasonal fruits and use these flowers for shipping and so on.",
+              "segments": [
+                {
+                  "start_seconds": 0.0,
+                  "end_seconds": 4.76,
+                  "text": " In seasonal fruits and use these flowers for shipping and so on."
+                }
+              ],
+              "metrics": {
+                "reference_normalized": "eat seasonal fruits and use these flowers for worshipping and so on",
+                "hypothesis_normalized": "in seasonal fruits and use these flowers for shipping and so on",
+                "word_edit_distance": 2,
+                "reference_word_count": 12,
+                "hypothesis_word_count": 12,
+                "wer": 0.16666666666666666,
+                "character_edit_distance": 6,
+                "reference_character_count": 56,
+                "hypothesis_character_count": 52,
+                "cer": 0.10714285714285714
+              }
+            },
+            {
+              "id": "en_test-00001-of-00003_001541",
+              "text": "Especially this Yaksha Gana and its various versions are",
+              "language": "en",
+              "wav_path": "en_test-00001-of-00003_001541.wav",
+              "wav_sha256": "ec8a531bca32ebcc27f702ac05278c1cebab71612a401c1dc145503807800922",
+              "duration_seconds": 4.191201814058957,
+              "asr_transcript": "It's pretty dissectional and it's really slashing, sir.",
+              "segments": [
+                {
+                  "start_seconds": 0.0,
+                  "end_seconds": 4.16,
+                  "text": " It's pretty dissectional and it's really slashing, sir."
+                }
+              ],
+              "metrics": {
+                "reference_normalized": "especially this yaksha gana and its various versions are",
+                "hypothesis_normalized": "its pretty dissectional and its really slashing sir",
+                "word_edit_distance": 7,
+                "reference_word_count": 9,
+                "hypothesis_word_count": 8,
+                "wer": 0.7777777777777778,
+                "character_edit_distance": 33,
+                "reference_character_count": 48,
+                "hypothesis_character_count": 44,
+                "cer": 0.6875
+              }
+            }
+          ],
+          "runtime_seconds": 25.375085959094577
+        }
+      }
+    },
+    "Telugu": {
+      "original_recording_control": {
+        "scope": "Same recognizer/settings on original held-out recordings; reference text not supplied to decoder.",
+        "aggregate": {
+          "sample_count": 3,
+          "word_edit_distance": 23,
+          "reference_word_count": 34,
+          "wer": 0.6764705882352942,
+          "character_edit_distance": 18,
+          "reference_character_count": 206,
+          "cer": 0.08737864077669903,
+          "aggregation": "micro-average within this language"
+        },
+        "samples": [
+          {
+            "id": "te_train-00000-of-00004_000018",
+            "text": "బాబూ ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి.",
+            "language": "te",
+            "wav_path": "te_train-00000-of-00004_000018.wav",
+            "wav_sha256": "738d86aa5a705a9fce125dce7d4a72801edb1cffe16f71337938c379f630de77",
+            "duration_seconds": 6.2719375,
+            "asr_transcript": "బాబు ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి",
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 6.08,
+                "text": " బాబు ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి"
+              }
+            ],
+            "metrics": {
+              "reference_normalized": "బాబూ ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి",
+              "hypothesis_normalized": "బాబు ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి",
+              "word_edit_distance": 1,
+              "reference_word_count": 8,
+              "hypothesis_word_count": 8,
+              "wer": 0.125,
+              "character_edit_distance": 1,
+              "reference_character_count": 42,
+              "hypothesis_character_count": 42,
+              "cer": 0.023809523809523808
+            }
+          },
+          {
+            "id": "te_train-00000-of-00004_000044",
+            "text": "భార్యకు తన భర్త ఇంకో పెళ్ళి చేసుకోబోతున్నాడని తెలిసింది తన భర్త ఎదుట ఏడిచి ఈ పెళ్ళి జరగటానికి వీల్లేదన్నది.",
+            "language": "te",
+            "wav_path": "te_train-00000-of-00004_000044.wav",
+            "wav_sha256": "d43483965fdb6c29eed07b5b2f6c66f6624a04d36724f68703a0e095d438585b",
+            "duration_seconds": 11.6938125,
+            "asr_transcript": "భార్యకు తనభర్టా ఇంకో పెల్డి చేసుకో బోతునాడని తెలిసింది తనభర్టా యదుటా ఏడిచి ఈ పెల్డి జరగటానికి వీల్లే దన్నది",
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 11.4,
+                "text": " భార్యకు తనభర్టా ఇంకో పెల్డి చేసుకో బోతునాడని తెలిసింది తనభర్టా యదుటా ఏడిచి ఈ పెల్డి జరగటానికి వీల్లే దన్నది"
+              }
+            ],
+            "metrics": {
+              "reference_normalized": "భార్యకు తన భర్త ఇంకో పెళ్ళి చేసుకోబోతున్నాడని తెలిసింది తన భర్త ఎదుట ఏడిచి ఈ పెళ్ళి జరగటానికి వీల్లేదన్నది",
+              "hypothesis_normalized": "భార్యకు తనభర్టా ఇంకో పెల్డి చేసుకో బోతునాడని తెలిసింది తనభర్టా యదుటా ఏడిచి ఈ పెల్డి జరగటానికి వీల్లే దన్నది",
+              "word_edit_distance": 11,
+              "reference_word_count": 15,
+              "hypothesis_word_count": 15,
+              "wer": 0.7333333333333333,
+              "character_edit_distance": 12,
+              "reference_character_count": 92,
+              "hypothesis_character_count": 93,
+              "cer": 0.13043478260869565
+            }
+          },
+          {
+            "id": "te_train-00000-of-00004_000156",
+            "text": "వాడు దరిద్రుడైతే నేను అజ్ఞానిని క్షమించు తల్లీ అంటూ మండోదరి భర్త బోర్లాపడి ఏడిచాడు.",
+            "language": "te",
+            "wav_path": "te_train-00000-of-00004_000156.wav",
+            "wav_sha256": "0a04e73d0ec9824e55a30220b103a185d9866de4399fb7cf2c49fab9bb8da467",
+            "duration_seconds": 8.9190625,
+            "asr_transcript": "వాడు దరిద్రు డయితే నేను అగ్ఞానిని క్షమించు తల్లి అంటు మండో దరి భర్త బోర్లా పడి ఏడి చాడు",
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 8.56,
+                "text": " వాడు దరిద్రు డయితే నేను అగ్ఞానిని క్షమించు తల్లి అంటు మండో దరి భర్త బోర్లా పడి ఏడి చాడు"
+              }
+            ],
+            "metrics": {
+              "reference_normalized": "వాడు దరిద్రుడైతే నేను అజ్ఞానిని క్షమించు తల్లీ అంటూ మండోదరి భర్త బోర్లాపడి ఏడిచాడు",
+              "hypothesis_normalized": "వాడు దరిద్రు డయితే నేను అగ్ఞానిని క్షమించు తల్లి అంటు మండో దరి భర్త బోర్లా పడి ఏడి చాడు",
+              "word_edit_distance": 11,
+              "reference_word_count": 11,
+              "hypothesis_word_count": 15,
+              "wer": 1.0,
+              "character_edit_distance": 5,
+              "reference_character_count": 72,
+              "hypothesis_character_count": 73,
+              "cer": 0.06944444444444445
+            }
+          }
+        ]
+      },
+      "original_control_report_sha256": "08ad23b6d01a207fa1e6ae4a3493185790d3623bf79971592a8cf9eb178621b7",
+      "branches": {
+        "target_mel_reconstruction": {
+          "schema_version": 1,
+          "created_utc": "2026-11-06T11:44:52.347649+00:00",
+          "language": "te",
+          "language_name": "Telugu",
+          "interpretation": "These are ASR hypotheses and text-comparison error rates, not ground-truth transcripts or a pronunciation score. Errors can arise from the recognizer, the synthesized speech, or text conventions. A low WER/CER does not establish correct stress, homograph sense, pronunciation, naturalness, or timing. A high WER/CER does not by itself prove a TTS error. Human listening is required.",
+          "normalization": "Unicode NFC; casefold; remove apostrophes and zero-width joiners; replace other punctuation/symbols with spaces; collapse whitespace; preserve Unicode letters, combining marks and digits. No spelling repairs, number/date/time expansion, transliteration, or correction of the deliberate input anomalies. WER uses whitespace-separated words; CER uses Unicode code points excluding whitespace (not grapheme clusters, so Telugu vowel signs count separately).",
+          "source": {
+            "diagnostic_branch": "target_mel_reconstruction",
+            "checkpoint_step": null,
+            "checkpoint_sha256": null,
+            "model_diagnostics_sha256": "7654e16c6834678896adc30062be8c2e2476de554b0374657a41c7e651b9030b"
+          },
+          "model": {
+            "engine": "faster-whisper / CTranslate2 local inference",
+            "requested_model": "large-v3-turbo",
+            "repository_id": "mobiuslabsgmbh/faster-whisper-large-v3-turbo",
+            "requested_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+            "resolved_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+            "revision_source": "Hugging Face cached snapshot directory; no network query",
+            "model_file_sha256": {
+              "config.json": "b0253ea6c0d3bea6b1e19e91a02acfd3b53f4467362efcb5a3e6b16c9b3a9b7e",
+              "model.bin": "e76620f83d5f5b69efd3d87e3dc180c1bd21df9fbebacfd4335e5e1efcc018da",
+              "preprocessor_config.json": "7ccc62c6f2765af1f3b46c00c9b5894426835a05021c8b9c01eecb6dfb542711",
+              "tokenizer.json": "297b13372ac43916285644fb9687add3cc62ee2a1adb60da3dc25cc94c1871fd",
+              "vocabulary.json": "c69260f2ab26d659b7c398f9a2b2b48ed0df16c3b47d7326782fd9cba71690c1"
+            },
+            "requested_device": "cpu",
+            "requested_compute_type": "int8",
+            "cpu_threads": 4,
+            "versions": {
+              "python": "3.11.18",
+              "faster-whisper": "1.2.1",
+              "ctranslate2": "4.8.5",
+              "huggingface-hub": "2.4.0",
+              "av": "18.1.0",
+              "tokenizers": "0.23.3",
+              "numpy": "2.4.6"
+            },
+            "audio_uploaded": false,
+            "actual_device": "cpu",
+            "actual_compute_type": "int8_float32"
+          },
+          "decoding": {
+            "language": "te",
+            "language_is_forced": true,
+            "task": "transcribe",
+            "beam_size": 5,
+            "temperature": 0.0,
+            "condition_on_previous_text": false,
+            "vad_filter": false,
+            "initial_prompt": null,
+            "hotwords": null,
+            "note": "Reference text is not supplied as a decoding prompt."
+          },
+          "aggregate": {
+            "sample_count": 3,
+            "word_edit_distance": 24,
+            "reference_word_count": 34,
+            "wer": 0.7058823529411765,
+            "character_edit_distance": 17,
+            "reference_character_count": 206,
+            "cer": 0.0825242718446602,
+            "aggregation": "micro-average within this language"
+          },
+          "samples": [
+            {
+              "id": "te_train-00000-of-00004_000018",
+              "text": "బాబూ ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి.",
+              "language": "te",
+              "wav_path": "te_train-00000-of-00004_000018.wav",
+              "wav_sha256": "4eb993ac0da6bf8dbed130bec0bc806c21084804e8e70c4e93d80bb23931c51f",
+              "duration_seconds": 6.280997732426304,
+              "asr_transcript": "బాబు ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి",
+              "segments": [
+                {
+                  "start_seconds": 0.0,
+                  "end_seconds": 6.08,
+                  "text": " బాబు ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి"
+                }
+              ],
+              "metrics": {
+                "reference_normalized": "బాబూ ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి",
+                "hypothesis_normalized": "బాబు ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి",
+                "word_edit_distance": 1,
+                "reference_word_count": 8,
+                "hypothesis_word_count": 8,
+                "wer": 0.125,
+                "character_edit_distance": 1,
+                "reference_character_count": 42,
+                "hypothesis_character_count": 42,
+                "cer": 0.023809523809523808
+              }
+            },
+            {
+              "id": "te_train-00000-of-00004_000044",
+              "text": "భార్యకు తన భర్త ఇంకో పెళ్ళి చేసుకోబోతున్నాడని తెలిసింది తన భర్త ఎదుట ఏడిచి ఈ పెళ్ళి జరగటానికి వీల్లేదన్నది.",
+              "language": "te",
+              "wav_path": "te_train-00000-of-00004_000044.wav",
+              "wav_sha256": "eb79a9b70962218a01f0d676132709be6fe4955d240a0dae44d8828c372611a5",
+              "duration_seconds": 11.702857142857143,
+              "asr_transcript": "భార్యకు తనభర్టా ఇంకో పెళ్డి చేసుకో బోతునాడని తెలిసింది తనభర్టా యదుటా ఏడిచి ఈ పెళ్డి జరగటానికి వీల్లే దన్నది",
+              "segments": [
+                {
+                  "start_seconds": 0.0,
+                  "end_seconds": 11.4,
+                  "text": " భార్యకు తనభర్టా ఇంకో పెళ్డి చేసుకో బోతునాడని తెలిసింది తనభర్టా యదుటా ఏడిచి ఈ పెళ్డి జరగటానికి వీల్లే దన్నది"
+                }
+              ],
+              "metrics": {
+                "reference_normalized": "భార్యకు తన భర్త ఇంకో పెళ్ళి చేసుకోబోతున్నాడని తెలిసింది తన భర్త ఎదుట ఏడిచి ఈ పెళ్ళి జరగటానికి వీల్లేదన్నది",
+                "hypothesis_normalized": "భార్యకు తనభర్టా ఇంకో పెళ్డి చేసుకో బోతునాడని తెలిసింది తనభర్టా యదుటా ఏడిచి ఈ పెళ్డి జరగటానికి వీల్లే దన్నది",
+                "word_edit_distance": 11,
+                "reference_word_count": 15,
+                "hypothesis_word_count": 15,
+                "wer": 0.7333333333333333,
+                "character_edit_distance": 10,
+                "reference_character_count": 92,
+                "hypothesis_character_count": 93,
+                "cer": 0.10869565217391304
+              }
+            },
+            {
+              "id": "te_train-00000-of-00004_000156",
+              "text": "వాడు దరిద్రుడైతే నేను అజ్ఞానిని క్షమించు తల్లీ అంటూ మండోదరి భర్త బోర్లాపడి ఏడిచాడు.",
+              "language": "te",
+              "wav_path": "te_train-00000-of-00004_000156.wav",
+              "wav_sha256": "d2e0873d97e7408d2d273473bf8b38031783027611d973e4bf61d652c31a1fb3",
+              "duration_seconds": 8.928072562358278,
+              "asr_transcript": "వాడు దరిద్రు డయితే నేను అగ్ఞానిని క్షమించు తల్లి అంటు మండో దరి భర్తా బోర్లా పడి ఏడి చాడు",
+              "segments": [
+                {
+                  "start_seconds": 0.0,
+                  "end_seconds": 8.620000000000001,
+                  "text": " వాడు దరిద్రు డయితే నేను అగ్ఞానిని క్షమించు తల్లి అంటు మండో దరి భర్తా బోర్లా పడి ఏడి చాడు"
+                }
+              ],
+              "metrics": {
+                "reference_normalized": "వాడు దరిద్రుడైతే నేను అజ్ఞానిని క్షమించు తల్లీ అంటూ మండోదరి భర్త బోర్లాపడి ఏడిచాడు",
+                "hypothesis_normalized": "వాడు దరిద్రు డయితే నేను అగ్ఞానిని క్షమించు తల్లి అంటు మండో దరి భర్తా బోర్లా పడి ఏడి చాడు",
+                "word_edit_distance": 12,
+                "reference_word_count": 11,
+                "hypothesis_word_count": 15,
+                "wer": 1.0909090909090908,
+                "character_edit_distance": 6,
+                "reference_character_count": 72,
+                "hypothesis_character_count": 74,
+                "cer": 0.08333333333333333
+              }
+            }
+          ],
+          "runtime_seconds": 35.99836658407003
+        },
+        "selected_ground_truth_duration": {
+          "schema_version": 1,
+          "created_utc": "2026-11-06T11:45:12.330069+00:00",
+          "language": "te",
+          "language_name": "Telugu",
+          "interpretation": "These are ASR hypotheses and text-comparison error rates, not ground-truth transcripts or a pronunciation score. Errors can arise from the recognizer, the synthesized speech, or text conventions. A low WER/CER does not establish correct stress, homograph sense, pronunciation, naturalness, or timing. A high WER/CER does not by itself prove a TTS error. Human listening is required.",
+          "normalization": "Unicode NFC; casefold; remove apostrophes and zero-width joiners; replace other punctuation/symbols with spaces; collapse whitespace; preserve Unicode letters, combining marks and digits. No spelling repairs, number/date/time expansion, transliteration, or correction of the deliberate input anomalies. WER uses whitespace-separated words; CER uses Unicode code points excluding whitespace (not grapheme clusters, so Telugu vowel signs count separately).",
+          "source": {
+            "diagnostic_branch": "selected_ground_truth_duration",
+            "checkpoint_step": 2000,
+            "checkpoint_sha256": "7f32328011ab47edda7eadc67dc4331ce4e1a9f11a74fdc771b79e638f72f0bf",
+            "model_diagnostics_sha256": "7654e16c6834678896adc30062be8c2e2476de554b0374657a41c7e651b9030b"
+          },
+          "model": {
+            "engine": "faster-whisper / CTranslate2 local inference",
+            "requested_model": "large-v3-turbo",
+            "repository_id": "mobiuslabsgmbh/faster-whisper-large-v3-turbo",
+            "requested_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+            "resolved_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+            "revision_source": "Hugging Face cached snapshot directory; no network query",
+            "model_file_sha256": {
+              "config.json": "b0253ea6c0d3bea6b1e19e91a02acfd3b53f4467362efcb5a3e6b16c9b3a9b7e",
+              "model.bin": "e76620f83d5f5b69efd3d87e3dc180c1bd21df9fbebacfd4335e5e1efcc018da",
+              "preprocessor_config.json": "7ccc62c6f2765af1f3b46c00c9b5894426835a05021c8b9c01eecb6dfb542711",
+              "tokenizer.json": "297b13372ac43916285644fb9687add3cc62ee2a1adb60da3dc25cc94c1871fd",
+              "vocabulary.json": "c69260f2ab26d659b7c398f9a2b2b48ed0df16c3b47d7326782fd9cba71690c1"
+            },
+            "requested_device": "cpu",
+            "requested_compute_type": "int8",
+            "cpu_threads": 4,
+            "versions": {
+              "python": "3.11.18",
+              "faster-whisper": "1.2.1",
+              "ctranslate2": "4.8.5",
+              "huggingface-hub": "2.4.0",
+              "av": "18.1.0",
+              "tokenizers": "0.23.3",
+              "numpy": "2.4.6"
+            },
+            "audio_uploaded": false,
+            "actual_device": "cpu",
+            "actual_compute_type": "int8_float32"
+          },
+          "decoding": {
+            "language": "te",
+            "language_is_forced": true,
+            "task": "transcribe",
+            "beam_size": 5,
+            "temperature": 0.0,
+            "condition_on_previous_text": false,
+            "vad_filter": false,
+            "initial_prompt": null,
+            "hotwords": null,
+            "note": "Reference text is not supplied as a decoding prompt."
+          },
+          "aggregate": {
+            "sample_count": 3,
+            "word_edit_distance": 25,
+            "reference_word_count": 34,
+            "wer": 0.7352941176470589,
+            "character_edit_distance": 33,
+            "reference_character_count": 206,
+            "cer": 0.16019417475728157,
+            "aggregation": "micro-average within this language"
+          },
+          "samples": [
+            {
+              "id": "te_train-00000-of-00004_000018",
+              "text": "బాబూ ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి.",
+              "language": "te",
+              "wav_path": "te_train-00000-of-00004_000018.wav",
+              "wav_sha256": "a8f42a089d66c54509eea261a720e58c2f381e2c1ce52b2e0eb6df5d3df12646",
+              "duration_seconds": 6.280997732426304,
+              "asr_transcript": "బాబు ఇది పద్మం కాదు అసిధారర చక్రం అన్నాడు నరకవాసి",
+              "segments": [
+                {
+                  "start_seconds": 0.0,
+                  "end_seconds": 6.08,
+                  "text": " బాబు ఇది పద్మం కాదు అసిధారర చక్రం అన్నాడు నరకవాసి"
+                }
+              ],
+              "metrics": {
+                "reference_normalized": "బాబూ ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి",
+                "hypothesis_normalized": "బాబు ఇది పద్మం కాదు అసిధారర చక్రం అన్నాడు నరకవాసి",
+                "word_edit_distance": 2,
+                "reference_word_count": 8,
+                "hypothesis_word_count": 8,
+                "wer": 0.25,
+                "character_edit_distance": 2,
+                "reference_character_count": 42,
+                "hypothesis_character_count": 42,
+                "cer": 0.047619047619047616
+              }
+            },
+            {
+              "id": "te_train-00000-of-00004_000044",
+              "text": "భార్యకు తన భర్త ఇంకో పెళ్ళి చేసుకోబోతున్నాడని తెలిసింది తన భర్త ఎదుట ఏడిచి ఈ పెళ్ళి జరగటానికి వీల్లేదన్నది.",
+              "language": "te",
+              "wav_path": "te_train-00000-of-00004_000044.wav",
+              "wav_sha256": "7292d13724a3cde6cd5e8f23d9be500c4ab1041e7a0738ace14c33a5b15b39db",
+              "duration_seconds": 11.702857142857143,
+              "asr_transcript": "భార్యకు తన భర్తా ఇంకో పెళ్డి చేసుకో బోతు నాడని తెలిసింది తన భర్తా యదుటా లేయేడిచి ఇపెళిం చరగటానికి వీలేదన్నది",
+              "segments": [
+                {
+                  "start_seconds": 0.0,
+                  "end_seconds": 11.4,
+                  "text": " భార్యకు తన భర్తా ఇంకో పెళ్డి చేసుకో బోతు నాడని తెలిసింది తన భర్తా యదుటా లేయేడిచి ఇపెళిం చరగటానికి వీలేదన్నది"
+                }
+              ],
+              "metrics": {
+                "reference_normalized": "భార్యకు తన భర్త ఇంకో పెళ్ళి చేసుకోబోతున్నాడని తెలిసింది తన భర్త ఎదుట ఏడిచి ఈ పెళ్ళి జరగటానికి వీల్లేదన్నది",
+                "hypothesis_normalized": "భార్యకు తన భర్తా ఇంకో పెళ్డి చేసుకో బోతు నాడని తెలిసింది తన భర్తా యదుటా లేయేడిచి ఇపెళిం చరగటానికి వీలేదన్నది",
+                "word_edit_distance": 12,
+                "reference_word_count": 15,
+                "hypothesis_word_count": 16,
+                "wer": 0.8,
+                "character_edit_distance": 18,
+                "reference_character_count": 92,
+                "hypothesis_character_count": 93,
+                "cer": 0.1956521739130435
+              }
+            },
+            {
+              "id": "te_train-00000-of-00004_000156",
+              "text": "వాడు దరిద్రుడైతే నేను అజ్ఞానిని క్షమించు తల్లీ అంటూ మండోదరి భర్త బోర్లాపడి ఏడిచాడు.",
+              "language": "te",
+              "wav_path": "te_train-00000-of-00004_000156.wav",
+              "wav_sha256": "9a289c87ad2216d4012814e1c03a1a99753b9cf13ab07eca16d3229feec5b62b",
+              "duration_seconds": 8.928072562358278,
+              "asr_transcript": "వాడు దరిద్రు నేతే నేను అగ్నానిని క్షమించు తల్లి అంటు మండు దరిభర్తావు బోర్లా పడి హేడ్ చాడు",
+              "segments": [
+                {
+                  "start_seconds": 0.0,
+                  "end_seconds": 8.620000000000001,
+                  "text": " వాడు దరిద్రు నేతే నేను అగ్నానిని క్షమించు తల్లి అంటు మండు దరిభర్తావు బోర్లా పడి హేడ్ చాడు"
+                }
+              ],
+              "metrics": {
+                "reference_normalized": "వాడు దరిద్రుడైతే నేను అజ్ఞానిని క్షమించు తల్లీ అంటూ మండోదరి భర్త బోర్లాపడి ఏడిచాడు",
+                "hypothesis_normalized": "వాడు దరిద్రు నేతే నేను అగ్నానిని క్షమించు తల్లి అంటు మండు దరిభర్తావు బోర్లా పడి హేడ్ చాడు",
+                "word_edit_distance": 11,
+                "reference_word_count": 11,
+                "hypothesis_word_count": 14,
+                "wer": 1.0,
+                "character_edit_distance": 13,
+                "reference_character_count": 72,
+                "hypothesis_character_count": 76,
+                "cer": 0.18055555555555555
+              }
+            }
+          ],
+          "runtime_seconds": 19.978600792004727
+        },
+        "diagnostic_final_free": {
+          "schema_version": 1,
+          "created_utc": "2026-11-06T11:45:32.318969+00:00",
+          "language": "te",
+          "language_name": "Telugu",
+          "interpretation": "These are ASR hypotheses and text-comparison error rates, not ground-truth transcripts or a pronunciation score. Errors can arise from the recognizer, the synthesized speech, or text conventions. A low WER/CER does not establish correct stress, homograph sense, pronunciation, naturalness, or timing. A high WER/CER does not by itself prove a TTS error. Human listening is required.",
+          "normalization": "Unicode NFC; casefold; remove apostrophes and zero-width joiners; replace other punctuation/symbols with spaces; collapse whitespace; preserve Unicode letters, combining marks and digits. No spelling repairs, number/date/time expansion, transliteration, or correction of the deliberate input anomalies. WER uses whitespace-separated words; CER uses Unicode code points excluding whitespace (not grapheme clusters, so Telugu vowel signs count separately).",
+          "source": {
+            "diagnostic_branch": "diagnostic_final_free",
+            "checkpoint_step": 7451,
+            "checkpoint_sha256": "9320935fa44c5bf0a40022a3405d3cdf5a4427bff2e60c90f3769e8aed76635f",
+            "model_diagnostics_sha256": "7654e16c6834678896adc30062be8c2e2476de554b0374657a41c7e651b9030b"
+          },
+          "model": {
+            "engine": "faster-whisper / CTranslate2 local inference",
+            "requested_model": "large-v3-turbo",
+            "repository_id": "mobiuslabsgmbh/faster-whisper-large-v3-turbo",
+            "requested_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+            "resolved_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+            "revision_source": "Hugging Face cached snapshot directory; no network query",
+            "model_file_sha256": {
+              "config.json": "b0253ea6c0d3bea6b1e19e91a02acfd3b53f4467362efcb5a3e6b16c9b3a9b7e",
+              "model.bin": "e76620f83d5f5b69efd3d87e3dc180c1bd21df9fbebacfd4335e5e1efcc018da",
+              "preprocessor_config.json": "7ccc62c6f2765af1f3b46c00c9b5894426835a05021c8b9c01eecb6dfb542711",
+              "tokenizer.json": "297b13372ac43916285644fb9687add3cc62ee2a1adb60da3dc25cc94c1871fd",
+              "vocabulary.json": "c69260f2ab26d659b7c398f9a2b2b48ed0df16c3b47d7326782fd9cba71690c1"
+            },
+            "requested_device": "cpu",
+            "requested_compute_type": "int8",
+            "cpu_threads": 4,
+            "versions": {
+              "python": "3.11.18",
+              "faster-whisper": "1.2.1",
+              "ctranslate2": "4.8.5",
+              "huggingface-hub": "2.4.0",
+              "av": "18.1.0",
+              "tokenizers": "0.23.3",
+              "numpy": "2.4.6"
+            },
+            "audio_uploaded": false,
+            "actual_device": "cpu",
+            "actual_compute_type": "int8_float32"
+          },
+          "decoding": {
+            "language": "te",
+            "language_is_forced": true,
+            "task": "transcribe",
+            "beam_size": 5,
+            "temperature": 0.0,
+            "condition_on_previous_text": false,
+            "vad_filter": false,
+            "initial_prompt": null,
+            "hotwords": null,
+            "note": "Reference text is not supplied as a decoding prompt."
+          },
+          "aggregate": {
+            "sample_count": 3,
+            "word_edit_distance": 30,
+            "reference_word_count": 34,
+            "wer": 0.8823529411764706,
+            "character_edit_distance": 25,
+            "reference_character_count": 206,
+            "cer": 0.12135922330097088,
+            "aggregation": "micro-average within this language"
+          },
+          "samples": [
+            {
+              "id": "te_train-00000-of-00004_000018",
+              "text": "బాబూ ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి.",
+              "language": "te",
+              "wav_path": "te_train-00000-of-00004_000018.wav",
+              "wav_sha256": "1b994a42da004a00e30321a928b50ae0bf53286eda3b4e8f3e2dab3d40f96796",
+              "duration_seconds": 5.688888888888889,
+              "asr_transcript": "బాబు ఇది పద్మం ఖాదు అసిధరా చక్రం అన్నాడు నరకవాసి",
+              "segments": [
+                {
+                  "start_seconds": 0.0,
+                  "end_seconds": 5.26,
+                  "text": " బాబు ఇది పద్మం ఖాదు అసిధరా చక్రం అన్నాడు నరకవాసి"
+                }
+              ],
+              "metrics": {
+                "reference_normalized": "బాబూ ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి",
+                "hypothesis_normalized": "బాబు ఇది పద్మం ఖాదు అసిధరా చక్రం అన్నాడు నరకవాసి",
+                "word_edit_distance": 3,
+                "reference_word_count": 8,
+                "hypothesis_word_count": 8,
+                "wer": 0.375,
+                "character_edit_distance": 3,
+                "reference_character_count": 42,
+                "hypothesis_character_count": 41,
+                "cer": 0.07142857142857142
+              }
+            },
+            {
+              "id": "te_train-00000-of-00004_000044",
+              "text": "భార్యకు తన భర్త ఇంకో పెళ్ళి చేసుకోబోతున్నాడని తెలిసింది తన భర్త ఎదుట ఏడిచి ఈ పెళ్ళి జరగటానికి వీల్లేదన్నది.",
+              "language": "te",
+              "wav_path": "te_train-00000-of-00004_000044.wav",
+              "wav_sha256": "8d9e9cd1ae3edca83c5ca9aec790e2b77805b075002f719e36f0196a92472c11",
+              "duration_seconds": 10.832108843537416,
+              "asr_transcript": "భార్యకు తనభర్తకు ఇంకో పెల్లి చేసుకో బోతున్నాడని తెలిసింది తనభర్తాయే ఎదుటా రేడిచి ఇపెల్లి జరగటానికి వీలే దన్నది",
+              "segments": [
+                {
+                  "start_seconds": 0.0,
+                  "end_seconds": 10.24,
+                  "text": " భార్యకు తనభర్తకు ఇంకో పెల్లి చేసుకో బోతున్నాడని తెలిసింది తనభర్తాయే ఎదుటా రేడిచి ఇపెల్లి జరగటానికి వీలే దన్నది"
+                }
+              ],
+              "metrics": {
+                "reference_normalized": "భార్యకు తన భర్త ఇంకో పెళ్ళి చేసుకోబోతున్నాడని తెలిసింది తన భర్త ఎదుట ఏడిచి ఈ పెళ్ళి జరగటానికి వీల్లేదన్నది",
+                "hypothesis_normalized": "భార్యకు తనభర్తకు ఇంకో పెల్లి చేసుకో బోతున్నాడని తెలిసింది తనభర్తాయే ఎదుటా రేడిచి ఇపెల్లి జరగటానికి వీలే దన్నది",
+                "word_edit_distance": 13,
+                "reference_word_count": 15,
+                "hypothesis_word_count": 14,
+                "wer": 0.8666666666666667,
+                "character_edit_distance": 15,
+                "reference_character_count": 92,
+                "hypothesis_character_count": 97,
+                "cer": 0.16304347826086957
+              }
+            },
+            {
+              "id": "te_train-00000-of-00004_000156",
+              "text": "వాడు దరిద్రుడైతే నేను అజ్ఞానిని క్షమించు తల్లీ అంటూ మండోదరి భర్త బోర్లాపడి ఏడిచాడు.",
+              "language": "te",
+              "wav_path": "te_train-00000-of-00004_000156.wav",
+              "wav_sha256": "0574c40191bfdbf45fd79a2317e1c7f9a1e35ef4ca4bb0a5bc19b660a443edef",
+              "duration_seconds": 8.092154195011338,
+              "asr_transcript": "వాడు దరిద్రు డేతే నీను అగ్నాని నిక్షమించు తల్లి అంటు మండో దరి భర్తా బోర్లా పడి ఏడి చాడు",
+              "segments": [
+                {
+                  "start_seconds": 0.0,
+                  "end_seconds": 7.68,
+                  "text": " వాడు దరిద్రు డేతే నీను అగ్నాని నిక్షమించు తల్లి అంటు మండో దరి భర్తా బోర్లా పడి ఏడి చాడు"
+                }
+              ],
+              "metrics": {
+                "reference_normalized": "వాడు దరిద్రుడైతే నేను అజ్ఞానిని క్షమించు తల్లీ అంటూ మండోదరి భర్త బోర్లాపడి ఏడిచాడు",
+                "hypothesis_normalized": "వాడు దరిద్రు డేతే నీను అగ్నాని నిక్షమించు తల్లి అంటు మండో దరి భర్తా బోర్లా పడి ఏడి చాడు",
+                "word_edit_distance": 14,
+                "reference_word_count": 11,
+                "hypothesis_word_count": 15,
+                "wer": 1.2727272727272727,
+                "character_edit_distance": 7,
+                "reference_character_count": 72,
+                "hypothesis_character_count": 73,
+                "cer": 0.09722222222222222
+              }
+            }
+          ],
+          "runtime_seconds": 19.986241624923423
+        },
+        "diagnostic_final_ground_truth_duration": {
+          "schema_version": 1,
+          "created_utc": "2026-11-06T11:45:52.785752+00:00",
+          "language": "te",
+          "language_name": "Telugu",
+          "interpretation": "These are ASR hypotheses and text-comparison error rates, not ground-truth transcripts or a pronunciation score. Errors can arise from the recognizer, the synthesized speech, or text conventions. A low WER/CER does not establish correct stress, homograph sense, pronunciation, naturalness, or timing. A high WER/CER does not by itself prove a TTS error. Human listening is required.",
+          "normalization": "Unicode NFC; casefold; remove apostrophes and zero-width joiners; replace other punctuation/symbols with spaces; collapse whitespace; preserve Unicode letters, combining marks and digits. No spelling repairs, number/date/time expansion, transliteration, or correction of the deliberate input anomalies. WER uses whitespace-separated words; CER uses Unicode code points excluding whitespace (not grapheme clusters, so Telugu vowel signs count separately).",
+          "source": {
+            "diagnostic_branch": "diagnostic_final_ground_truth_duration",
+            "checkpoint_step": 7451,
+            "checkpoint_sha256": "9320935fa44c5bf0a40022a3405d3cdf5a4427bff2e60c90f3769e8aed76635f",
+            "model_diagnostics_sha256": "7654e16c6834678896adc30062be8c2e2476de554b0374657a41c7e651b9030b"
+          },
+          "model": {
+            "engine": "faster-whisper / CTranslate2 local inference",
+            "requested_model": "large-v3-turbo",
+            "repository_id": "mobiuslabsgmbh/faster-whisper-large-v3-turbo",
+            "requested_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+            "resolved_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+            "revision_source": "Hugging Face cached snapshot directory; no network query",
+            "model_file_sha256": {
+              "config.json": "b0253ea6c0d3bea6b1e19e91a02acfd3b53f4467362efcb5a3e6b16c9b3a9b7e",
+              "model.bin": "e76620f83d5f5b69efd3d87e3dc180c1bd21df9fbebacfd4335e5e1efcc018da",
+              "preprocessor_config.json": "7ccc62c6f2765af1f3b46c00c9b5894426835a05021c8b9c01eecb6dfb542711",
+              "tokenizer.json": "297b13372ac43916285644fb9687add3cc62ee2a1adb60da3dc25cc94c1871fd",
+              "vocabulary.json": "c69260f2ab26d659b7c398f9a2b2b48ed0df16c3b47d7326782fd9cba71690c1"
+            },
+            "requested_device": "cpu",
+            "requested_compute_type": "int8",
+            "cpu_threads": 4,
+            "versions": {
+              "python": "3.11.18",
+              "faster-whisper": "1.2.1",
+              "ctranslate2": "4.8.5",
+              "huggingface-hub": "2.4.0",
+              "av": "18.1.0",
+              "tokenizers": "0.23.3",
+              "numpy": "2.4.6"
+            },
+            "audio_uploaded": false,
+            "actual_device": "cpu",
+            "actual_compute_type": "int8_float32"
+          },
+          "decoding": {
+            "language": "te",
+            "language_is_forced": true,
+            "task": "transcribe",
+            "beam_size": 5,
+            "temperature": 0.0,
+            "condition_on_previous_text": false,
+            "vad_filter": false,
+            "initial_prompt": null,
+            "hotwords": null,
+            "note": "Reference text is not supplied as a decoding prompt."
+          },
+          "aggregate": {
+            "sample_count": 3,
+            "word_edit_distance": 23,
+            "reference_word_count": 34,
+            "wer": 0.6764705882352942,
+            "character_edit_distance": 21,
+            "reference_character_count": 206,
+            "cer": 0.10194174757281553,
+            "aggregation": "micro-average within this language"
+          },
+          "samples": [
+            {
+              "id": "te_train-00000-of-00004_000018",
+              "text": "బాబూ ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి.",
+              "language": "te",
+              "wav_path": "te_train-00000-of-00004_000018.wav",
+              "wav_sha256": "85ca852946c9e93f1868c6cbfd9341f804194a3a24f8be2360a57551238d4976",
+              "duration_seconds": 6.280997732426304,
+              "asr_transcript": "బాబు ఇది పద్మం కాదు అసిధారహ చక్రం అన్నాడు నరకవాసి",
+              "segments": [
+                {
+                  "start_seconds": 0.0,
+                  "end_seconds": 6.08,
+                  "text": " బాబు ఇది పద్మం కాదు అసిధారహ చక్రం అన్నాడు నరకవాసి"
+                }
+              ],
+              "metrics": {
+                "reference_normalized": "బాబూ ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి",
+                "hypothesis_normalized": "బాబు ఇది పద్మం కాదు అసిధారహ చక్రం అన్నాడు నరకవాసి",
+                "word_edit_distance": 2,
+                "reference_word_count": 8,
+                "hypothesis_word_count": 8,
+                "wer": 0.25,
+                "character_edit_distance": 2,
+                "reference_character_count": 42,
+                "hypothesis_character_count": 42,
+                "cer": 0.047619047619047616
+              }
+            },
+            {
+              "id": "te_train-00000-of-00004_000044",
+              "text": "భార్యకు తన భర్త ఇంకో పెళ్ళి చేసుకోబోతున్నాడని తెలిసింది తన భర్త ఎదుట ఏడిచి ఈ పెళ్ళి జరగటానికి వీల్లేదన్నది.",
+              "language": "te",
+              "wav_path": "te_train-00000-of-00004_000044.wav",
+              "wav_sha256": "3ae6290b45b8fc19ac795414081d8995d71c1106a9c4faef96d84e2f5e17fc96",
+              "duration_seconds": 11.702857142857143,
+              "asr_transcript": "భార్యకు తన భరుత్తా ఇంకోర పెళ్ళి చేసుకోబో తున్నాడని తెలిసింది తన భర్తా ఏదుటా నీయడిచి ఈ పెళ్ళి జరగటానికి వీల్లే దన్నది",
+              "segments": [
+                {
+                  "start_seconds": 0.0,
+                  "end_seconds": 11.700000000000001,
+                  "text": " భార్యకు తన భరుత్తా ఇంకోర పెళ్ళి చేసుకోబో తున్నాడని తెలిసింది తన భర్తా ఏదుటా నీయడిచి ఈ పెళ్ళి జరగటానికి వీల్లే దన్నది"
+                }
+              ],
+              "metrics": {
+                "reference_normalized": "భార్యకు తన భర్త ఇంకో పెళ్ళి చేసుకోబోతున్నాడని తెలిసింది తన భర్త ఎదుట ఏడిచి ఈ పెళ్ళి జరగటానికి వీల్లేదన్నది",
+                "hypothesis_normalized": "భార్యకు తన భరుత్తా ఇంకోర పెళ్ళి చేసుకోబో తున్నాడని తెలిసింది తన భర్తా ఏదుటా నీయడిచి ఈ పెళ్ళి జరగటానికి వీల్లే దన్నది",
+                "word_edit_distance": 9,
+                "reference_word_count": 15,
+                "hypothesis_word_count": 17,
+                "wer": 0.6,
+                "character_edit_distance": 10,
+                "reference_character_count": 92,
+                "hypothesis_character_count": 100,
+                "cer": 0.10869565217391304
+              }
+            },
+            {
+              "id": "te_train-00000-of-00004_000156",
+              "text": "వాడు దరిద్రుడైతే నేను అజ్ఞానిని క్షమించు తల్లీ అంటూ మండోదరి భర్త బోర్లాపడి ఏడిచాడు.",
+              "language": "te",
+              "wav_path": "te_train-00000-of-00004_000156.wav",
+              "wav_sha256": "87ff3737a1b1e8edc4939240bf2d02ac34e85753fe59385760350d27c2cbb4ab",
+              "duration_seconds": 8.928072562358278,
+              "asr_transcript": "వాడు దరిద్రు డేతే నేను అగ్నానిని క్షమించు తల్లి అంటు మండో దరి భర్తా బోర్లా పడి ఏళు చడు",
+              "segments": [
+                {
+                  "start_seconds": 0.0,
+                  "end_seconds": 8.92,
+                  "text": " వాడు దరిద్రు డేతే నేను అగ్నానిని క్షమించు తల్లి అంటు మండో దరి భర్తా బోర్లా పడి ఏళు చడు"
+                }
+              ],
+              "metrics": {
+                "reference_normalized": "వాడు దరిద్రుడైతే నేను అజ్ఞానిని క్షమించు తల్లీ అంటూ మండోదరి భర్త బోర్లాపడి ఏడిచాడు",
+                "hypothesis_normalized": "వాడు దరిద్రు డేతే నేను అగ్నానిని క్షమించు తల్లి అంటు మండో దరి భర్తా బోర్లా పడి ఏళు చడు",
+                "word_edit_distance": 12,
+                "reference_word_count": 11,
+                "hypothesis_word_count": 15,
+                "wer": 1.0909090909090908,
+                "character_edit_distance": 9,
+                "reference_character_count": 72,
+                "hypothesis_character_count": 72,
+                "cer": 0.125
+              }
+            }
+          ],
+          "runtime_seconds": 20.462314665899612
+        }
+      }
+    }
+  },
+  "finished_utc": "2026-11-06T11:45:52.787725+00:00"
+}

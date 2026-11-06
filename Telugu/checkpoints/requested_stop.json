@@ -1,0 +1,5 @@
+{
+  "requested_utc": "2026-11-05T11:40:36.305113+00:00",
+  "pid": 3068,
+  "reason": "Validation plateau after warmup; frozen two-checkpoint validation comparison completed. End optimization and save exact final state."
+}

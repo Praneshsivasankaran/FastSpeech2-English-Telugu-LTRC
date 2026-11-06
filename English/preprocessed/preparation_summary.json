@@ -1,0 +1,44 @@
+{
+  "language": "en",
+  "source_manifest_sha256": "cb33df4abde54c0e3e241fceb25417400f39997907cc9bc86bf0ed0e1e7b529e",
+  "seed": 20261105,
+  "accepted": 3971,
+  "rejected": 383,
+  "duration_seconds": {
+    "train": 18000.389375000002,
+    "val": 3603.7513125000014,
+    "unused": 1788.829749999999
+  },
+  "statistics_fit_on": "train only",
+  "vocabulary": "corpus text and prescribed test text only",
+  "mel": {
+    "sr": 22050,
+    "n_fft": 1024,
+    "hop_length": 256,
+    "n_mels": 80,
+    "fmin": 0,
+    "fmax": 8000,
+    "scale": "natural log magnitude Slaney mel"
+  },
+  "split_policy": "seeded whole connected groups of NFC-casefolded whitespace-normalized text and audio SHA256",
+  "acoustic_qa": {
+    "maximum_speech_phone_seconds": 1.0,
+    "minimum_mean_speech_confidence": 0.2,
+    "reject_backend_bad_alignment": true,
+    "note": "Heuristic screening, not ground-truth phone boundary accuracy"
+  },
+  "preprocessing_sha256": "14d89c946c343a7904ca337e843f102465c99409ffbe47b0c728ca43b66dbcb4",
+  "extraction_versions": {
+    "torch": "2.15.0",
+    "numpy": "2.4.6",
+    "librosa": "0.11.0",
+    "pyworld": "0.3.5",
+    "bournemouth-forced-aligner": "2.0.1",
+    "espeakng-loader": "0.2.4"
+  },
+  "candidate_scan": {
+    "processed_rows": 4354,
+    "available_rows": 4354,
+    "accepted_hours_stop": 6.5
+  }
+}

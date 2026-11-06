@@ -1,0 +1,784 @@
+{
+  "schema_version": 1,
+  "scope": "assignment inference evidence",
+  "language": "Telugu",
+  "created_at_utc": "2026-11-06T11:59:52.201032+00:00",
+  "source": {
+    "test_samples_sha256": "9c42693394a9eea8fe953c8c71a3801945235e9baf697c5d5b8acdb0df382339",
+    "config_sha256": "9138d37b440f5656bfecebd4ca8b87fb29109be0095263f583ef3e2bc79736e5",
+    "checkpoint_sha256": "7f32328011ab47edda7eadc67dc4331ce4e1a9f11a74fdc771b79e638f72f0bf",
+    "checkpoint_step": 2000,
+    "checkpoint_file": "selected.pt",
+    "checkpoint_selection": {
+      "schema_version": 1,
+      "created_utc": "2026-11-05T11:41:34.788798+00:00",
+      "selected_file": "selected.pt",
+      "selected_sha256": "7f32328011ab47edda7eadc67dc4331ce4e1a9f11a74fdc771b79e638f72f0bf",
+      "selected_step": 2000,
+      "selection_basis": "fixed_validation_comparison",
+      "rationale": "The fixed validation comparison is inconclusive: later WER worsens while CER improves. Retain the original minimum-total-validation checkpoint. This choice does not establish native-listener speech quality.",
+      "validation_probe_manifest_sha256": "3a6d89d4f99c3b51b969a7b6f2b20c4d56d7ac699d9f9c3e9245fdaa6181047f",
+      "probe_ids": [
+        "te_train-00000-of-00004_000018",
+        "te_train-00000-of-00004_000044",
+        "te_train-00000-of-00004_000156"
+      ],
+      "candidates": [
+        {
+          "label": "minimum_total",
+          "step": 2000,
+          "sha256": "7f32328011ab47edda7eadc67dc4331ce4e1a9f11a74fdc771b79e638f72f0bf",
+          "wer": 0.7352941176470589,
+          "cer": 0.12135922330097088,
+          "duration_ratio_min": 0.9124115134390715,
+          "duration_ratio_max": 0.9671659047043831,
+          "valid_audio": true,
+          "passes_quality_gate": true
+        },
+        {
+          "label": "later_fixed",
+          "step": 6000,
+          "sha256": "87563a2ee631af8c2c1881e0588e8b04c76a5606e3792986c8ea631db86cf6d9",
+          "wer": 0.7941176470588235,
+          "cer": 0.10194174757281553,
+          "duration_ratio_min": 0.9144429130848228,
+          "duration_ratio_max": 0.9814846462275973,
+          "valid_audio": true,
+          "passes_quality_gate": true
+        }
+      ],
+      "source_controls": {
+        "wer": 0.6764705882352942,
+        "cer": 0.08737864077669903
+      },
+      "decision": "baseline_retained_inconclusive",
+      "quality_gate_passed": false,
+      "protocol_note": "Earlier assignment-ASR diagnostics motivated this post-hoc review; the assignment set is not a pristine untouched test. Exactly three validation prompts and two checkpoints were then fixed before later-candidate evaluation. The frozen rule remains inconclusive. No native listening was performed. English artifact preference is an explicitly disclosed best-available decision despite the failed duration gate; no threshold or score was changed.",
+      "frozen_criterion": {
+        "frozen_utc": "2026-11-05T11:37:41.788844+00:00",
+        "scope": "Exactly the existing frozen three project-validation probes per language; compare the baseline and the one supplied later checkpoint only. No assignment test samples or additional checkpoint search.",
+        "score_rule": "Prefer the candidate with strictly lower micro-averaged WER, provided micro-averaged CER does not increase, and it has no severe artifact/coverage/duration failure. If scores conflict, tie, or neither candidate satisfies the gates, mark inconclusive rather than infer human quality.",
+        "severe_failure_rules": [
+          "Missing or nonfinite WAV/prediction artifact or zero/silent generated waveform (RMS <= 1e-5).",
+          "Empty ASR transcript.",
+          "Any generated/source duration ratio below 0.5 or above 2.0."
+        ],
+        "threshold_note": "Broad internal screening thresholds, fixed before later-candidate inference; not perceptually validated quality thresholds.",
+        "asr": "Pinned faster-whisper large-v3-turbo 0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf, CPU int8, language forced, beam 5, temperature 0, no prompt/hotwords.",
+        "selection_warning": "A choice applies only among these two supplied checkpoints on these three validation probes. No human-listening or native-quality claim."
+      },
+      "per_probe_comparison": [
+        {
+          "label": "baseline",
+          "probes": [
+            {
+              "id": "te_train-00000-of-00004_000018",
+              "text": "బాబూ ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి.",
+              "asr_transcript": "బాబు ఇది పద్మం కాదు అసి ధరా చక్రం అన్నాడు నరకవాది",
+              "metrics": {
+                "reference_normalized": "బాబూ ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి",
+                "hypothesis_normalized": "బాబు ఇది పద్మం కాదు అసి ధరా చక్రం అన్నాడు నరకవాది",
+                "word_edit_distance": 4,
+                "reference_word_count": 8,
+                "hypothesis_word_count": 9,
+                "wer": 0.5,
+                "character_edit_distance": 3,
+                "reference_character_count": 42,
+                "hypothesis_character_count": 41,
+                "cer": 0.07142857142857142
+              },
+              "source_duration_seconds": 6.2719375,
+              "generated_duration_seconds": 6.060408163265306,
+              "generated_to_source_duration_ratio": 0.9662736854863917,
+              "wav_sha256": "9826c437540b353d90c64ed2989b47f7f7726b31d38700b99643d83190140bfe",
+              "source_wav_sha256": "738d86aa5a705a9fce125dce7d4a72801edb1cffe16f71337938c379f630de77",
+              "finite": true,
+              "rms": 0.05353668124469103,
+              "peak": 0.34588623046875,
+              "pcm_rail_hits": 0,
+              "prediction_sha256": "84840fd194e32bd77e6b27e619a1966af9f8df951454a025cfa111cb8803d50a",
+              "zero_duration_phone_count": 2,
+              "plot_sha256": {
+                "duration": "4f91070d3cd1fac5afd358df6a410dc83bd22705410d8ee3a424e5df7b727973",
+                "pitch": "215d5f54e285ee9a6f59ac0f4d9e750a759b6c9c7376c6d0045cdb9a3887fae9",
+                "energy": "22f77b43d7fc63b4915d5156425b67038f0885a89f906711962e1e533aaa3516"
+              }
+            },
+            {
+              "id": "te_train-00000-of-00004_000044",
+              "text": "భార్యకు తన భర్త ఇంకో పెళ్ళి చేసుకోబోతున్నాడని తెలిసింది తన భర్త ఎదుట ఏడిచి ఈ పెళ్ళి జరగటానికి వీల్లేదన్నది.",
+              "asr_transcript": "భార్యకు తనబర్తా ఇంకో పెళ్లి చేసుకో పోతునాడని తెలిసింది తనబర్తా యదు టగేడిచి ఈ పెళ్లి జరగటానికి విలేదన్నది",
+              "metrics": {
+                "reference_normalized": "భార్యకు తన భర్త ఇంకో పెళ్ళి చేసుకోబోతున్నాడని తెలిసింది తన భర్త ఎదుట ఏడిచి ఈ పెళ్ళి జరగటానికి వీల్లేదన్నది",
+                "hypothesis_normalized": "భార్యకు తనబర్తా ఇంకో పెళ్లి చేసుకో పోతునాడని తెలిసింది తనబర్తా యదు టగేడిచి ఈ పెళ్లి జరగటానికి విలేదన్నది",
+                "word_edit_distance": 11,
+                "reference_word_count": 15,
+                "hypothesis_word_count": 14,
+                "wer": 0.7333333333333333,
+                "character_edit_distance": 15,
+                "reference_character_count": 92,
+                "hypothesis_character_count": 91,
+                "cer": 0.16304347826086957
+              },
+              "source_duration_seconds": 11.6938125,
+              "generated_duration_seconds": 10.669569160997732,
+              "generated_to_source_duration_ratio": 0.9124115134390715,
+              "wav_sha256": "3fbc10e39aea97504358df11468d187c585fed32067daec8e02ac1fc8046c558",
+              "source_wav_sha256": "d43483965fdb6c29eed07b5b2f6c66f6624a04d36724f68703a0e095d438585b",
+              "finite": true,
+              "rms": 0.05866966924244334,
+              "peak": 0.412200927734375,
+              "pcm_rail_hits": 0,
+              "prediction_sha256": "6927e22899d41c4a970694ac0c86897e2b139913cc7874dc07161769244c602e",
+              "zero_duration_phone_count": 2,
+              "plot_sha256": {
+                "duration": "50535f252ffe45d876e27fd41589a96a439adea4ad48830f2692feca731e7d32",
+                "pitch": "f4e7a125f45e45d6bf151f1af846d4da0c5f8042a28793a47388f56349ac1775",
+                "energy": "e3088f48f1ab6b127d911b11fa5d96975339f49b087dd2be6b879e126552e36d"
+              }
+            },
+            {
+              "id": "te_train-00000-of-00004_000156",
+              "text": "వాడు దరిద్రుడైతే నేను అజ్ఞానిని క్షమించు తల్లీ అంటూ మండోదరి భర్త బోర్లాపడి ఏడిచాడు.",
+              "asr_transcript": "వాడు దరిద్రుడేతే నేను వాగ్నానిని క్షమించు తల్లి అంటు మండో దరి భర్త బోర్లా పడి ఏడి చాడు",
+              "metrics": {
+                "reference_normalized": "వాడు దరిద్రుడైతే నేను అజ్ఞానిని క్షమించు తల్లీ అంటూ మండోదరి భర్త బోర్లాపడి ఏడిచాడు",
+                "hypothesis_normalized": "వాడు దరిద్రుడేతే నేను వాగ్నానిని క్షమించు తల్లి అంటు మండో దరి భర్త బోర్లా పడి ఏడి చాడు",
+                "word_edit_distance": 10,
+                "reference_word_count": 11,
+                "hypothesis_word_count": 14,
+                "wer": 0.9090909090909091,
+                "character_edit_distance": 7,
+                "reference_character_count": 72,
+                "hypothesis_character_count": 73,
+                "cer": 0.09722222222222222
+              },
+              "source_duration_seconds": 8.9190625,
+              "generated_duration_seconds": 8.626213151927438,
+              "generated_to_source_duration_ratio": 0.9671659047043831,
+              "wav_sha256": "18f412d62492520dc82669ec9f0b99556cdd33caad87c2ae2328ee6d114a4d43",
+              "source_wav_sha256": "0a04e73d0ec9824e55a30220b103a185d9866de4399fb7cf2c49fab9bb8da467",
+              "finite": true,
+              "rms": 0.06876609296262307,
+              "peak": 0.402740478515625,
+              "pcm_rail_hits": 0,
+              "prediction_sha256": "16f201cbaf7fdd474bc85347d051c60353ae6721e66064c7deb8f2ff905b228a",
+              "zero_duration_phone_count": 2,
+              "plot_sha256": {
+                "duration": "eff0350dcb7d382155312c0cf8c4a15e80565803153f5d4537c537bf2c2196a6",
+                "pitch": "31fbd8baa883043abbca786f4027e30de4c429aeb68d227e3357b11f9ed77ac8",
+                "energy": "19725c36042551e3558b3da542877aa6646c8c40e210433e19707a5aaf586af0"
+              }
+            }
+          ]
+        },
+        {
+          "label": "later",
+          "probes": [
+            {
+              "id": "te_train-00000-of-00004_000018",
+              "text": "బాబూ ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి.",
+              "asr_transcript": "బాబు ఇది పద్మం కాదు అసిధరా చక్రం అన్నాడు నరకవాసి",
+              "metrics": {
+                "reference_normalized": "బాబూ ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి",
+                "hypothesis_normalized": "బాబు ఇది పద్మం కాదు అసిధరా చక్రం అన్నాడు నరకవాసి",
+                "word_edit_distance": 2,
+                "reference_word_count": 8,
+                "hypothesis_word_count": 8,
+                "wer": 0.25,
+                "character_edit_distance": 2,
+                "reference_character_count": 42,
+                "hypothesis_character_count": 41,
+                "cer": 0.047619047619047616
+              },
+              "source_duration_seconds": 6.2719375,
+              "generated_duration_seconds": 5.735328798185941,
+              "generated_to_source_duration_ratio": 0.9144429130848228,
+              "wav_sha256": "21e86269be1b4ae77fb598837102b80d9d1417490f6c159ba59718220dca1fd0",
+              "source_wav_sha256": "738d86aa5a705a9fce125dce7d4a72801edb1cffe16f71337938c379f630de77",
+              "finite": true,
+              "rms": 0.07762554908321127,
+              "peak": 0.586761474609375,
+              "pcm_rail_hits": 0,
+              "prediction_sha256": "7cc0a5517a39eca3b705113d22a53d8f6471cedccbe460a365523cce69ae3b85",
+              "zero_duration_phone_count": 3,
+              "plot_sha256": {
+                "duration": "50cb07b2c5bc7c9d7105b74acdaa2f017ea77d9b4912567a5a904bf58e35a208",
+                "pitch": "d4fe3880bec33e9f94a1ea3f9de005ef4889f5b9b829c2fb84e12c7bdd6c72eb",
+                "energy": "064dbd6f362a18cbea87ea27d2ea45070375a04c65f208825065c559439b5934"
+              }
+            },
+            {
+              "id": "te_train-00000-of-00004_000044",
+              "text": "భార్యకు తన భర్త ఇంకో పెళ్ళి చేసుకోబోతున్నాడని తెలిసింది తన భర్త ఎదుట ఏడిచి ఈ పెళ్ళి జరగటానికి వీల్లేదన్నది.",
+              "asr_transcript": "భారియకు తనభర్త ఇంకో పెళ్లి జేసు కోబోతున్నాడని తిలిసింది తనభర్త యదుటా ఏడిచ్చి ఈ పెళ్లి జరగటానికి వీలేదన్నది",
+              "metrics": {
+                "reference_normalized": "భార్యకు తన భర్త ఇంకో పెళ్ళి చేసుకోబోతున్నాడని తెలిసింది తన భర్త ఎదుట ఏడిచి ఈ పెళ్ళి జరగటానికి వీల్లేదన్నది",
+                "hypothesis_normalized": "భారియకు తనభర్త ఇంకో పెళ్లి జేసు కోబోతున్నాడని తిలిసింది తనభర్త యదుటా ఏడిచ్చి ఈ పెళ్లి జరగటానికి వీలేదన్నది",
+                "word_edit_distance": 12,
+                "reference_word_count": 15,
+                "hypothesis_word_count": 14,
+                "wer": 0.8,
+                "character_edit_distance": 11,
+                "reference_character_count": 92,
+                "hypothesis_character_count": 93,
+                "cer": 0.11956521739130435
+              },
+              "source_duration_seconds": 11.6938125,
+              "generated_duration_seconds": 10.89015873015873,
+              "generated_to_source_duration_ratio": 0.9312752988094114,
+              "wav_sha256": "1acda2f3cc768ea53c02774f1f55189c1b7bb92bd53126e2a00ba64520aa55b6",
+              "source_wav_sha256": "d43483965fdb6c29eed07b5b2f6c66f6624a04d36724f68703a0e095d438585b",
+              "finite": true,
+              "rms": 0.07851538609691869,
+              "peak": 0.550201416015625,
+              "pcm_rail_hits": 0,
+              "prediction_sha256": "ae7d966326734191c2a56be22da7f2e10ab176638140f9f197d41a97c55bd24b",
+              "zero_duration_phone_count": 7,
+              "plot_sha256": {
+                "duration": "ac32310bf5625f8ef8a7a56d5c27dbfc5973469c5388e7bd6179c3b5a43e2ce4",
+                "pitch": "8e9cb687798d6e044df4b7d1771fbef428fa178045efb8326e6df18ba867d804",
+                "energy": "69502779c72b6bd7377f24aefd9c0c7df6cf5ddf122efe5158651a56d48688e9"
+              }
+            },
+            {
+              "id": "te_train-00000-of-00004_000156",
+              "text": "వాడు దరిద్రుడైతే నేను అజ్ఞానిని క్షమించు తల్లీ అంటూ మండోదరి భర్త బోర్లాపడి ఏడిచాడు.",
+              "asr_transcript": "వాడు దరిద్రు డయితే నేను అగ్నాని నిక్షమించు తల్లి అంటు మండో దరి భర్తా బోరిలా పడి ఏడి చాడు",
+              "metrics": {
+                "reference_normalized": "వాడు దరిద్రుడైతే నేను అజ్ఞానిని క్షమించు తల్లీ అంటూ మండోదరి భర్త బోర్లాపడి ఏడిచాడు",
+                "hypothesis_normalized": "వాడు దరిద్రు డయితే నేను అగ్నాని నిక్షమించు తల్లి అంటు మండో దరి భర్తా బోరిలా పడి ఏడి చాడు",
+                "word_edit_distance": 13,
+                "reference_word_count": 11,
+                "hypothesis_word_count": 15,
+                "wer": 1.1818181818181819,
+                "character_edit_distance": 8,
+                "reference_character_count": 72,
+                "hypothesis_character_count": 74,
+                "cer": 0.1111111111111111
+              },
+              "source_duration_seconds": 8.9190625,
+              "generated_duration_seconds": 8.753922902494331,
+              "generated_to_source_duration_ratio": 0.9814846462275973,
+              "wav_sha256": "1b223ac5a0226966e25511eb40401781c7d416a6ac7c460dd136617e6131db05",
+              "source_wav_sha256": "0a04e73d0ec9824e55a30220b103a185d9866de4399fb7cf2c49fab9bb8da467",
+              "finite": true,
+              "rms": 0.09034280922762797,
+              "peak": 0.489105224609375,
+              "pcm_rail_hits": 0,
+              "prediction_sha256": "a039c7e88a5a9e10dfe4fc44615416b092f7720cacf61d6d4a1f8c34076c3b5b",
+              "zero_duration_phone_count": 1,
+              "plot_sha256": {
+                "duration": "65b2b11eeb1d1bea7d8943dc5a2344a5ed8cabbeca263e63b7a17f86cacf7f3e",
+                "pitch": "153a7a63ea3b6652d16f3f834a852343ba2dfd7919588d837f540b5e7256bfb6",
+                "energy": "66e7a6c8d532b4256efe0bb957b9cf8c8bca74787ff2b7038549201752026c3b"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "inference_manifest_sha256": "b3fe28f6dcb620669d5d171d8722433524be19bc0e7e606d4a17e5182d525cd4",
+    "sample_rate_hz": 22050,
+    "hop_length": 256
+  },
+  "limitations": [
+    "These are objective artifact measurements, not subjective speech-quality scores.",
+    "Predicted pitch and spectral energy are not measured waveform F0 and RMS.",
+    "WORLD uses 60–600 Hz search bounds; its voicing/F0 estimates can be wrong on synthesized audio.",
+    "Full-scale PCM samples indicate rail hits; lost peaks cannot be recovered from the written WAV.",
+    "Silence maxima refer to predicted SIL runs, not silence independently detected in audio."
+  ],
+  "samples": [
+    {
+      "id": "T1",
+      "text": "న్యూరోఫార్మకోలాజికల్ పరిశోధనలో నూతన ఔషధాల ప్రభావాన్ని విశ్లేషించారు.",
+      "checkpoint_step": 2000,
+      "prediction": {
+        "sha256": "2ef0c9e70ea4316d001d95467f23838cc3e5c97184409006963996bb477868ba",
+        "phone_count": 73,
+        "non_sil_phone_count": 66,
+        "zero_duration_phone_count": 1,
+        "zero_duration_non_sil_phone_count": 0,
+        "mel_frame_count": 643,
+        "duration_seconds": 7.465215419501134,
+        "non_sil_duration_seconds": 5.723718820861678,
+        "sil_duration_seconds": 1.741496598639456,
+        "max_phone": {
+          "phone_index": 21,
+          "phone": "p",
+          "duration_frames": 30,
+          "duration_seconds": 0.34829931972789113
+        },
+        "pause_run_count": 7,
+        "max_pause": {
+          "start_phone_index": 72,
+          "end_phone_index_inclusive": 72,
+          "duration_frames": 46,
+          "duration_seconds": 0.5340589569160997
+        },
+        "predicted_variance": {
+          "source": "acoustic-model phone-level predictions, denormalized at inference",
+          "selection": "All non-SIL phones; duration-weighted means exclude zero-duration phones",
+          "energy_units": "linear spectral energy (not waveform RMS)",
+          "pitch_hz_non_sil": {
+            "count": 66,
+            "min": 152.4671630859375,
+            "p05": 162.05330657958984,
+            "mean": 209.88744562322444,
+            "median": 201.4700164794922,
+            "p95": 301.8900146484375,
+            "max": 362.63214111328125,
+            "std": 43.258146088981015,
+            "nonpositive_count": 0,
+            "duration_weighted_mean": 210.25882183949315
+          },
+          "energy_non_sil": {
+            "count": 66,
+            "min": 2.2087936401367188,
+            "p05": 6.012185573577881,
+            "mean": 34.327400554310195,
+            "median": 31.454265594482422,
+            "p95": 74.9483413696289,
+            "max": 80.88955688476562,
+            "std": 19.567564934824357,
+            "nonpositive_count": 0,
+            "duration_weighted_mean": 34.58820234302575
+          }
+        }
+      },
+      "wav": {
+        "sha256": "7bcaf769e08a38d49bfd48b6a48f73865c53ccc266ea462e9af867d26b4c8ef4",
+        "sample_rate_hz": 22050,
+        "channels": 1,
+        "encoding": "PCM_16",
+        "sample_count": 164608,
+        "duration_seconds": 7.465215419501134,
+        "rms": 0.06902322416543173,
+        "rms_dbfs": -23.220095162104265,
+        "peak": 0.401153564453125,
+        "dc_mean": 4.057843429304393e-05,
+        "full_scale_sample_count": 0,
+        "clipping_fraction_at_pcm_rails": 0.0,
+        "clipping_definition": "Samples at or beyond the positive/negative encoding rails. A rail hit alone does not establish pre-encoding clipping.",
+        "positive_rail": 0.999969482421875,
+        "negative_rail": -1.0
+      },
+      "acoustic_f0": {
+        "status": "measured",
+        "algorithm": "WORLD DIO + StoneMask",
+        "f0_floor_hz": 60.0,
+        "f0_ceiling_hz": 600.0,
+        "frame_period_ms": 11.609977324263038,
+        "source": "decoded generated WAV",
+        "scope": "entire waveform, including pauses",
+        "frame_count": 644,
+        "voiced_frame_count": 465,
+        "voiced_fraction": 0.7220496894409938,
+        "voiced_f0_hz": {
+          "count": 465,
+          "min": 55.3305224254247,
+          "p05": 76.89736078643377,
+          "mean": 184.28067814191002,
+          "median": 185.54919175703523,
+          "p95": 289.66584711868063,
+          "max": 343.8856307372675,
+          "std": 60.930055087426844
+        },
+        "interpretation": "Extractor voicing decisions and F0 estimates; not a quality or intelligibility score."
+      }
+    },
+    {
+      "id": "T2a",
+      "text": "తాడుపై అతని పట్టు చాలా బలంగా ఉంది.",
+      "checkpoint_step": 2000,
+      "prediction": {
+        "sha256": "12df56c71d9438539193688a37d4c4cd060da69596348d05946bc730854ffb5a",
+        "phone_count": 38,
+        "non_sil_phone_count": 31,
+        "zero_duration_phone_count": 1,
+        "zero_duration_non_sil_phone_count": 0,
+        "mel_frame_count": 349,
+        "duration_seconds": 4.051882086167801,
+        "non_sil_duration_seconds": 3.134693877551021,
+        "sil_duration_seconds": 0.9171882086167801,
+        "max_phone": {
+          "phone_index": 5,
+          "phone": "p",
+          "duration_frames": 20,
+          "duration_seconds": 0.23219954648526078
+        },
+        "pause_run_count": 7,
+        "max_pause": {
+          "start_phone_index": 37,
+          "end_phone_index_inclusive": 37,
+          "duration_frames": 42,
+          "duration_seconds": 0.4876190476190476
+        },
+        "predicted_variance": {
+          "source": "acoustic-model phone-level predictions, denormalized at inference",
+          "selection": "All non-SIL phones; duration-weighted means exclude zero-duration phones",
+          "energy_units": "linear spectral energy (not waveform RMS)",
+          "pitch_hz_non_sil": {
+            "count": 31,
+            "min": 153.25091552734375,
+            "p05": 158.7803192138672,
+            "mean": 192.13069595829134,
+            "median": 189.19461059570312,
+            "p95": 229.58660888671875,
+            "max": 249.231201171875,
+            "std": 23.463210592103245,
+            "nonpositive_count": 0,
+            "duration_weighted_mean": 194.28765829580803
+          },
+          "energy_non_sil": {
+            "count": 31,
+            "min": 2.246126174926758,
+            "p05": 3.482842445373535,
+            "mean": 30.21416461083197,
+            "median": 34.207515716552734,
+            "p95": 57.54331970214844,
+            "max": 65.02852630615234,
+            "std": 17.349347464279628,
+            "nonpositive_count": 0,
+            "duration_weighted_mean": 28.874275751467103
+          }
+        }
+      },
+      "wav": {
+        "sha256": "dd64d03e4d677e473662fd841ed22f38c65cede6e8661172b353321622154b08",
+        "sample_rate_hz": 22050,
+        "channels": 1,
+        "encoding": "PCM_16",
+        "sample_count": 89344,
+        "duration_seconds": 4.051882086167801,
+        "rms": 0.060928484849542844,
+        "rms_dbfs": -24.30359243280504,
+        "peak": 0.478973388671875,
+        "dc_mean": 9.149739940391913e-05,
+        "full_scale_sample_count": 0,
+        "clipping_fraction_at_pcm_rails": 0.0,
+        "clipping_definition": "Samples at or beyond the positive/negative encoding rails. A rail hit alone does not establish pre-encoding clipping.",
+        "positive_rail": 0.999969482421875,
+        "negative_rail": -1.0
+      },
+      "acoustic_f0": {
+        "status": "measured",
+        "algorithm": "WORLD DIO + StoneMask",
+        "f0_floor_hz": 60.0,
+        "f0_ceiling_hz": 600.0,
+        "frame_period_ms": 11.609977324263038,
+        "source": "decoded generated WAV",
+        "scope": "entire waveform, including pauses",
+        "frame_count": 350,
+        "voiced_frame_count": 235,
+        "voiced_fraction": 0.6714285714285714,
+        "voiced_f0_hz": {
+          "count": 235,
+          "min": 55.828369340600894,
+          "p05": 68.72663862811008,
+          "mean": 165.58270611479034,
+          "median": 178.29958652569312,
+          "p95": 242.5341101290128,
+          "max": 256.7717435358538,
+          "std": 52.84285493603886
+        },
+        "interpretation": "Extractor voicing decisions and F0 estimates; not a quality or intelligibility score."
+      }
+    },
+    {
+      "id": "T2b",
+      "text": "ఆమె పట్టు చీరను ధరించి వేడుకకు వచ్చింది.",
+      "checkpoint_step": 2000,
+      "prediction": {
+        "sha256": "d591dc9d8cda875cb4f3835ed29e545bff478a89a6ed3b196dd3a25a389274dc",
+        "phone_count": 44,
+        "non_sil_phone_count": 37,
+        "zero_duration_phone_count": 3,
+        "zero_duration_non_sil_phone_count": 0,
+        "mel_frame_count": 382,
+        "duration_seconds": 4.435011337868481,
+        "non_sil_duration_seconds": 3.0534240362811795,
+        "sil_duration_seconds": 1.3815873015873015,
+        "max_phone": {
+          "phone_index": 12,
+          "phone": "iː",
+          "duration_frames": 19,
+          "duration_seconds": 0.22058956916099773
+        },
+        "pause_run_count": 7,
+        "max_pause": {
+          "start_phone_index": 0,
+          "end_phone_index_inclusive": 0,
+          "duration_frames": 46,
+          "duration_seconds": 0.5340589569160997
+        },
+        "predicted_variance": {
+          "source": "acoustic-model phone-level predictions, denormalized at inference",
+          "selection": "All non-SIL phones; duration-weighted means exclude zero-duration phones",
+          "energy_units": "linear spectral energy (not waveform RMS)",
+          "pitch_hz_non_sil": {
+            "count": 37,
+            "min": 153.77877807617188,
+            "p05": 161.67522583007812,
+            "mean": 212.35693648054794,
+            "median": 215.13629150390625,
+            "p95": 271.23365478515615,
+            "max": 287.81756591796875,
+            "std": 34.3497622478927,
+            "nonpositive_count": 0,
+            "duration_weighted_mean": 211.4734413524091
+          },
+          "energy_non_sil": {
+            "count": 37,
+            "min": 2.9139537811279297,
+            "p05": 3.696023941040039,
+            "mean": 32.112194009729336,
+            "median": 30.597089767456055,
+            "p95": 74.7895294189453,
+            "max": 78.92404174804688,
+            "std": 22.884407472507966,
+            "nonpositive_count": 0,
+            "duration_weighted_mean": 33.15789567200403
+          }
+        }
+      },
+      "wav": {
+        "sha256": "462b0133e54ec0d402a0f89fd7ffb3af594af6cd675ea71dc9e6a2377a36b614",
+        "sample_rate_hz": 22050,
+        "channels": 1,
+        "encoding": "PCM_16",
+        "sample_count": 97792,
+        "duration_seconds": 4.435011337868481,
+        "rms": 0.06300368480239452,
+        "rms_dbfs": -24.012680997420727,
+        "peak": 0.446868896484375,
+        "dc_mean": 7.290865114222022e-05,
+        "full_scale_sample_count": 0,
+        "clipping_fraction_at_pcm_rails": 0.0,
+        "clipping_definition": "Samples at or beyond the positive/negative encoding rails. A rail hit alone does not establish pre-encoding clipping.",
+        "positive_rail": 0.999969482421875,
+        "negative_rail": -1.0
+      },
+      "acoustic_f0": {
+        "status": "measured",
+        "algorithm": "WORLD DIO + StoneMask",
+        "f0_floor_hz": 60.0,
+        "f0_ceiling_hz": 600.0,
+        "frame_period_ms": 11.609977324263038,
+        "source": "decoded generated WAV",
+        "scope": "entire waveform, including pauses",
+        "frame_count": 383,
+        "voiced_frame_count": 254,
+        "voiced_fraction": 0.6631853785900783,
+        "voiced_f0_hz": {
+          "count": 254,
+          "min": 57.15895325770606,
+          "p05": 65.54742118503324,
+          "mean": 172.25648935167035,
+          "median": 188.9399010491759,
+          "p95": 257.85141503788975,
+          "max": 300.6858931902564,
+          "std": 64.78855671366178
+        },
+        "interpretation": "Extractor voicing decisions and F0 estimates; not a quality or intelligibility score."
+      }
+    },
+    {
+      "id": "T3",
+      "text": "పులి అడ విలో నిశ్శబ్దంగా నడిచింది.",
+      "checkpoint_step": 2000,
+      "prediction": {
+        "sha256": "addc0a3922cb82113b744be88a2bdf88bc8a63329411487592fa3ced089dfe78",
+        "phone_count": 37,
+        "non_sil_phone_count": 31,
+        "zero_duration_phone_count": 1,
+        "zero_duration_non_sil_phone_count": 0,
+        "mel_frame_count": 289,
+        "duration_seconds": 3.355283446712018,
+        "non_sil_duration_seconds": 2.5309750566893423,
+        "sil_duration_seconds": 0.8243083900226758,
+        "max_phone": {
+          "phone_index": 13,
+          "phone": "oː",
+          "duration_frames": 15,
+          "duration_seconds": 0.17414965986394557
+        },
+        "pause_run_count": 6,
+        "max_pause": {
+          "start_phone_index": 36,
+          "end_phone_index_inclusive": 36,
+          "duration_frames": 45,
+          "duration_seconds": 0.5224489795918368
+        },
+        "predicted_variance": {
+          "source": "acoustic-model phone-level predictions, denormalized at inference",
+          "selection": "All non-SIL phones; duration-weighted means exclude zero-duration phones",
+          "energy_units": "linear spectral energy (not waveform RMS)",
+          "pitch_hz_non_sil": {
+            "count": 31,
+            "min": 146.79592895507812,
+            "p05": 152.28301239013672,
+            "mean": 205.32640764790196,
+            "median": 205.31643676757812,
+            "p95": 265.59932708740234,
+            "max": 283.1699523925781,
+            "std": 34.97255186236072,
+            "nonpositive_count": 0,
+            "duration_weighted_mean": 211.2186115509873
+          },
+          "energy_non_sil": {
+            "count": 31,
+            "min": 3.80804443359375,
+            "p05": 6.740408897399902,
+            "mean": 35.46637728906447,
+            "median": 31.910629272460938,
+            "p95": 66.15026092529297,
+            "max": 71.19685363769531,
+            "std": 19.506790556819354,
+            "nonpositive_count": 0,
+            "duration_weighted_mean": 38.01272983726012
+          }
+        }
+      },
+      "wav": {
+        "sha256": "8bfcbec1b50f6745b9a3df80fdc4fe19a6de9d28991618408a85fd597cadbb51",
+        "sample_rate_hz": 22050,
+        "channels": 1,
+        "encoding": "PCM_16",
+        "sample_count": 73984,
+        "duration_seconds": 3.355283446712018,
+        "rms": 0.06973462672954346,
+        "rms_dbfs": -23.13103038830082,
+        "peak": 0.448150634765625,
+        "dc_mean": 1.1816981754500973e-05,
+        "full_scale_sample_count": 0,
+        "clipping_fraction_at_pcm_rails": 0.0,
+        "clipping_definition": "Samples at or beyond the positive/negative encoding rails. A rail hit alone does not establish pre-encoding clipping.",
+        "positive_rail": 0.999969482421875,
+        "negative_rail": -1.0
+      },
+      "acoustic_f0": {
+        "status": "measured",
+        "algorithm": "WORLD DIO + StoneMask",
+        "f0_floor_hz": 60.0,
+        "f0_ceiling_hz": 600.0,
+        "frame_period_ms": 11.609977324263038,
+        "source": "decoded generated WAV",
+        "scope": "entire waveform, including pauses",
+        "frame_count": 290,
+        "voiced_frame_count": 221,
+        "voiced_fraction": 0.7620689655172413,
+        "voiced_f0_hz": {
+          "count": 221,
+          "min": 72.3372390071555,
+          "p05": 85.45838362855203,
+          "mean": 188.9548404688432,
+          "median": 198.03599605099174,
+          "p95": 278.47965338171457,
+          "max": 303.20738834245964,
+          "std": 55.23010740471687
+        },
+        "interpretation": "Extractor voicing decisions and F0 estimates; not a quality or intelligibility score."
+      }
+    },
+    {
+      "id": "T4",
+      "text": "ఈ సమావేశం 2026 నవంబర్ 12వ తేదీ ఉదయం 10:45 గంటలకు ప్రారంభమవుతుంది, సమయానికి సిద్ధంగా ఉంచండి.",
+      "checkpoint_step": 2000,
+      "prediction": {
+        "sha256": "36a2fcf162d9ef309ae92faec4695a92b30287b45b88b0ea3a6564d001e43fac",
+        "phone_count": 133,
+        "non_sil_phone_count": 119,
+        "zero_duration_phone_count": 2,
+        "zero_duration_non_sil_phone_count": 0,
+        "mel_frame_count": 1065,
+        "duration_seconds": 12.364625850340136,
+        "non_sil_duration_seconds": 9.311201814058956,
+        "sil_duration_seconds": 3.0534240362811786,
+        "max_phone": {
+          "phone_index": 87,
+          "phone": "p",
+          "duration_frames": 18,
+          "duration_seconds": 0.2089795918367347
+        },
+        "pause_run_count": 14,
+        "max_pause": {
+          "start_phone_index": 0,
+          "end_phone_index_inclusive": 0,
+          "duration_frames": 48,
+          "duration_seconds": 0.5572789115646258
+        },
+        "predicted_variance": {
+          "source": "acoustic-model phone-level predictions, denormalized at inference",
+          "selection": "All non-SIL phones; duration-weighted means exclude zero-duration phones",
+          "energy_units": "linear spectral energy (not waveform RMS)",
+          "pitch_hz_non_sil": {
+            "count": 119,
+            "min": 149.50184631347656,
+            "p05": 162.14874420166015,
+            "mean": 200.1027196034664,
+            "median": 196.7973175048828,
+            "p95": 249.03560028076166,
+            "max": 297.382080078125,
+            "std": 27.669210406887867,
+            "nonpositive_count": 0,
+            "duration_weighted_mean": 201.62480753377787
+          },
+          "energy_non_sil": {
+            "count": 119,
+            "min": 0.9919357299804688,
+            "p05": 4.419171142578125,
+            "mean": 33.24828755354681,
+            "median": 32.565792083740234,
+            "p95": 62.55508041381835,
+            "max": 95.68531799316406,
+            "std": 18.178285296710428,
+            "nonpositive_count": 0,
+            "duration_weighted_mean": 33.05940142415111
+          }
+        }
+      },
+      "wav": {
+        "sha256": "0bdde4849332b01985da7441f039785fc4e513e08b768b476bc492259f0ab493",
+        "sample_rate_hz": 22050,
+        "channels": 1,
+        "encoding": "PCM_16",
+        "sample_count": 272640,
+        "duration_seconds": 12.364625850340136,
+        "rms": 0.06354693013021762,
+        "rms_dbfs": -23.938108496128457,
+        "peak": 0.3734130859375,
+        "dc_mean": 8.239802060552605e-05,
+        "full_scale_sample_count": 0,
+        "clipping_fraction_at_pcm_rails": 0.0,
+        "clipping_definition": "Samples at or beyond the positive/negative encoding rails. A rail hit alone does not establish pre-encoding clipping.",
+        "positive_rail": 0.999969482421875,
+        "negative_rail": -1.0
+      },
+      "acoustic_f0": {
+        "status": "measured",
+        "algorithm": "WORLD DIO + StoneMask",
+        "f0_floor_hz": 60.0,
+        "f0_ceiling_hz": 600.0,
+        "frame_period_ms": 11.609977324263038,
+        "source": "decoded generated WAV",
+        "scope": "entire waveform, including pauses",
+        "frame_count": 1066,
+        "voiced_frame_count": 795,
+        "voiced_fraction": 0.7457786116322702,
+        "voiced_f0_hz": {
+          "count": 795,
+          "min": 61.25156177797977,
+          "p05": 85.04516664713258,
+          "mean": 182.94356486108856,
+          "median": 189.05923410491002,
+          "p95": 252.46793571958682,
+          "max": 305.74280303317784,
+          "std": 50.49973898212833
+        },
+        "interpretation": "Extractor voicing decisions and F0 estimates; not a quality or intelligibility score."
+      }
+    }
+  ]
+}

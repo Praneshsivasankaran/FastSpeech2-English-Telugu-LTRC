@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "file_count": 258,
+  "transformations": [
+    {
+      "path": "English/preprocessed/train.jsonl",
+      "rows": 3047,
+      "portable_metadata_unchanged": true,
+      "portable_metadata_sha256": "7482e70e503833186a4b3317843fb11aae96a9c5c55b35d7b65205b5e6b76ff2",
+      "removed_locators": [
+        "audio_path",
+        "wav_path",
+        "raw_features"
+      ]
+    },
+    {
+      "path": "English/preprocessed/unused.jsonl",
+      "rows": 309,
+      "portable_metadata_unchanged": true,
+      "portable_metadata_sha256": "5115a29dc7ad7d303c381974ad0adcf5906b81fea06c7b7f16c7206f926669e8",
+      "removed_locators": [
+        "audio_path",
+        "wav_path",
+        "raw_features"
+      ]
+    },
+    {
+      "path": "English/preprocessed/val.jsonl",
+      "rows": 615,
+      "portable_metadata_unchanged": true,
+      "portable_metadata_sha256": "db32337627476288068fab1a9bc973ece9b8a292142bddc5c30248b33042ec20",
+      "removed_locators": [
+        "audio_path",
+        "wav_path",
+        "raw_features"
+      ]
+    },
+    {
+      "path": "Telugu/preprocessed/train.jsonl",
+      "rows": 1177,
+      "portable_metadata_unchanged": true,
+      "portable_metadata_sha256": "091ae2337fad2c8f715d3abb7440f4e6b0e376131b4d9f5eaa23f9f551e2cb96",
+      "removed_locators": [
+        "audio_path",
+        "wav_path",
+        "raw_features"
+      ]
+    },
+    {
+      "path": "Telugu/preprocessed/unused.jsonl",
+      "rows": 123,
+      "portable_metadata_unchanged": true,
+      "portable_metadata_sha256": "290c207e529d65b2641371a6d62a533c857497be73a34e37ffbc9b7c13fc8ed2",
+      "removed_locators": [
+        "audio_path",
+        "wav_path",
+        "raw_features"
+      ]
+    },
+    {
+      "path": "Telugu/preprocessed/val.jsonl",
+      "rows": 241,
+      "portable_metadata_unchanged": true,
+      "portable_metadata_sha256": "ee7f2ff7c2b3f6beb0a3f31978d8c1fa8428857981eba5a4bf8162b0e7ec7afe",
+      "removed_locators": [
+        "audio_path",
+        "wav_path",
+        "raw_features"
+      ]
+    },
+    {
+      "path": "provenance/cloud_run.json",
+      "change": "Omit private account and billing fields; preserve execution and cleanup evidence",
+      "removed_fields": [
+        "billing_note",
+        "estimated_compute_charge_upper_bound_usd",
+        "maximum_user_budget_usd",
+        "observed_account_balance_usd",
+        "observed_balance_reduction_usd"
+      ]
+    },
+    {
+      "path": "provenance/smoke_training_evidence.json",
+      "change": "Replace private development WAV locators; preserve measurements and SHA256"
+    }
+  ],
+  "source_modified": false,
+  "refreshed_existing_sanitized_copy": true,
+  "excluded": [
+    "raw datasets/audio",
+    "features/alignments",
+    "Git history",
+    "private development outputs",
+    "unneeded upstream presets"
+  ],
+  "note": "Checkpoint and result bytes are copied unchanged. Only documented public-copy transforms remove private locators and financial fields."
+}

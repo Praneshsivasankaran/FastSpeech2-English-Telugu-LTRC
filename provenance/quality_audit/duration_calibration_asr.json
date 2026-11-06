@@ -1,0 +1,349 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-06T11:49:00.912546+00:00",
+  "language": "en",
+  "language_name": "English",
+  "interpretation": "These are ASR hypotheses and text-comparison error rates, not ground-truth transcripts or a pronunciation score. Errors can arise from the recognizer, the synthesized speech, or text conventions. A low WER/CER does not establish correct stress, homograph sense, pronunciation, naturalness, or timing. A high WER/CER does not by itself prove a TTS error. Human listening is required.",
+  "normalization": "Unicode NFC; casefold; remove apostrophes and zero-width joiners; replace other punctuation/symbols with spaces; collapse whitespace; preserve Unicode letters, combining marks and digits. No spelling repairs, number/date/time expansion, transliteration, or correction of the deliberate input anomalies. WER uses whitespace-separated words; CER uses Unicode code points excluding whitespace (not grapheme clusters, so Telugu vowel signs count separately).",
+  "source": {
+    "diagnostics_sha256": "c7a4a4eabeee688ccbb79db6befc8f16176c6de38b57b40d8ed25b3ea3e5f5d3",
+    "checkpoint_step": 7000,
+    "fitted_duration_control": 1.1398149817792733
+  },
+  "model": {
+    "engine": "faster-whisper / CTranslate2 local inference",
+    "requested_model": "large-v3-turbo",
+    "repository_id": "mobiuslabsgmbh/faster-whisper-large-v3-turbo",
+    "requested_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "resolved_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "revision_source": "Hugging Face cached snapshot directory; no network query",
+    "model_file_sha256": {
+      "config.json": "b0253ea6c0d3bea6b1e19e91a02acfd3b53f4467362efcb5a3e6b16c9b3a9b7e",
+      "model.bin": "e76620f83d5f5b69efd3d87e3dc180c1bd21df9fbebacfd4335e5e1efcc018da",
+      "preprocessor_config.json": "7ccc62c6f2765af1f3b46c00c9b5894426835a05021c8b9c01eecb6dfb542711",
+      "tokenizer.json": "297b13372ac43916285644fb9687add3cc62ee2a1adb60da3dc25cc94c1871fd",
+      "vocabulary.json": "c69260f2ab26d659b7c398f9a2b2b48ed0df16c3b47d7326782fd9cba71690c1"
+    },
+    "requested_device": "cpu",
+    "requested_compute_type": "int8",
+    "cpu_threads": 4,
+    "versions": {
+      "python": "3.11.18",
+      "faster-whisper": "1.2.1",
+      "ctranslate2": "4.8.5",
+      "huggingface-hub": "2.4.0",
+      "av": "18.1.0",
+      "tokenizers": "0.23.3",
+      "numpy": "2.4.6"
+    },
+    "audio_uploaded": false
+  },
+  "decoding": {
+    "language": "en",
+    "language_is_forced": true,
+    "task": "transcribe",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "initial_prompt": null,
+    "hotwords": null,
+    "note": "Reference text is not supplied as a decoding prompt."
+  },
+  "aggregate": {
+    "sample_count": 3,
+    "word_edit_distance": 13,
+    "reference_word_count": 26,
+    "wer": 0.5,
+    "character_edit_distance": 44,
+    "reference_character_count": 134,
+    "cer": 0.3283582089552239,
+    "aggregation": "micro-average within this language"
+  },
+  "samples": [
+    {
+      "id": "en_test-00000-of-00003_000970",
+      "text": "Brazil, Cambodia, Japan, Spain, Greece.",
+      "language": "en",
+      "wav_path": "en_test-00000-of-00003_000970.wav",
+      "wav_sha256": "605194bba28496535cf55301c01b671791c9b0f5e7fd1389c309afe78049e6d2",
+      "duration_seconds": 3.1579138321995464,
+      "asr_transcript": "Bozit Amodi, Japan, Spainways.",
+      "segments": [
+        {
+          "start_seconds": 0.0,
+          "end_seconds": 3.04,
+          "text": " Bozit Amodi, Japan, Spainways."
+        }
+      ],
+      "metrics": {
+        "reference_normalized": "brazil cambodia japan spain greece",
+        "hypothesis_normalized": "bozit amodi japan spainways",
+        "word_edit_distance": 4,
+        "reference_word_count": 5,
+        "hypothesis_word_count": 4,
+        "wer": 0.8,
+        "character_edit_distance": 12,
+        "reference_character_count": 30,
+        "hypothesis_character_count": 24,
+        "cer": 0.4
+      }
+    },
+    {
+      "id": "en_test-00000-of-00003_002008",
+      "text": "eat seasonal fruits and use these flowers for worshipping and so on.",
+      "language": "en",
+      "wav_path": "en_test-00000-of-00003_002008.wav",
+      "wav_sha256": "6caa0a64d42f26f79e7956b09659d332a38684fcf6e0579f72660a85341b685f",
+      "duration_seconds": 5.027120181405896,
+      "asr_transcript": "Treat seasonal fruits and use these flowers for worshipping and so on.",
+      "segments": [
+        {
+          "start_seconds": 0.0,
+          "end_seconds": 4.98,
+          "text": " Treat seasonal fruits and use these flowers for worshipping and so on."
+        }
+      ],
+      "metrics": {
+        "reference_normalized": "eat seasonal fruits and use these flowers for worshipping and so on",
+        "hypothesis_normalized": "treat seasonal fruits and use these flowers for worshipping and so on",
+        "word_edit_distance": 1,
+        "reference_word_count": 12,
+        "hypothesis_word_count": 12,
+        "wer": 0.08333333333333333,
+        "character_edit_distance": 2,
+        "reference_character_count": 56,
+        "hypothesis_character_count": 58,
+        "cer": 0.03571428571428571
+      }
+    },
+    {
+      "id": "en_test-00001-of-00003_001541",
+      "text": "Especially this Yaksha Gana and its various versions are",
+      "language": "en",
+      "wav_path": "en_test-00001-of-00003_001541.wav",
+      "wav_sha256": "07200dc267480e30b2d1c558353e2e21d0103ed3b078c924608077f17383e3cf",
+      "duration_seconds": 3.900952380952381,
+      "asr_transcript": "especially if this reaction on landings where these wounds are hurt.",
+      "segments": [
+        {
+          "start_seconds": 0.0,
+          "end_seconds": 3.9,
+          "text": " especially if this reaction on landings where these wounds are hurt."
+        }
+      ],
+      "metrics": {
+        "reference_normalized": "especially this yaksha gana and its various versions are",
+        "hypothesis_normalized": "especially if this reaction on landings where these wounds are hurt",
+        "word_edit_distance": 8,
+        "reference_word_count": 9,
+        "hypothesis_word_count": 11,
+        "wer": 0.8888888888888888,
+        "character_edit_distance": 30,
+        "reference_character_count": 48,
+        "hypothesis_character_count": 57,
+        "cer": 0.625
+      }
+    }
+  ],
+  "scope": "Diagnostic only: duration multiplier fitted on disjoint 64 validation rows, scored once on the frozen 3 probes; no final artifacts altered.",
+  "baseline_report_path": "assessment.json",
+  "baseline_report_sha256": "0169d2bf386c313762b0aab675fd7154fff8a03aaed2fcbcb0187868b1f12b3c",
+  "baseline_aggregate": {
+    "sample_count": 3,
+    "word_edit_distance": 10,
+    "reference_word_count": 26,
+    "wer": 0.38461538461538464,
+    "character_edit_distance": 41,
+    "reference_character_count": 134,
+    "cer": 0.30597014925373134,
+    "aggregation": "micro-average within this language"
+  },
+  "baseline_samples": [
+    {
+      "id": "en_test-00000-of-00003_000970",
+      "text": "Brazil, Cambodia, Japan, Spain, Greece.",
+      "language": "en",
+      "wav_path": "en_test-00000-of-00003_000970.wav",
+      "wav_sha256": "b6ebaef5d91b43edd7c982b648f6fc0a5952a0ba1136ce205a42dcce48baab15",
+      "duration_seconds": 2.9257142857142857,
+      "asr_transcript": "Bursley downloading Japan-Spainways.",
+      "segments": [
+        {
+          "start_seconds": 0.0,
+          "end_seconds": 2.8000000000000003,
+          "text": " Bursley downloading Japan-Spainways."
+        }
+      ],
+      "metrics": {
+        "reference_normalized": "brazil cambodia japan spain greece",
+        "hypothesis_normalized": "bursley downloading japan spainways",
+        "word_edit_distance": 4,
+        "reference_word_count": 5,
+        "hypothesis_word_count": 4,
+        "wer": 0.8,
+        "character_edit_distance": 19,
+        "reference_character_count": 30,
+        "hypothesis_character_count": 32,
+        "cer": 0.6333333333333333
+      }
+    },
+    {
+      "id": "en_test-00000-of-00003_002008",
+      "text": "eat seasonal fruits and use these flowers for worshipping and so on.",
+      "language": "en",
+      "wav_path": "en_test-00000-of-00003_002008.wav",
+      "wav_sha256": "6c21585952431f589f32d5d795051f1284108ff1a52f96b98de28a160d2fe1fd",
+      "duration_seconds": 4.655600907029479,
+      "asr_transcript": "Treat seasonal fruits and use these flowers for worshipping and so on.",
+      "segments": [
+        {
+          "start_seconds": 0.0,
+          "end_seconds": 4.64,
+          "text": " Treat seasonal fruits and use these flowers for worshipping and so on."
+        }
+      ],
+      "metrics": {
+        "reference_normalized": "eat seasonal fruits and use these flowers for worshipping and so on",
+        "hypothesis_normalized": "treat seasonal fruits and use these flowers for worshipping and so on",
+        "word_edit_distance": 1,
+        "reference_word_count": 12,
+        "hypothesis_word_count": 12,
+        "wer": 0.08333333333333333,
+        "character_edit_distance": 2,
+        "reference_character_count": 56,
+        "hypothesis_character_count": 58,
+        "cer": 0.03571428571428571
+      }
+    },
+    {
+      "id": "en_test-00001-of-00003_001541",
+      "text": "Especially this Yaksha Gana and its various versions are",
+      "language": "en",
+      "wav_path": "en_test-00001-of-00003_001541.wav",
+      "wav_sha256": "9eab1db53f3e0a6056ea9c78103d8e728490bb751b06647707eb711d8b6683fc",
+      "duration_seconds": 3.645532879818594,
+      "asr_transcript": "especially with dyslexia and its various women's work.",
+      "segments": [
+        {
+          "start_seconds": 0.0,
+          "end_seconds": 3.64,
+          "text": " especially with dyslexia and its various women's work."
+        }
+      ],
+      "metrics": {
+        "reference_normalized": "especially this yaksha gana and its various versions are",
+        "hypothesis_normalized": "especially with dyslexia and its various womens work",
+        "word_edit_distance": 5,
+        "reference_word_count": 9,
+        "hypothesis_word_count": 8,
+        "wer": 0.5555555555555556,
+        "character_edit_distance": 20,
+        "reference_character_count": 48,
+        "hypothesis_character_count": 45,
+        "cer": 0.4166666666666667
+      }
+    }
+  ],
+  "source_recording_control": {
+    "scope": "Same recognizer/settings on original held-out recordings; reference text not supplied to decoder.",
+    "aggregate": {
+      "sample_count": 3,
+      "word_edit_distance": 2,
+      "reference_word_count": 26,
+      "wer": 0.07692307692307693,
+      "character_edit_distance": 2,
+      "reference_character_count": 134,
+      "cer": 0.014925373134328358,
+      "aggregation": "micro-average within this language"
+    },
+    "samples": [
+      {
+        "id": "en_test-00000-of-00003_000970",
+        "text": "Brazil, Cambodia, Japan, Spain, Greece.",
+        "language": "en",
+        "wav_path": "en_test-00000-of-00003_000970.wav",
+        "wav_sha256": "97d138733e9d50c164324c41b71fa4c04952fe723c3ec1a1d5b801e04fbcb469",
+        "duration_seconds": 5.974625,
+        "asr_transcript": "Brazil, Cambodia, Japan, Spain, Greece",
+        "segments": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 5.96,
+            "text": " Brazil, Cambodia, Japan, Spain, Greece"
+          }
+        ],
+        "metrics": {
+          "reference_normalized": "brazil cambodia japan spain greece",
+          "hypothesis_normalized": "brazil cambodia japan spain greece",
+          "word_edit_distance": 0,
+          "reference_word_count": 5,
+          "hypothesis_word_count": 5,
+          "wer": 0.0,
+          "character_edit_distance": 0,
+          "reference_character_count": 30,
+          "hypothesis_character_count": 30,
+          "cer": 0.0
+        }
+      },
+      {
+        "id": "en_test-00000-of-00003_002008",
+        "text": "eat seasonal fruits and use these flowers for worshipping and so on.",
+        "language": "en",
+        "wav_path": "en_test-00000-of-00003_002008.wav",
+        "wav_sha256": "4e67e99a2885855f621d68d5b13f4bf69272bb47906a87f1d0c1f69652d46fd2",
+        "duration_seconds": 5.30875,
+        "asr_transcript": "eat seasonal fruits and use these flowers for worshipping and so on.",
+        "segments": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 4.76,
+            "text": " eat seasonal fruits and use these flowers for worshipping and so on."
+          }
+        ],
+        "metrics": {
+          "reference_normalized": "eat seasonal fruits and use these flowers for worshipping and so on",
+          "hypothesis_normalized": "eat seasonal fruits and use these flowers for worshipping and so on",
+          "word_edit_distance": 0,
+          "reference_word_count": 12,
+          "hypothesis_word_count": 12,
+          "wer": 0.0,
+          "character_edit_distance": 0,
+          "reference_character_count": 56,
+          "hypothesis_character_count": 56,
+          "cer": 0.0
+        }
+      },
+      {
+        "id": "en_test-00001-of-00003_001541",
+        "text": "Especially this Yaksha Gana and its various versions are",
+        "language": "en",
+        "wav_path": "en_test-00001-of-00003_001541.wav",
+        "wav_sha256": "3415c9104675ce5249dcd3af4ad059d2ccb08f0bbb79d1a30332c68917acd048",
+        "duration_seconds": 4.1803125,
+        "asr_transcript": "especially this Ekshagana and its various versions are",
+        "segments": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 4.32,
+            "text": " especially this Ekshagana and its various versions are"
+          }
+        ],
+        "metrics": {
+          "reference_normalized": "especially this yaksha gana and its various versions are",
+          "hypothesis_normalized": "especially this ekshagana and its various versions are",
+          "word_edit_distance": 2,
+          "reference_word_count": 9,
+          "hypothesis_word_count": 8,
+          "wer": 0.2222222222222222,
+          "character_edit_distance": 2,
+          "reference_character_count": 48,
+          "hypothesis_character_count": 47,
+          "cer": 0.041666666666666664
+        }
+      }
+    ],
+    "reused_from": "assessment.json",
+    "reused_report_sha256": "49818508f812f222dbd5e2b8623997bf40e486bf36417366ed2a2e41a74b999e"
+  }
+}

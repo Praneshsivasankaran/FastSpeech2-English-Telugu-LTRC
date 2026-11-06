@@ -1,0 +1,185 @@
+{
+  "status": "REAL-DATA DEVELOPMENT SMOKE ONLY",
+  "final_models_trained": false,
+  "assignment_audio_generated": false,
+  "scope": "Full original FastSpeech2 network trained for ten smoke steps per language; independent tiny held-out validation and target-mel vocoder reconstruction.",
+  "limitations": [
+    "Not 5h training/1h validation; production duration gate deliberately bypassed with --benchmark.",
+    "Timings use batch1 and short utterances; insufficient to extrapolate complete dataset throughput.",
+    "English fixture shares an unverified demographic profile rather than verified speaker identity.",
+    "Telugu phoneme alignment uses zero-shot CUPE-3-mls7; human boundary and pronunciation audit remains necessary.",
+    "Reconstruction WAVs are real target mels decoded with pretrained universal HiFi-GAN, not predicted TTS output."
+  ],
+  "languages": {
+    "English": {
+      "run": {
+        "language": "en",
+        "device": "mps",
+        "torch_version": "2.15.0",
+        "steps": 10,
+        "parameters": 36104513,
+        "median_step_seconds": 0.10439312504604459,
+        "mean_step_seconds": 0.10723210000433028,
+        "batch_size": 1,
+        "wall_seconds": 4.569951709010638,
+        "benchmark_only": true,
+        "training_examples": 2,
+        "validation_examples": 1,
+        "split_audit": {
+          "production_duration_gate": false,
+          "train_examples": 2,
+          "validation_examples": 1,
+          "train_seconds": 7.2498125,
+          "validation_seconds": 4.6668125,
+          "train_speakers": 1,
+          "validation_speakers": 1,
+          "overlap_checks": "passed",
+          "train_manifest_sha256": "8c82c4c0df3de49c8087b30ee6b7d69eba9b991719db1f5752f469a2afe54a00",
+          "validation_manifest_sha256": "824de9bdee960afdefba933ccb388bf7cb2ab52e5d175fb74d0c9e754c633025"
+        }
+      },
+      "validation": [
+        {
+          "total": 30.633970260620117,
+          "mel": 4.409539699554443,
+          "postnet_mel": 4.420569896697998,
+          "pitch": 18.404417037963867,
+          "energy": 1.4372776746749878,
+          "duration": 1.9621669054031372,
+          "examples": 1,
+          "step": 5
+        },
+        {
+          "total": 28.647846221923828,
+          "mel": 4.290475368499756,
+          "postnet_mel": 4.309168815612793,
+          "pitch": 17.922788619995117,
+          "energy": 1.4445997476577759,
+          "duration": 0.6808147430419922,
+          "examples": 1,
+          "step": 10
+        }
+      ],
+      "first_training_loss": 23.7701473236084,
+      "last_training_loss": 14.58712100982666,
+      "production_gate_correctly_rejects": "Production training requires about 5h audio (+/-10%); got 0.002h",
+      "reconstruction_audit": [
+        {
+          "id": "en_test-00000-of-00003_000001",
+          "split": "train",
+          "status": "target-mel vocoder reconstruction, not predicted speech",
+          "wav": "private-development/en_test-00000-of-00003_000001.target_reconstruction.wav",
+          "frames": 68608,
+          "seconds": 3.111473922902494,
+          "rms": 0.06074522063136101,
+          "peak": 0.3925909698009491,
+          "sha256": "4411bcd2dac94ae99e699c55ecb00623c66cd8adf0f72f84939badc0d8279cb9",
+          "wav_location_note": "Development audio is not distributed; original machine path removed."
+        },
+        {
+          "id": "en_test-00000-of-00003_000068",
+          "split": "train",
+          "status": "target-mel vocoder reconstruction, not predicted speech",
+          "wav": "private-development/en_test-00000-of-00003_000068.target_reconstruction.wav",
+          "frames": 91648,
+          "seconds": 4.156371882086168,
+          "rms": 0.035634685307741165,
+          "peak": 0.29952147603034973,
+          "sha256": "27d7676ba75c0b5b6455d7e2960d5bd960469a32b2447f8a5116cafba5ad5c68",
+          "wav_location_note": "Development audio is not distributed; original machine path removed."
+        },
+        {
+          "id": "en_test-00000-of-00003_000096",
+          "split": "val",
+          "status": "target-mel vocoder reconstruction, not predicted speech",
+          "wav": "private-development/en_test-00000-of-00003_000096.target_reconstruction.wav",
+          "frames": 102912,
+          "seconds": 4.667210884353741,
+          "rms": 0.06352011114358902,
+          "peak": 0.391524076461792,
+          "sha256": "038ade8f441e5b71a9047fbbf9d423686f0b061a0b3c3f0a87bd6754cf82dbff",
+          "wav_location_note": "Development audio is not distributed; original machine path removed."
+        }
+      ]
+    },
+    "Telugu": {
+      "run": {
+        "language": "te",
+        "device": "mps",
+        "torch_version": "2.15.0",
+        "steps": 10,
+        "parameters": 36100161,
+        "median_step_seconds": 0.07668529194779694,
+        "mean_step_seconds": 0.08071411680430174,
+        "batch_size": 1,
+        "wall_seconds": 4.553126540966332,
+        "benchmark_only": true,
+        "training_examples": 1,
+        "validation_examples": 1,
+        "split_audit": {
+          "production_duration_gate": false,
+          "train_examples": 1,
+          "validation_examples": 1,
+          "train_seconds": 2.162,
+          "validation_seconds": 8.268875,
+          "train_speakers": 1,
+          "validation_speakers": 1,
+          "overlap_checks": "passed",
+          "train_manifest_sha256": "81969e1b05f987f7e8bcdace28a7b612201ffb4ecb79311caff9224202021f37",
+          "validation_manifest_sha256": "979b77290f7f024f73a70c89a538fcccd3d03b2a99dc2d1adbafaaa73902fdfd"
+        }
+      },
+      "validation": [
+        {
+          "total": 16.338512420654297,
+          "mel": 5.439413070678711,
+          "postnet_mel": 5.431750774383545,
+          "pitch": 1.1483157873153687,
+          "energy": 0.5491690635681152,
+          "duration": 3.7698636054992676,
+          "examples": 1,
+          "step": 5
+        },
+        {
+          "total": 15.044841766357422,
+          "mel": 5.308839797973633,
+          "postnet_mel": 5.271785736083984,
+          "pitch": 1.4360716342926025,
+          "energy": 1.105103850364685,
+          "duration": 1.9230414628982544,
+          "examples": 1,
+          "step": 10
+        }
+      ],
+      "first_training_loss": 26.116899490356445,
+      "last_training_loss": 14.28219985961914,
+      "production_gate_correctly_rejects": "Production training requires about 5h audio (+/-10%); got 0.001h",
+      "reconstruction_audit": [
+        {
+          "id": "telugu_0000",
+          "split": "train",
+          "status": "target-mel vocoder reconstruction, not predicted speech",
+          "wav": "private-development/telugu_0000.target_reconstruction.wav",
+          "frames": 47872,
+          "seconds": 2.1710657596371883,
+          "rms": 0.07969041913747787,
+          "peak": 0.5236631035804749,
+          "sha256": "61a6953ab94ecc47bb5039c953fb7f7349bd8b0da3c944a08350dcee2d5dea00",
+          "wav_location_note": "Development audio is not distributed; original machine path removed."
+        },
+        {
+          "id": "telugu_0004",
+          "split": "val",
+          "status": "target-mel vocoder reconstruction, not predicted speech",
+          "wav": "private-development/telugu_0004.target_reconstruction.wav",
+          "frames": 182528,
+          "seconds": 8.277913832199546,
+          "rms": 0.07991521060466766,
+          "peak": 0.5047503709793091,
+          "sha256": "1dccaf912c7145239b814c06a3b9ed692bc611da26ba69f123c049f322ec4b01",
+          "wav_location_note": "Development audio is not distributed; original machine path removed."
+        }
+      ]
+    }
+  }
+}

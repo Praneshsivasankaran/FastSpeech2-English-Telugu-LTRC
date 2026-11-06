@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-05T11:41:34.312136+00:00",
+  "selected_file": "selected.pt",
+  "selected_sha256": "44cf8b5d39856ffc337d734507001f5bd1d944d542780868ca09a4d5f719cdcf",
+  "selected_step": 7000,
+  "selection_basis": "fixed_validation_comparison",
+  "rationale": "The later checkpoint reduces both WER and CER on the same three fixed validation probes and is retained as the better available synthesis artifact. Neither candidate passes the predeclared quality rule: the later country-list duration ratio remains below 0.5. This pragmatic artifact preference is not a validated-quality winner.",
+  "validation_probe_manifest_sha256": "ece858ca512c3727fc795406b38f4b839fd8e2e66695966fee9c85c4f6b282ed",
+  "probe_ids": [
+    "en_test-00000-of-00003_000970",
+    "en_test-00000-of-00003_002008",
+    "en_test-00001-of-00003_001541"
+  ],
+  "candidates": [
+    {
+      "label": "minimum_total",
+      "step": 1500,
+      "sha256": "17ad591e4ef9e269df9e3da05737fb4ea52d35d1b5eec7f1229ff3231446afcc",
+      "wer": 0.6923076923076923,
+      "cer": 0.4552238805970149,
+      "duration_ratio_min": 0.4022453804418602,
+      "duration_ratio_max": 0.8581853613090596,
+      "valid_audio": true,
+      "passes_quality_gate": false
+    },
+    {
+      "label": "later_fixed",
+      "step": 7000,
+      "sha256": "44cf8b5d39856ffc337d734507001f5bd1d944d542780868ca09a4d5f719cdcf",
+      "wer": 0.38461538461538464,
+      "cer": 0.30597014925373134,
+      "duration_ratio_min": 0.48969002836400377,
+      "duration_ratio_max": 0.8769674418703987,
+      "valid_audio": true,
+      "passes_quality_gate": false
+    }
+  ],
+  "source_controls": {
+    "wer": 0.07692307692307693,
+    "cer": 0.014925373134328358
+  },
+  "decision": "later_best_available_failed_quality_gate",
+  "quality_gate_passed": false,
+  "protocol_note": "Earlier assignment-ASR diagnostics motivated this post-hoc review; the assignment set is not a pristine untouched test. Exactly three validation prompts and two checkpoints were then fixed before later-candidate evaluation. The frozen rule remains inconclusive. No native listening was performed. English artifact preference is an explicitly disclosed best-available decision despite the failed duration gate; no threshold or score was changed.",
+  "frozen_criterion": {
+    "frozen_utc": "2026-11-05T11:37:41.788844+00:00",
+    "scope": "Exactly the existing frozen three project-validation probes per language; compare the baseline and the one supplied later checkpoint only. No assignment test samples or additional checkpoint search.",
+    "score_rule": "Prefer the candidate with strictly lower micro-averaged WER, provided micro-averaged CER does not increase, and it has no severe artifact/coverage/duration failure. If scores conflict, tie, or neither candidate satisfies the gates, mark inconclusive rather than infer human quality.",
+    "severe_failure_rules": [
+      "Missing or nonfinite WAV/prediction artifact or zero/silent generated waveform (RMS <= 1e-5).",
+      "Empty ASR transcript.",
+      "Any generated/source duration ratio below 0.5 or above 2.0."
+    ],
+    "threshold_note": "Broad internal screening thresholds, fixed before later-candidate inference; not perceptually validated quality thresholds.",
+    "asr": "Pinned faster-whisper large-v3-turbo 0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf, CPU int8, language forced, beam 5, temperature 0, no prompt/hotwords.",
+    "selection_warning": "A choice applies only among these two supplied checkpoints on these three validation probes. No human-listening or native-quality claim."
+  },
+  "per_probe_comparison": [
+    {
+      "label": "baseline",
+      "probes": [
+        {
+          "id": "en_test-00000-of-00003_000970",
+          "text": "Brazil, Cambodia, Japan, Spain, Greece.",
+          "asr_transcript": "Was it a movie Japan's game race?",
+          "metrics": {
+            "reference_normalized": "brazil cambodia japan spain greece",
+            "hypothesis_normalized": "was it a movie japans game race",
+            "word_edit_distance": 7,
+            "reference_word_count": 5,
+            "hypothesis_word_count": 7,
+            "wer": 1.4,
+            "character_edit_distance": 14,
+            "reference_character_count": 30,
+            "hypothesis_character_count": 25,
+            "cer": 0.4666666666666667
+          },
+          "source_duration_seconds": 5.974625,
+          "generated_duration_seconds": 2.403265306122449,
+          "generated_to_source_duration_ratio": 0.4022453804418602,
+          "wav_sha256": "308b54b3c0808594a9c066c376b5de499c04e550e88bd557b5037768a4b1fbac",
+          "source_wav_sha256": "97d138733e9d50c164324c41b71fa4c04952fe723c3ec1a1d5b801e04fbcb469",
+          "finite": true,
+          "rms": 0.05448443677089007,
+          "peak": 0.280120849609375,
+          "pcm_rail_hits": 0,
+          "prediction_sha256": "985224cc20a105ea10128656aeeb585a50925da9583b8fb68325fa3465f31a30",
+          "zero_duration_phone_count": 1,
+          "plot_sha256": {
+            "duration": "3ec75b1f5a25e946b387e99036ff09fa2d1a4e1445e7aa96f23cf815b0b380b6",
+            "pitch": "bdd45d1930cb3c3f1b3d7fb46aa68baaf8d5616be17badda48da3912a214a41c",
+            "energy": "33f17abe2fac17e0caf3dc818d5df822289dbb78317c657d9d8583ee0453772c"
+          }
+        },
+        {
+          "id": "en_test-00000-of-00003_002008",
+          "text": "eat seasonal fruits and use these flowers for worshipping and so on.",
+          "asr_transcript": "It's seasoning, fruits and beans, these flowers for worshipping them, so on.",
+          "metrics": {
+            "reference_normalized": "eat seasonal fruits and use these flowers for worshipping and so on",
+            "hypothesis_normalized": "its seasoning fruits and beans these flowers for worshipping them so on",
+            "word_edit_distance": 4,
+            "reference_word_count": 12,
+            "hypothesis_word_count": 12,
+            "wer": 0.3333333333333333,
+            "character_edit_distance": 15,
+            "reference_character_count": 56,
+            "hypothesis_character_count": 60,
+            "cer": 0.26785714285714285
+          },
+          "source_duration_seconds": 5.30875,
+          "generated_duration_seconds": 4.307301587301588,
+          "generated_to_source_duration_ratio": 0.8113589050721145,
+          "wav_sha256": "ce97c6c540c62ad4f081d09973872a6acfc50f1b891fe15b0cbf763034d2989a",
+          "source_wav_sha256": "4e67e99a2885855f621d68d5b13f4bf69272bb47906a87f1d0c1f69652d46fd2",
+          "finite": true,
+          "rms": 0.05022583001997992,
+          "peak": 0.258514404296875,
+          "pcm_rail_hits": 0,
+          "prediction_sha256": "771dce6ee92612d330ce825e2572056fc9098b951e17240b1305adf401d8bb40",
+          "zero_duration_phone_count": 0,
+          "plot_sha256": {
+            "duration": "677904b5ca809ef73c14035e8b040ba73a6b93ecac270fa2f1dc39a6fbcba3e8",
+            "pitch": "d5a2632d937b6782cff67aecaeadd506356ec576b210202e85ea2f15c627068c",
+            "energy": "69daf518c59ed551b1343276f17bf18f450df8e7d06637c763aac42c8b942cec"
+          }
+        },
+        {
+          "id": "en_test-00001-of-00003_001541",
+          "text": "Especially this Yaksha Gana and its various versions are",
+          "asr_transcript": "Especially this reaction from the analytics release washing store.",
+          "metrics": {
+            "reference_normalized": "especially this yaksha gana and its various versions are",
+            "hypothesis_normalized": "especially this reaction from the analytics release washing store",
+            "word_edit_distance": 7,
+            "reference_word_count": 9,
+            "hypothesis_word_count": 9,
+            "wer": 0.7777777777777778,
+            "character_edit_distance": 32,
+            "reference_character_count": 48,
+            "hypothesis_character_count": 57,
+            "cer": 0.6666666666666666
+          },
+          "source_duration_seconds": 4.1803125,
+          "generated_duration_seconds": 3.5874829931972787,
+          "generated_to_source_duration_ratio": 0.8581853613090596,
+          "wav_sha256": "31f950624902c1d0edb11a29fb55d5be5ebb2f0dc0f686f4f2947b563de0f092",
+          "source_wav_sha256": "3415c9104675ce5249dcd3af4ad059d2ccb08f0bbb79d1a30332c68917acd048",
+          "finite": true,
+          "rms": 0.045843633397326215,
+          "peak": 0.236968994140625,
+          "pcm_rail_hits": 0,
+          "prediction_sha256": "f81fa2b38d7419f309889a10e499c9d595027114a99d1d079c3991ef52c2b140",
+          "zero_duration_phone_count": 0,
+          "plot_sha256": {
+            "duration": "af90cc7c30b1b9841201ca5c27e93aaffb11de9235f48b48b44d067ded1d1115",
+            "pitch": "6177517a9ad232a61a1ea70bcade83bddf5a7f93bcd9fdb278e812b49249573b",
+            "energy": "e980dda75c45ac0783762b03572744427e3e9676bed772792a5c8a60d832b8a5"
+          }
+        }
+      ]
+    },
+    {
+      "label": "later",
+      "probes": [
+        {
+          "id": "en_test-00000-of-00003_000970",
+          "text": "Brazil, Cambodia, Japan, Spain, Greece.",
+          "asr_transcript": "Bursley downloading Japan-Spainways.",
+          "metrics": {
+            "reference_normalized": "brazil cambodia japan spain greece",
+            "hypothesis_normalized": "bursley downloading japan spainways",
+            "word_edit_distance": 4,
+            "reference_word_count": 5,
+            "hypothesis_word_count": 4,
+            "wer": 0.8,
+            "character_edit_distance": 19,
+            "reference_character_count": 30,
+            "hypothesis_character_count": 32,
+            "cer": 0.6333333333333333
+          },
+          "source_duration_seconds": 5.974625,
+          "generated_duration_seconds": 2.9257142857142857,
+          "generated_to_source_duration_ratio": 0.48969002836400377,
+          "wav_sha256": "b6ebaef5d91b43edd7c982b648f6fc0a5952a0ba1136ce205a42dcce48baab15",
+          "source_wav_sha256": "97d138733e9d50c164324c41b71fa4c04952fe723c3ec1a1d5b801e04fbcb469",
+          "finite": true,
+          "rms": 0.05834800402420919,
+          "peak": 0.397918701171875,
+          "pcm_rail_hits": 0,
+          "prediction_sha256": "3897c095ee0bce4dd042b613851c834ddbb0c2e627da502d1b64050f056a104f",
+          "zero_duration_phone_count": 2,
+          "plot_sha256": {
+            "duration": "60713ea5115574b2dad7d484189f2d1b4d7a2017c5f816c94d559062edf49b96",
+            "pitch": "7391d8eae13ca16cc66304d5c6bb97743e80b5f3fe7efc774dc44f251a2e88fa",
+            "energy": "7468341d2a893fe839c391e52c0abc0cb09ff1542872b9ff464d6274fb51809b"
+          }
+        },
+        {
+          "id": "en_test-00000-of-00003_002008",
+          "text": "eat seasonal fruits and use these flowers for worshipping and so on.",
+          "asr_transcript": "Treat seasonal fruits and use these flowers for worshipping and so on.",
+          "metrics": {
+            "reference_normalized": "eat seasonal fruits and use these flowers for worshipping and so on",
+            "hypothesis_normalized": "treat seasonal fruits and use these flowers for worshipping and so on",
+            "word_edit_distance": 1,
+            "reference_word_count": 12,
+            "hypothesis_word_count": 12,
+            "wer": 0.08333333333333333,
+            "character_edit_distance": 2,
+            "reference_character_count": 56,
+            "hypothesis_character_count": 58,
+            "cer": 0.03571428571428571
+          },
+          "source_duration_seconds": 5.30875,
+          "generated_duration_seconds": 4.655600907029479,
+          "generated_to_source_duration_ratio": 0.8769674418703987,
+          "wav_sha256": "6c21585952431f589f32d5d795051f1284108ff1a52f96b98de28a160d2fe1fd",
+          "source_wav_sha256": "4e67e99a2885855f621d68d5b13f4bf69272bb47906a87f1d0c1f69652d46fd2",
+          "finite": true,
+          "rms": 0.05211559668615006,
+          "peak": 0.304840087890625,
+          "pcm_rail_hits": 0,
+          "prediction_sha256": "7c72dcddb915bd0dde0081f7bccfa0da71b7ad93afc076d1aef2bc7d5b6f9d64",
+          "zero_duration_phone_count": 6,
+          "plot_sha256": {
+            "duration": "59b78d03ee4bf0bf6aa4e0fdad2944c3b7357c4fcceba9712a4d515313789ac5",
+            "pitch": "c2eec185c66c327228c541206d5e1e23c7e76a9aa2e9bb905c2d7f7e4aaf2a02",
+            "energy": "cdcc8681101349233642fa87e5b8d528add375c0872f34f722e54d19a94138bd"
+          }
+        },
+        {
+          "id": "en_test-00001-of-00003_001541",
+          "text": "Especially this Yaksha Gana and its various versions are",
+          "asr_transcript": "especially with dyslexia and its various women's work.",
+          "metrics": {
+            "reference_normalized": "especially this yaksha gana and its various versions are",
+            "hypothesis_normalized": "especially with dyslexia and its various womens work",
+            "word_edit_distance": 5,
+            "reference_word_count": 9,
+            "hypothesis_word_count": 8,
+            "wer": 0.5555555555555556,
+            "character_edit_distance": 20,
+            "reference_character_count": 48,
+            "hypothesis_character_count": 45,
+            "cer": 0.4166666666666667
+          },
+          "source_duration_seconds": 4.1803125,
+          "generated_duration_seconds": 3.645532879818594,
+          "generated_to_source_duration_ratio": 0.8720718558286238,
+          "wav_sha256": "9eab1db53f3e0a6056ea9c78103d8e728490bb751b06647707eb711d8b6683fc",
+          "source_wav_sha256": "3415c9104675ce5249dcd3af4ad059d2ccb08f0bbb79d1a30332c68917acd048",
+          "finite": true,
+          "rms": 0.04090112856905711,
+          "peak": 0.208587646484375,
+          "pcm_rail_hits": 0,
+          "prediction_sha256": "6c851f1337a276560a80edc40cd7b3e9699ce738b8caa0d98a42da69ab89e00c",
+          "zero_duration_phone_count": 6,
+          "plot_sha256": {
+            "duration": "f796daaec57d3e12464e0d82c124530c5b73c8a4583069ff6f55983f6effd496",
+            "pitch": "f0ac08e6316ac6ce58197d3bbb5d1c50f6328bcdc62dab37a8ade81059e08ca7",
+            "energy": "d46db4b911a91a3fe1f73eea9f2e1cce2cb145de7e017a27d40bf4fc1701ddf2"
+          }
+        }
+      ]
+    }
+  ]
+}

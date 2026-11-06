@@ -1,0 +1,456 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-06T11:52:29.879436+00:00",
+  "scope": "Bounded post-hoc quality audit on three frozen project-validation probes per language; no human listening or native-quality certification. Earlier assignment ASR motivated the diagnostics, so this is not an untouched final-test evaluation.",
+  "final_artifact_version": "FINAL FROZEN: English8842 sentence_context_v1, zero_sil_energy=false, duration/pitch1.0; Telugu2000 unchanged.",
+  "asr_model": {
+    "model": "large-v3-turbo",
+    "revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "faster_whisper": "1.2.1",
+    "ctranslate2": "4.8.5",
+    "device": "cpu",
+    "requested_compute_type": "int8",
+    "actual_compute_type": "int8_float32",
+    "reference_prompt_used": false
+  },
+  "controlled_metrics": {
+    "English": {
+      "original_recording": {
+        "sample_count": 3,
+        "word_edit_distance": 2,
+        "reference_word_count": 26,
+        "wer": 0.07692307692307693,
+        "character_edit_distance": 2,
+        "reference_character_count": 134,
+        "cer": 0.014925373134328358,
+        "aggregation": "micro-average within this language"
+      },
+      "target_mel_reconstruction": {
+        "sample_count": 3,
+        "word_edit_distance": 2,
+        "reference_word_count": 26,
+        "wer": 0.07692307692307693,
+        "character_edit_distance": 5,
+        "reference_character_count": 134,
+        "cer": 0.03731343283582089,
+        "aggregation": "micro-average within this language"
+      },
+      "selected_ground_truth_duration": {
+        "sample_count": 3,
+        "word_edit_distance": 14,
+        "reference_word_count": 26,
+        "wer": 0.5384615384615384,
+        "character_edit_distance": 51,
+        "reference_character_count": 134,
+        "cer": 0.3805970149253731,
+        "aggregation": "micro-average within this language"
+      },
+      "diagnostic_final_free": {
+        "sample_count": 3,
+        "word_edit_distance": 4,
+        "reference_word_count": 26,
+        "wer": 0.15384615384615385,
+        "character_edit_distance": 15,
+        "reference_character_count": 134,
+        "cer": 0.11194029850746269,
+        "aggregation": "micro-average within this language"
+      },
+      "diagnostic_final_ground_truth_duration": {
+        "sample_count": 3,
+        "word_edit_distance": 11,
+        "reference_word_count": 26,
+        "wer": 0.4230769230769231,
+        "character_edit_distance": 44,
+        "reference_character_count": 134,
+        "cer": 0.3283582089552239,
+        "aggregation": "micro-average within this language"
+      }
+    },
+    "Telugu": {
+      "original_recording": {
+        "sample_count": 3,
+        "word_edit_distance": 23,
+        "reference_word_count": 34,
+        "wer": 0.6764705882352942,
+        "character_edit_distance": 18,
+        "reference_character_count": 206,
+        "cer": 0.08737864077669903,
+        "aggregation": "micro-average within this language"
+      },
+      "target_mel_reconstruction": {
+        "sample_count": 3,
+        "word_edit_distance": 24,
+        "reference_word_count": 34,
+        "wer": 0.7058823529411765,
+        "character_edit_distance": 17,
+        "reference_character_count": 206,
+        "cer": 0.0825242718446602,
+        "aggregation": "micro-average within this language"
+      },
+      "selected_ground_truth_duration": {
+        "sample_count": 3,
+        "word_edit_distance": 25,
+        "reference_word_count": 34,
+        "wer": 0.7352941176470589,
+        "character_edit_distance": 33,
+        "reference_character_count": 206,
+        "cer": 0.16019417475728157,
+        "aggregation": "micro-average within this language"
+      },
+      "diagnostic_final_free": {
+        "sample_count": 3,
+        "word_edit_distance": 30,
+        "reference_word_count": 34,
+        "wer": 0.8823529411764706,
+        "character_edit_distance": 25,
+        "reference_character_count": 206,
+        "cer": 0.12135922330097088,
+        "aggregation": "micro-average within this language"
+      },
+      "diagnostic_final_ground_truth_duration": {
+        "sample_count": 3,
+        "word_edit_distance": 23,
+        "reference_word_count": 34,
+        "wer": 0.6764705882352942,
+        "character_edit_distance": 21,
+        "reference_character_count": 206,
+        "cer": 0.10194174757281553,
+        "aggregation": "micro-average within this language"
+      }
+    }
+  },
+  "rejected_duration_calibration": {
+    "fitted_on": "First64 sorted validation IDs, excluding the fixed three evaluation IDs",
+    "multiplier": 1.1398149817792733,
+    "baseline": {
+      "sample_count": 3,
+      "word_edit_distance": 10,
+      "reference_word_count": 26,
+      "wer": 0.38461538461538464,
+      "character_edit_distance": 41,
+      "reference_character_count": 134,
+      "cer": 0.30597014925373134,
+      "aggregation": "micro-average within this language"
+    },
+    "candidate": {
+      "sample_count": 3,
+      "word_edit_distance": 13,
+      "reference_word_count": 26,
+      "wer": 0.5,
+      "character_edit_distance": 44,
+      "reference_character_count": 134,
+      "cer": 0.3283582089552239,
+      "aggregation": "micro-average within this language"
+    },
+    "decision": "Rejected: both WER and CER worsened. Crossing a timing threshold alone did not establish better recognition."
+  },
+  "sil_energy_candidate": {
+    "checkpoint_step": 8842,
+    "change": "Set SIL-position energy conditioning to normalized linear zero; duration, pitch and non-SIL energy unchanged; no waveform masking.",
+    "baseline": {
+      "sample_count": 3,
+      "word_edit_distance": 4,
+      "reference_word_count": 26,
+      "wer": 0.15384615384615385,
+      "character_edit_distance": 15,
+      "reference_character_count": 134,
+      "cer": 0.11194029850746269,
+      "aggregation": "micro-average within this language"
+    },
+    "candidate": {
+      "sample_count": 3,
+      "word_edit_distance": 2,
+      "reference_word_count": 26,
+      "wer": 0.07692307692307693,
+      "character_edit_distance": 4,
+      "reference_character_count": 134,
+      "cer": 0.029850746268656716,
+      "aggregation": "micro-average within this language"
+    },
+    "decision": "Improved both WER and CER on the same three probes; supports a bounded inference candidate, not a claim of perfect speech.",
+    "assignment_causal_ablation": {
+      "scope": "All five English prompts, same8842 checkpoint and contextual frontend; raw duration/pitch/energy arrays and phone sequence verified identical. Descriptive post-hoc ablation only.",
+      "energy_on": {
+        "sample_count": 5,
+        "word_edit_distance": 22,
+        "reference_word_count": 58,
+        "wer": 0.3793103448275862,
+        "character_edit_distance": 50,
+        "reference_character_count": 334,
+        "cer": 0.1497005988023952,
+        "aggregation": "micro-average within this language"
+      },
+      "energy_off": {
+        "sample_count": 5,
+        "word_edit_distance": 16,
+        "reference_word_count": 58,
+        "wer": 0.27586206896551724,
+        "character_edit_distance": 38,
+        "reference_character_count": 334,
+        "cer": 0.11377245508982035,
+        "aggregation": "micro-average within this language"
+      },
+      "observation": "Energy-off improves assignment ASR while energy-on improved the three frozen validation probes. This documents a tradeoff and does not certify general quality or select a final recipe."
+    }
+  },
+  "contextual_frontend_candidate": {
+    "module": "tts/contextual_frontend.py",
+    "unit_tests_passed": 5,
+    "comparison_counts": {
+      "total": 16,
+      "contextual": 13,
+      "fallback": 3,
+      "changed": 3
+    },
+    "training_frontend_unchanged": true,
+    "stress_markers_encoded": false,
+    "unknown_vocabulary_phones": 0,
+    "fallback_assignment_ids": [
+      "E3",
+      "E4",
+      "T4"
+    ],
+    "changed_assignment_ids": [
+      "E1",
+      "E2a",
+      "E2b"
+    ],
+    "fixed_validation_phone_sequences_changed": false,
+    "combined_final_audio_evaluation": "Final five English WAVs exactly match the completed context-on/energy-off ablation; standard ASR rebound by exact audio hashes and texts. No human-listening quality certification.",
+    "causal_assignment_subset_check": {
+      "scope": "E1/E2a/E2b only, original7000 checkpoint, context on, SIL-energy off; descriptive post-hoc comparison, no clean-test claim.",
+      "baseline": {
+        "word_edit_distance": 5,
+        "reference_word_count": 32,
+        "wer": 0.15625,
+        "character_edit_distance": 14,
+        "reference_character_count": 222,
+        "cer": 0.06306306306306306
+      },
+      "candidate": {
+        "sample_count": 3,
+        "word_edit_distance": 6,
+        "reference_word_count": 32,
+        "wer": 0.1875,
+        "character_edit_distance": 18,
+        "reference_character_count": 222,
+        "cer": 0.08108108108108109,
+        "aggregation": "micro-average within this language"
+      },
+      "decision": "Did not preserve aggregate ASR recognition: one additional word edit and four additional character edits. Vowel target correction is verified, but acoustic improvement is not established."
+    }
+  },
+  "preserved_limitations": [
+    "The pre-frozen country-list duration gate failed; it is not retroactively marked passed.",
+    "The original selected-checkpoint comparison had no supported winner under its frozen metric/gate rule.",
+    "English profile60 is an unverified demographic grouping, not a verified speaker identity.",
+    "Telugu WER is strongly affected by orthographic spacing; source and target-mel controls have high WER too.",
+    "ASR text matches cannot establish heteronym stress, correct vowel length, native naturalness or semantic interpretation."
+  ],
+  "evidence": {
+    "controlled_asr.json": {
+      "file": "provenance/quality_audit/controlled_asr.json",
+      "sha256": "6c4de201b59c7d28ee54faf86d5f757c833b56a5867ca54b776c60373169f06a",
+      "source_content_sha256": "f73cf54ec68ce6831995adf3a9caa15b214b8fe3b7e49b37366a2d6f31d0bbd0"
+    },
+    "duration_calibration_asr.json": {
+      "file": "provenance/quality_audit/duration_calibration_asr.json",
+      "sha256": "24a9e2349c8925605bc95279e72f5bf368ce00b711a22c4e8d961412416e339c",
+      "source_content_sha256": "c31c68c4d2121d3b1bdce10ac44cde4119699c6572289a03b1ec2cb412bd79df"
+    },
+    "sil_energy_zero_asr.json": {
+      "file": "provenance/quality_audit/sil_energy_zero_asr.json",
+      "sha256": "ee404faef03545728bf002c7abd7d7d591438e9fa0f296a84dec39debcbef9c8",
+      "source_content_sha256": "7f8df6301a932a8b4e9b757da1237f50ea27d7f51f1761733031751d45c0629a"
+    },
+    "contextual_frontend_comparison.json": {
+      "file": "provenance/quality_audit/contextual_frontend_comparison.json",
+      "sha256": "3cf6695f8df735b89d180c701820f1564e1048ac3fc455b87fa8a6f3ef423289",
+      "source_content_sha256": "3cf6695f8df735b89d180c701820f1564e1048ac3fc455b87fa8a6f3ef423289"
+    },
+    "frontend_phoneme_trace.json": {
+      "file": "provenance/quality_audit/frontend_phoneme_trace.json",
+      "sha256": "4e171ce82206dd0d251eecb01ca7965093547112e5de32357e00b3c6747f5c32",
+      "source_content_sha256": "4e171ce82206dd0d251eecb01ca7965093547112e5de32357e00b3c6747f5c32"
+    },
+    "frozen_validation_decision.json": {
+      "file": "provenance/quality_audit/frozen_validation_decision.json",
+      "sha256": "0870b9906e0f8f2392d4293f780dc7c7db845b17da665f33ba10d0674dfb9378",
+      "source_content_sha256": "80482f72fb5027334fdd976b90f7be760358e87ecf3e5ab0234e1f375a5df9df"
+    },
+    "initial_final_asr_English.json": {
+      "file": "provenance/quality_audit/initial_final_asr_English.json",
+      "sha256": "4184283cb0380d5e702e79a6c2b3d686f62daef5603a3ff827cc8424af4745e9",
+      "source_content_sha256": "27a42336065c7e74e4e5ae5213239db98ed56991ae0d2114319d22026ca03bdd"
+    },
+    "initial_final_asr_Telugu.json": {
+      "file": "provenance/quality_audit/initial_final_asr_Telugu.json",
+      "sha256": "c0dfb8ba65a365a29b530d62c493afed4d93ee8a54447f58300c70870541cd75",
+      "source_content_sha256": "e2931e5aa65efe8aac59067c9576dafe9a9428eaa34ac5519597c2854b4f511c"
+    },
+    "final_v2_asr_English.json": {
+      "file": "provenance/quality_audit/final_v2_asr_English.json",
+      "sha256": "d3855f9c707091a4338e7324cfd5f6eedb45c19742a4f82d1083fb11aab9e34f",
+      "source_content_sha256": "0b344c661499b6fba57f9881cb50c74f890c32e5c2aa128926ed66dfcf04ad02"
+    },
+    "final_v2_asr_Telugu.json": {
+      "file": "provenance/quality_audit/final_v2_asr_Telugu.json",
+      "sha256": "d8f44670c509e0ac98bd13e27e15d232a81b819466dbbd34c3e2a486b43290bd",
+      "source_content_sha256": "9cd1948936792f22df9730bff5d93d715a85afa06a5f17531684c6930c6cdd27"
+    },
+    "final_v2_comparison.json": {
+      "file": "provenance/quality_audit/final_v2_comparison.json",
+      "sha256": "2c69d3e341be3d34a406712317ad4cdb061153642c7a12c77ca3337502ac3ab0"
+    },
+    "causal_context_7000.json": {
+      "file": "provenance/quality_audit/causal_context_7000.json",
+      "sha256": "e74d20ad870f9510ca792471cc871b6724a5f49e8a2c65892886e2be6a6dfbe0",
+      "source_content_sha256": "f520972ab5732f3e4865cae84d68e3f283bfacbd59353c2b820f3d3311feda55"
+    },
+    "causal_energy_8842.json": {
+      "file": "provenance/quality_audit/causal_energy_8842.json",
+      "sha256": "0cccb6dc99cebaba2c79ac6928ad1cc2fd35a29f4c565f40dd35c320ce0e2c26",
+      "source_content_sha256": "e54a6679444bddfe61432665681e24f5052ad928bfb4c70f8b1d0c06145c59ef"
+    },
+    "final_frozen_asr_English.json": {
+      "file": "provenance/quality_audit/final_frozen_asr_English.json",
+      "sha256": "19418f1a0aabe0a4339ce0640bb8d031dc6c640e99fa8aab1589d4dece2de78f",
+      "source_content_sha256": "a751c78dd3dc1b383c121f6c58cb93536f6d85c2141412653726cbed178b1878"
+    },
+    "final_frozen_asr_Telugu.json": {
+      "file": "provenance/quality_audit/final_frozen_asr_Telugu.json",
+      "sha256": "0b014bbe2398ea802b23de774438c6c5b5f00ea2e997fc084cd68c15932130bd",
+      "source_content_sha256": "9cd1948936792f22df9730bff5d93d715a85afa06a5f17531684c6930c6cdd27"
+    }
+  },
+  "final_v2_asr": {
+    "English": {
+      "initial_aggregate": {
+        "sample_count": 5,
+        "word_edit_distance": 14,
+        "reference_word_count": 58,
+        "wer": 0.2413793103448276,
+        "character_edit_distance": 30,
+        "reference_character_count": 334,
+        "cer": 0.08982035928143713,
+        "aggregation": "micro-average within this language"
+      },
+      "v2_aggregate": {
+        "sample_count": 5,
+        "word_edit_distance": 22,
+        "reference_word_count": 58,
+        "wer": 0.3793103448275862,
+        "character_edit_distance": 50,
+        "reference_character_count": 334,
+        "cer": 0.1497005988023952,
+        "aggregation": "micro-average within this language"
+      },
+      "regression_ids": [
+        "E2a",
+        "E2b",
+        "E3",
+        "E4"
+      ],
+      "checkpoint_steps": [
+        8842
+      ]
+    },
+    "Telugu": {
+      "initial_aggregate": {
+        "sample_count": 5,
+        "word_edit_distance": 32,
+        "reference_word_count": 37,
+        "wer": 0.8648648648648649,
+        "character_edit_distance": 57,
+        "reference_character_count": 229,
+        "cer": 0.24890829694323144,
+        "aggregation": "micro-average within this language"
+      },
+      "v2_aggregate": {
+        "sample_count": 5,
+        "word_edit_distance": 32,
+        "reference_word_count": 37,
+        "wer": 0.8648648648648649,
+        "character_edit_distance": 57,
+        "reference_character_count": 229,
+        "cer": 0.24890829694323144,
+        "aggregation": "micro-average within this language"
+      },
+      "regression_ids": [],
+      "checkpoint_steps": [
+        2000
+      ]
+    }
+  },
+  "experiments_stopped": true,
+  "final_freeze": {
+    "verified_utc": "2026-11-06T12:01:25.840413+00:00",
+    "languages": {
+      "English": {
+        "checkpoint_steps": [
+          8842
+        ],
+        "checkpoint_sha256": "48a2bc893c5192a7559408d4843a1d2f99b5bfab6196691edb636c6803ea7bac",
+        "asr": {
+          "sample_count": 5,
+          "word_edit_distance": 16,
+          "reference_word_count": 58,
+          "wer": 0.27586206896551724,
+          "character_edit_distance": 38,
+          "reference_character_count": 334,
+          "cer": 0.11377245508982035,
+          "aggregation": "micro-average within this language"
+        },
+        "manifest_sha256": "68dd144ad8bd1d6afd118145b127418df9bac9a32cf5596b60aaae9f4afdcaca",
+        "asr_file_sha256": "a751c78dd3dc1b383c121f6c58cb93536f6d85c2141412653726cbed178b1878",
+        "csv_file_sha256": "5b778c412b64aa67b40e4eb71ab71d550590183ef24d12ef3f2b56490cb76255",
+        "all_wav_hashes_verified": true,
+        "controls": {
+          "frontend": "sentence_context_v1",
+          "zero_sil_energy": false,
+          "sil_energy_linear_value": null,
+          "duration_control": 1.0,
+          "pitch_control": 1.0,
+          "max_frames": 3000
+        },
+        "transcript_provenance": {
+          "method": "reused_transcripts_for_byte_identical_audio",
+          "original_transcription_created_utc": "2026-11-06T11:58:41.766931+00:00",
+          "source_assessment_sha256": "e54a6679444bddfe61432665681e24f5052ad928bfb4c70f8b1d0c06145c59ef",
+          "source_evidence_file": "provenance/quality_audit/causal_energy_8842.json",
+          "validation": "All five audio SHA-256 hashes, exact reference texts, language and decoded durations match the prior local ASR run. Source manifest/sample hashes rebound to final published files."
+        }
+      },
+      "Telugu": {
+        "checkpoint_steps": [
+          2000
+        ],
+        "checkpoint_sha256": "7f32328011ab47edda7eadc67dc4331ce4e1a9f11a74fdc771b79e638f72f0bf",
+        "asr": {
+          "sample_count": 5,
+          "word_edit_distance": 32,
+          "reference_word_count": 37,
+          "wer": 0.8648648648648649,
+          "character_edit_distance": 57,
+          "reference_character_count": 229,
+          "cer": 0.24890829694323144,
+          "aggregation": "micro-average within this language"
+        },
+        "manifest_sha256": "b3fe28f6dcb620669d5d171d8722433524be19bc0e7e606d4a17e5182d525cd4",
+        "asr_file_sha256": "9cd1948936792f22df9730bff5d93d715a85afa06a5f17531684c6930c6cdd27",
+        "csv_file_sha256": "0f5c5c9bfefad7442a64673c3e750fe95530ca9730a3447f9e906c0c3105bc9a",
+        "all_wav_hashes_verified": true,
+        "controls": {
+          "frontend": "trained_word_level",
+          "zero_sil_energy": false
+        },
+        "transcript_provenance": {
+          "method": "direct_local_ASR"
+        }
+      }
+    },
+    "decision_context": "Root selected the later English checkpoint from fixed-validation improvement and retained the contextual verb-vowel correction, while rejecting SIL-energy override because of assignment regressions. This is an explicit tradeoff; v1 had lower assignment ASR error, so no claim of uniform superiority or a passed quality gate is made.",
+    "human_listening_performed": false,
+    "native_quality_certified": false
+  }
+}

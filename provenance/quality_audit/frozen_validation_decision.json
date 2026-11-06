@@ -1,0 +1,818 @@
+{
+  "status": "COMPARISON_COMPLETE_NO_SUPPORTED_FINAL_SELECTION",
+  "created_utc": "2026-11-05T11:40:14.398846+00:00",
+  "criterion": {
+    "frozen_utc": "2026-11-05T11:37:41.788844+00:00",
+    "scope": "Exactly the existing frozen three project-validation probes per language; compare the baseline and the one supplied later checkpoint only. No assignment test samples or additional checkpoint search.",
+    "score_rule": "Prefer the candidate with strictly lower micro-averaged WER, provided micro-averaged CER does not increase, and it has no severe artifact/coverage/duration failure. If scores conflict, tie, or neither candidate satisfies the gates, mark inconclusive rather than infer human quality.",
+    "severe_failure_rules": [
+      "Missing or nonfinite WAV/prediction artifact or zero/silent generated waveform (RMS <= 1e-5).",
+      "Empty ASR transcript.",
+      "Any generated/source duration ratio below 0.5 or above 2.0."
+    ],
+    "threshold_note": "Broad internal screening thresholds, fixed before later-candidate inference; not perceptually validated quality thresholds.",
+    "asr": "Pinned faster-whisper large-v3-turbo 0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf, CPU int8, language forced, beam 5, temperature 0, no prompt/hotwords.",
+    "selection_warning": "A choice applies only among these two supplied checkpoints on these three validation probes. No human-listening or native-quality claim."
+  },
+  "criterion_sha256": "1342b79998cbce03a4487ed04a9e240bc9346027c8a0f568fac4c52043d1f05b",
+  "selection_chronology": "Earlier assignment-ASR results motivated this diagnostic. The held-out validation IDs/texts were then fixed by ID/profile/duration before their synthesis; the decision criterion was frozen before later-candidate synthesis. This is not a clean untouched final-test evaluation.",
+  "scope": "Exactly two supplied checkpoints per language on the same three fixed validation prompts; no additional checkpoint search.",
+  "manual_listening_performed": false,
+  "native_quality_claimed": false,
+  "languages": {
+    "English": {
+      "selected_candidate_id": null,
+      "decision": "inconclusive",
+      "reason": "Later7000 improves aggregate WER and CER, but both checkpoints fail the pre-frozen duration gate on the country-list probe. No checkpoint passes the complete minimum-viability rule.",
+      "relatedness_observation": "Later7000 has clear text correspondence on the seasonal-fruit probe, but correspondence remains weak on the country list and incomplete on Yaksha Gana. This is ASR evidence, not listening.",
+      "lower_wer_candidate": "later",
+      "later_minus_baseline": {
+        "wer": -0.30769230769230765,
+        "cer": -0.14925373134328357,
+        "word_edit_distance": -8,
+        "character_edit_distance": -20
+      },
+      "frozen_samples_sha256": "ece858ca512c3727fc795406b38f4b839fd8e2e66695966fee9c85c4f6b282ed",
+      "selection_sha256": "1ed5290c0100df1d432917abcfb9eb9f808f1036caf2eb56815c72830a176f85",
+      "candidates": [
+        {
+          "candidate_id": "English_baseline",
+          "label": "baseline",
+          "checkpoint_step": 1500,
+          "checkpoint": {
+            "path": "best_first_preview.pt",
+            "sha256": "17ad591e4ef9e269df9e3da05737fb4ea52d35d1b5eec7f1229ff3231446afcc"
+          },
+          "report_path": "assessment.json",
+          "report_sha256": "49818508f812f222dbd5e2b8623997bf40e486bf36417366ed2a2e41a74b999e",
+          "metrics": {
+            "sample_count": 3,
+            "word_edit_distance": 18,
+            "reference_word_count": 26,
+            "wer": 0.6923076923076923,
+            "character_edit_distance": 61,
+            "reference_character_count": 134,
+            "cer": 0.4552238805970149,
+            "aggregation": "micro-average within this language"
+          },
+          "artifact_integrity_verified": true,
+          "severe_failures": [
+            {
+              "id": "en_test-00000-of-00003_000970",
+              "rule": "duration_ratio_outside_0.5_to_2.0",
+              "ratio": 0.4022453804418602
+            }
+          ],
+          "passes_artifact_coverage_duration_gate": false,
+          "probe_metrics": [
+            {
+              "id": "en_test-00000-of-00003_000970",
+              "text": "Brazil, Cambodia, Japan, Spain, Greece.",
+              "asr_transcript": "Was it a movie Japan's game race?",
+              "metrics": {
+                "reference_normalized": "brazil cambodia japan spain greece",
+                "hypothesis_normalized": "was it a movie japans game race",
+                "word_edit_distance": 7,
+                "reference_word_count": 5,
+                "hypothesis_word_count": 7,
+                "wer": 1.4,
+                "character_edit_distance": 14,
+                "reference_character_count": 30,
+                "hypothesis_character_count": 25,
+                "cer": 0.4666666666666667
+              },
+              "source_duration_seconds": 5.974625,
+              "generated_duration_seconds": 2.403265306122449,
+              "generated_to_source_duration_ratio": 0.4022453804418602,
+              "wav_sha256": "308b54b3c0808594a9c066c376b5de499c04e550e88bd557b5037768a4b1fbac",
+              "source_wav_sha256": "97d138733e9d50c164324c41b71fa4c04952fe723c3ec1a1d5b801e04fbcb469",
+              "finite": true,
+              "rms": 0.05448443677089007,
+              "peak": 0.280120849609375,
+              "pcm_rail_hits": 0,
+              "prediction_sha256": "985224cc20a105ea10128656aeeb585a50925da9583b8fb68325fa3465f31a30",
+              "zero_duration_phone_count": 1,
+              "plot_sha256": {
+                "duration": "3ec75b1f5a25e946b387e99036ff09fa2d1a4e1445e7aa96f23cf815b0b380b6",
+                "pitch": "bdd45d1930cb3c3f1b3d7fb46aa68baaf8d5616be17badda48da3912a214a41c",
+                "energy": "33f17abe2fac17e0caf3dc818d5df822289dbb78317c657d9d8583ee0453772c"
+              }
+            },
+            {
+              "id": "en_test-00000-of-00003_002008",
+              "text": "eat seasonal fruits and use these flowers for worshipping and so on.",
+              "asr_transcript": "It's seasoning, fruits and beans, these flowers for worshipping them, so on.",
+              "metrics": {
+                "reference_normalized": "eat seasonal fruits and use these flowers for worshipping and so on",
+                "hypothesis_normalized": "its seasoning fruits and beans these flowers for worshipping them so on",
+                "word_edit_distance": 4,
+                "reference_word_count": 12,
+                "hypothesis_word_count": 12,
+                "wer": 0.3333333333333333,
+                "character_edit_distance": 15,
+                "reference_character_count": 56,
+                "hypothesis_character_count": 60,
+                "cer": 0.26785714285714285
+              },
+              "source_duration_seconds": 5.30875,
+              "generated_duration_seconds": 4.307301587301588,
+              "generated_to_source_duration_ratio": 0.8113589050721145,
+              "wav_sha256": "ce97c6c540c62ad4f081d09973872a6acfc50f1b891fe15b0cbf763034d2989a",
+              "source_wav_sha256": "4e67e99a2885855f621d68d5b13f4bf69272bb47906a87f1d0c1f69652d46fd2",
+              "finite": true,
+              "rms": 0.05022583001997992,
+              "peak": 0.258514404296875,
+              "pcm_rail_hits": 0,
+              "prediction_sha256": "771dce6ee92612d330ce825e2572056fc9098b951e17240b1305adf401d8bb40",
+              "zero_duration_phone_count": 0,
+              "plot_sha256": {
+                "duration": "677904b5ca809ef73c14035e8b040ba73a6b93ecac270fa2f1dc39a6fbcba3e8",
+                "pitch": "d5a2632d937b6782cff67aecaeadd506356ec576b210202e85ea2f15c627068c",
+                "energy": "69daf518c59ed551b1343276f17bf18f450df8e7d06637c763aac42c8b942cec"
+              }
+            },
+            {
+              "id": "en_test-00001-of-00003_001541",
+              "text": "Especially this Yaksha Gana and its various versions are",
+              "asr_transcript": "Especially this reaction from the analytics release washing store.",
+              "metrics": {
+                "reference_normalized": "especially this yaksha gana and its various versions are",
+                "hypothesis_normalized": "especially this reaction from the analytics release washing store",
+                "word_edit_distance": 7,
+                "reference_word_count": 9,
+                "hypothesis_word_count": 9,
+                "wer": 0.7777777777777778,
+                "character_edit_distance": 32,
+                "reference_character_count": 48,
+                "hypothesis_character_count": 57,
+                "cer": 0.6666666666666666
+              },
+              "source_duration_seconds": 4.1803125,
+              "generated_duration_seconds": 3.5874829931972787,
+              "generated_to_source_duration_ratio": 0.8581853613090596,
+              "wav_sha256": "31f950624902c1d0edb11a29fb55d5be5ebb2f0dc0f686f4f2947b563de0f092",
+              "source_wav_sha256": "3415c9104675ce5249dcd3af4ad059d2ccb08f0bbb79d1a30332c68917acd048",
+              "finite": true,
+              "rms": 0.045843633397326215,
+              "peak": 0.236968994140625,
+              "pcm_rail_hits": 0,
+              "prediction_sha256": "f81fa2b38d7419f309889a10e499c9d595027114a99d1d079c3991ef52c2b140",
+              "zero_duration_phone_count": 0,
+              "plot_sha256": {
+                "duration": "af90cc7c30b1b9841201ca5c27e93aaffb11de9235f48b48b44d067ded1d1115",
+                "pitch": "6177517a9ad232a61a1ea70bcade83bddf5a7f93bcd9fdb278e812b49249573b",
+                "energy": "e980dda75c45ac0783762b03572744427e3e9676bed772792a5c8a60d832b8a5"
+              }
+            }
+          ]
+        },
+        {
+          "candidate_id": "English_later",
+          "label": "later",
+          "checkpoint_step": 7000,
+          "checkpoint": {
+            "path": "latest_validation_comparison.pt",
+            "sha256": "44cf8b5d39856ffc337d734507001f5bd1d944d542780868ca09a4d5f719cdcf"
+          },
+          "report_path": "assessment.json",
+          "report_sha256": "0169d2bf386c313762b0aab675fd7154fff8a03aaed2fcbcb0187868b1f12b3c",
+          "metrics": {
+            "sample_count": 3,
+            "word_edit_distance": 10,
+            "reference_word_count": 26,
+            "wer": 0.38461538461538464,
+            "character_edit_distance": 41,
+            "reference_character_count": 134,
+            "cer": 0.30597014925373134,
+            "aggregation": "micro-average within this language"
+          },
+          "artifact_integrity_verified": true,
+          "severe_failures": [
+            {
+              "id": "en_test-00000-of-00003_000970",
+              "rule": "duration_ratio_outside_0.5_to_2.0",
+              "ratio": 0.48969002836400377
+            }
+          ],
+          "passes_artifact_coverage_duration_gate": false,
+          "probe_metrics": [
+            {
+              "id": "en_test-00000-of-00003_000970",
+              "text": "Brazil, Cambodia, Japan, Spain, Greece.",
+              "asr_transcript": "Bursley downloading Japan-Spainways.",
+              "metrics": {
+                "reference_normalized": "brazil cambodia japan spain greece",
+                "hypothesis_normalized": "bursley downloading japan spainways",
+                "word_edit_distance": 4,
+                "reference_word_count": 5,
+                "hypothesis_word_count": 4,
+                "wer": 0.8,
+                "character_edit_distance": 19,
+                "reference_character_count": 30,
+                "hypothesis_character_count": 32,
+                "cer": 0.6333333333333333
+              },
+              "source_duration_seconds": 5.974625,
+              "generated_duration_seconds": 2.9257142857142857,
+              "generated_to_source_duration_ratio": 0.48969002836400377,
+              "wav_sha256": "b6ebaef5d91b43edd7c982b648f6fc0a5952a0ba1136ce205a42dcce48baab15",
+              "source_wav_sha256": "97d138733e9d50c164324c41b71fa4c04952fe723c3ec1a1d5b801e04fbcb469",
+              "finite": true,
+              "rms": 0.05834800402420919,
+              "peak": 0.397918701171875,
+              "pcm_rail_hits": 0,
+              "prediction_sha256": "3897c095ee0bce4dd042b613851c834ddbb0c2e627da502d1b64050f056a104f",
+              "zero_duration_phone_count": 2,
+              "plot_sha256": {
+                "duration": "60713ea5115574b2dad7d484189f2d1b4d7a2017c5f816c94d559062edf49b96",
+                "pitch": "7391d8eae13ca16cc66304d5c6bb97743e80b5f3fe7efc774dc44f251a2e88fa",
+                "energy": "7468341d2a893fe839c391e52c0abc0cb09ff1542872b9ff464d6274fb51809b"
+              }
+            },
+            {
+              "id": "en_test-00000-of-00003_002008",
+              "text": "eat seasonal fruits and use these flowers for worshipping and so on.",
+              "asr_transcript": "Treat seasonal fruits and use these flowers for worshipping and so on.",
+              "metrics": {
+                "reference_normalized": "eat seasonal fruits and use these flowers for worshipping and so on",
+                "hypothesis_normalized": "treat seasonal fruits and use these flowers for worshipping and so on",
+                "word_edit_distance": 1,
+                "reference_word_count": 12,
+                "hypothesis_word_count": 12,
+                "wer": 0.08333333333333333,
+                "character_edit_distance": 2,
+                "reference_character_count": 56,
+                "hypothesis_character_count": 58,
+                "cer": 0.03571428571428571
+              },
+              "source_duration_seconds": 5.30875,
+              "generated_duration_seconds": 4.655600907029479,
+              "generated_to_source_duration_ratio": 0.8769674418703987,
+              "wav_sha256": "6c21585952431f589f32d5d795051f1284108ff1a52f96b98de28a160d2fe1fd",
+              "source_wav_sha256": "4e67e99a2885855f621d68d5b13f4bf69272bb47906a87f1d0c1f69652d46fd2",
+              "finite": true,
+              "rms": 0.05211559668615006,
+              "peak": 0.304840087890625,
+              "pcm_rail_hits": 0,
+              "prediction_sha256": "7c72dcddb915bd0dde0081f7bccfa0da71b7ad93afc076d1aef2bc7d5b6f9d64",
+              "zero_duration_phone_count": 6,
+              "plot_sha256": {
+                "duration": "59b78d03ee4bf0bf6aa4e0fdad2944c3b7357c4fcceba9712a4d515313789ac5",
+                "pitch": "c2eec185c66c327228c541206d5e1e23c7e76a9aa2e9bb905c2d7f7e4aaf2a02",
+                "energy": "cdcc8681101349233642fa87e5b8d528add375c0872f34f722e54d19a94138bd"
+              }
+            },
+            {
+              "id": "en_test-00001-of-00003_001541",
+              "text": "Especially this Yaksha Gana and its various versions are",
+              "asr_transcript": "especially with dyslexia and its various women's work.",
+              "metrics": {
+                "reference_normalized": "especially this yaksha gana and its various versions are",
+                "hypothesis_normalized": "especially with dyslexia and its various womens work",
+                "word_edit_distance": 5,
+                "reference_word_count": 9,
+                "hypothesis_word_count": 8,
+                "wer": 0.5555555555555556,
+                "character_edit_distance": 20,
+                "reference_character_count": 48,
+                "hypothesis_character_count": 45,
+                "cer": 0.4166666666666667
+              },
+              "source_duration_seconds": 4.1803125,
+              "generated_duration_seconds": 3.645532879818594,
+              "generated_to_source_duration_ratio": 0.8720718558286238,
+              "wav_sha256": "9eab1db53f3e0a6056ea9c78103d8e728490bb751b06647707eb711d8b6683fc",
+              "source_wav_sha256": "3415c9104675ce5249dcd3af4ad059d2ccb08f0bbb79d1a30332c68917acd048",
+              "finite": true,
+              "rms": 0.04090112856905711,
+              "peak": 0.208587646484375,
+              "pcm_rail_hits": 0,
+              "prediction_sha256": "6c851f1337a276560a80edc40cd7b3e9699ce738b8caa0d98a42da69ab89e00c",
+              "zero_duration_phone_count": 6,
+              "plot_sha256": {
+                "duration": "f796daaec57d3e12464e0d82c124530c5b73c8a4583069ff6f55983f6effd496",
+                "pitch": "f0ac08e6316ac6ce58197d3bbb5d1c50f6328bcdc62dab37a8ade81059e08ca7",
+                "energy": "d46db4b911a91a3fe1f73eea9f2e1cce2cb145de7e017a27d40bf4fc1701ddf2"
+              }
+            }
+          ]
+        }
+      ],
+      "source_recording_asr_control": {
+        "scope": "Same recognizer/settings on original held-out recordings; reference text not supplied to decoder.",
+        "aggregate": {
+          "sample_count": 3,
+          "word_edit_distance": 2,
+          "reference_word_count": 26,
+          "wer": 0.07692307692307693,
+          "character_edit_distance": 2,
+          "reference_character_count": 134,
+          "cer": 0.014925373134328358,
+          "aggregation": "micro-average within this language"
+        },
+        "samples": [
+          {
+            "id": "en_test-00000-of-00003_000970",
+            "text": "Brazil, Cambodia, Japan, Spain, Greece.",
+            "language": "en",
+            "wav_path": "en_test-00000-of-00003_000970.wav",
+            "wav_sha256": "97d138733e9d50c164324c41b71fa4c04952fe723c3ec1a1d5b801e04fbcb469",
+            "duration_seconds": 5.974625,
+            "asr_transcript": "Brazil, Cambodia, Japan, Spain, Greece",
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 5.96,
+                "text": " Brazil, Cambodia, Japan, Spain, Greece"
+              }
+            ],
+            "metrics": {
+              "reference_normalized": "brazil cambodia japan spain greece",
+              "hypothesis_normalized": "brazil cambodia japan spain greece",
+              "word_edit_distance": 0,
+              "reference_word_count": 5,
+              "hypothesis_word_count": 5,
+              "wer": 0.0,
+              "character_edit_distance": 0,
+              "reference_character_count": 30,
+              "hypothesis_character_count": 30,
+              "cer": 0.0
+            }
+          },
+          {
+            "id": "en_test-00000-of-00003_002008",
+            "text": "eat seasonal fruits and use these flowers for worshipping and so on.",
+            "language": "en",
+            "wav_path": "en_test-00000-of-00003_002008.wav",
+            "wav_sha256": "4e67e99a2885855f621d68d5b13f4bf69272bb47906a87f1d0c1f69652d46fd2",
+            "duration_seconds": 5.30875,
+            "asr_transcript": "eat seasonal fruits and use these flowers for worshipping and so on.",
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 4.76,
+                "text": " eat seasonal fruits and use these flowers for worshipping and so on."
+              }
+            ],
+            "metrics": {
+              "reference_normalized": "eat seasonal fruits and use these flowers for worshipping and so on",
+              "hypothesis_normalized": "eat seasonal fruits and use these flowers for worshipping and so on",
+              "word_edit_distance": 0,
+              "reference_word_count": 12,
+              "hypothesis_word_count": 12,
+              "wer": 0.0,
+              "character_edit_distance": 0,
+              "reference_character_count": 56,
+              "hypothesis_character_count": 56,
+              "cer": 0.0
+            }
+          },
+          {
+            "id": "en_test-00001-of-00003_001541",
+            "text": "Especially this Yaksha Gana and its various versions are",
+            "language": "en",
+            "wav_path": "en_test-00001-of-00003_001541.wav",
+            "wav_sha256": "3415c9104675ce5249dcd3af4ad059d2ccb08f0bbb79d1a30332c68917acd048",
+            "duration_seconds": 4.1803125,
+            "asr_transcript": "especially this Ekshagana and its various versions are",
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 4.32,
+                "text": " especially this Ekshagana and its various versions are"
+              }
+            ],
+            "metrics": {
+              "reference_normalized": "especially this yaksha gana and its various versions are",
+              "hypothesis_normalized": "especially this ekshagana and its various versions are",
+              "word_edit_distance": 2,
+              "reference_word_count": 9,
+              "hypothesis_word_count": 8,
+              "wer": 0.2222222222222222,
+              "character_edit_distance": 2,
+              "reference_character_count": 48,
+              "hypothesis_character_count": 47,
+              "cer": 0.041666666666666664
+            }
+          }
+        ]
+      }
+    },
+    "Telugu": {
+      "selected_candidate_id": null,
+      "decision": "inconclusive",
+      "reason": "Later6000 has lower CER but higher WER than best2000. Both pass artifact/duration checks; the frozen lower-WER-supported-by-CER rule yields no supported winner.",
+      "relatedness_observation": "Generated hypotheses at both checkpoints retain much of the reference content, with CER near the original-recording ASR control. This supports textual relatedness but does not establish native quality or perceptual correctness.",
+      "lower_wer_candidate": "baseline",
+      "later_minus_baseline": {
+        "wer": 0.05882352941176461,
+        "cer": -0.019417475728155345,
+        "word_edit_distance": 2,
+        "character_edit_distance": -4
+      },
+      "frozen_samples_sha256": "3a6d89d4f99c3b51b969a7b6f2b20c4d56d7ac699d9f9c3e9245fdaa6181047f",
+      "selection_sha256": "527649b33082994fad4c5de0e64259a05a52987b7de1cb4514a2aa5bf167b147",
+      "candidates": [
+        {
+          "candidate_id": "Telugu_baseline",
+          "label": "baseline",
+          "checkpoint_step": 2000,
+          "checkpoint": {
+            "path": "best_preview.pt",
+            "sha256": "7f32328011ab47edda7eadc67dc4331ce4e1a9f11a74fdc771b79e638f72f0bf"
+          },
+          "report_path": "assessment.json",
+          "report_sha256": "08ad23b6d01a207fa1e6ae4a3493185790d3623bf79971592a8cf9eb178621b7",
+          "metrics": {
+            "sample_count": 3,
+            "word_edit_distance": 25,
+            "reference_word_count": 34,
+            "wer": 0.7352941176470589,
+            "character_edit_distance": 25,
+            "reference_character_count": 206,
+            "cer": 0.12135922330097088,
+            "aggregation": "micro-average within this language"
+          },
+          "artifact_integrity_verified": true,
+          "severe_failures": [],
+          "passes_artifact_coverage_duration_gate": true,
+          "probe_metrics": [
+            {
+              "id": "te_train-00000-of-00004_000018",
+              "text": "బాబూ ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి.",
+              "asr_transcript": "బాబు ఇది పద్మం కాదు అసి ధరా చక్రం అన్నాడు నరకవాది",
+              "metrics": {
+                "reference_normalized": "బాబూ ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి",
+                "hypothesis_normalized": "బాబు ఇది పద్మం కాదు అసి ధరా చక్రం అన్నాడు నరకవాది",
+                "word_edit_distance": 4,
+                "reference_word_count": 8,
+                "hypothesis_word_count": 9,
+                "wer": 0.5,
+                "character_edit_distance": 3,
+                "reference_character_count": 42,
+                "hypothesis_character_count": 41,
+                "cer": 0.07142857142857142
+              },
+              "source_duration_seconds": 6.2719375,
+              "generated_duration_seconds": 6.060408163265306,
+              "generated_to_source_duration_ratio": 0.9662736854863917,
+              "wav_sha256": "9826c437540b353d90c64ed2989b47f7f7726b31d38700b99643d83190140bfe",
+              "source_wav_sha256": "738d86aa5a705a9fce125dce7d4a72801edb1cffe16f71337938c379f630de77",
+              "finite": true,
+              "rms": 0.05353668124469103,
+              "peak": 0.34588623046875,
+              "pcm_rail_hits": 0,
+              "prediction_sha256": "84840fd194e32bd77e6b27e619a1966af9f8df951454a025cfa111cb8803d50a",
+              "zero_duration_phone_count": 2,
+              "plot_sha256": {
+                "duration": "4f91070d3cd1fac5afd358df6a410dc83bd22705410d8ee3a424e5df7b727973",
+                "pitch": "215d5f54e285ee9a6f59ac0f4d9e750a759b6c9c7376c6d0045cdb9a3887fae9",
+                "energy": "22f77b43d7fc63b4915d5156425b67038f0885a89f906711962e1e533aaa3516"
+              }
+            },
+            {
+              "id": "te_train-00000-of-00004_000044",
+              "text": "భార్యకు తన భర్త ఇంకో పెళ్ళి చేసుకోబోతున్నాడని తెలిసింది తన భర్త ఎదుట ఏడిచి ఈ పెళ్ళి జరగటానికి వీల్లేదన్నది.",
+              "asr_transcript": "భార్యకు తనబర్తా ఇంకో పెళ్లి చేసుకో పోతునాడని తెలిసింది తనబర్తా యదు టగేడిచి ఈ పెళ్లి జరగటానికి విలేదన్నది",
+              "metrics": {
+                "reference_normalized": "భార్యకు తన భర్త ఇంకో పెళ్ళి చేసుకోబోతున్నాడని తెలిసింది తన భర్త ఎదుట ఏడిచి ఈ పెళ్ళి జరగటానికి వీల్లేదన్నది",
+                "hypothesis_normalized": "భార్యకు తనబర్తా ఇంకో పెళ్లి చేసుకో పోతునాడని తెలిసింది తనబర్తా యదు టగేడిచి ఈ పెళ్లి జరగటానికి విలేదన్నది",
+                "word_edit_distance": 11,
+                "reference_word_count": 15,
+                "hypothesis_word_count": 14,
+                "wer": 0.7333333333333333,
+                "character_edit_distance": 15,
+                "reference_character_count": 92,
+                "hypothesis_character_count": 91,
+                "cer": 0.16304347826086957
+              },
+              "source_duration_seconds": 11.6938125,
+              "generated_duration_seconds": 10.669569160997732,
+              "generated_to_source_duration_ratio": 0.9124115134390715,
+              "wav_sha256": "3fbc10e39aea97504358df11468d187c585fed32067daec8e02ac1fc8046c558",
+              "source_wav_sha256": "d43483965fdb6c29eed07b5b2f6c66f6624a04d36724f68703a0e095d438585b",
+              "finite": true,
+              "rms": 0.05866966924244334,
+              "peak": 0.412200927734375,
+              "pcm_rail_hits": 0,
+              "prediction_sha256": "6927e22899d41c4a970694ac0c86897e2b139913cc7874dc07161769244c602e",
+              "zero_duration_phone_count": 2,
+              "plot_sha256": {
+                "duration": "50535f252ffe45d876e27fd41589a96a439adea4ad48830f2692feca731e7d32",
+                "pitch": "f4e7a125f45e45d6bf151f1af846d4da0c5f8042a28793a47388f56349ac1775",
+                "energy": "e3088f48f1ab6b127d911b11fa5d96975339f49b087dd2be6b879e126552e36d"
+              }
+            },
+            {
+              "id": "te_train-00000-of-00004_000156",
+              "text": "వాడు దరిద్రుడైతే నేను అజ్ఞానిని క్షమించు తల్లీ అంటూ మండోదరి భర్త బోర్లాపడి ఏడిచాడు.",
+              "asr_transcript": "వాడు దరిద్రుడేతే నేను వాగ్నానిని క్షమించు తల్లి అంటు మండో దరి భర్త బోర్లా పడి ఏడి చాడు",
+              "metrics": {
+                "reference_normalized": "వాడు దరిద్రుడైతే నేను అజ్ఞానిని క్షమించు తల్లీ అంటూ మండోదరి భర్త బోర్లాపడి ఏడిచాడు",
+                "hypothesis_normalized": "వాడు దరిద్రుడేతే నేను వాగ్నానిని క్షమించు తల్లి అంటు మండో దరి భర్త బోర్లా పడి ఏడి చాడు",
+                "word_edit_distance": 10,
+                "reference_word_count": 11,
+                "hypothesis_word_count": 14,
+                "wer": 0.9090909090909091,
+                "character_edit_distance": 7,
+                "reference_character_count": 72,
+                "hypothesis_character_count": 73,
+                "cer": 0.09722222222222222
+              },
+              "source_duration_seconds": 8.9190625,
+              "generated_duration_seconds": 8.626213151927438,
+              "generated_to_source_duration_ratio": 0.9671659047043831,
+              "wav_sha256": "18f412d62492520dc82669ec9f0b99556cdd33caad87c2ae2328ee6d114a4d43",
+              "source_wav_sha256": "0a04e73d0ec9824e55a30220b103a185d9866de4399fb7cf2c49fab9bb8da467",
+              "finite": true,
+              "rms": 0.06876609296262307,
+              "peak": 0.402740478515625,
+              "pcm_rail_hits": 0,
+              "prediction_sha256": "16f201cbaf7fdd474bc85347d051c60353ae6721e66064c7deb8f2ff905b228a",
+              "zero_duration_phone_count": 2,
+              "plot_sha256": {
+                "duration": "eff0350dcb7d382155312c0cf8c4a15e80565803153f5d4537c537bf2c2196a6",
+                "pitch": "31fbd8baa883043abbca786f4027e30de4c429aeb68d227e3357b11f9ed77ac8",
+                "energy": "19725c36042551e3558b3da542877aa6646c8c40e210433e19707a5aaf586af0"
+              }
+            }
+          ]
+        },
+        {
+          "candidate_id": "Telugu_later",
+          "label": "later",
+          "checkpoint_step": 6000,
+          "checkpoint": {
+            "path": "latest_quality_preview.pt",
+            "sha256": "87563a2ee631af8c2c1881e0588e8b04c76a5606e3792986c8ea631db86cf6d9"
+          },
+          "report_path": "assessment.json",
+          "report_sha256": "2a7a8c4eaa8be56e6ef4887ed0baba14372b2ca6891380fb9afe803be413fde7",
+          "metrics": {
+            "sample_count": 3,
+            "word_edit_distance": 27,
+            "reference_word_count": 34,
+            "wer": 0.7941176470588235,
+            "character_edit_distance": 21,
+            "reference_character_count": 206,
+            "cer": 0.10194174757281553,
+            "aggregation": "micro-average within this language"
+          },
+          "artifact_integrity_verified": true,
+          "severe_failures": [],
+          "passes_artifact_coverage_duration_gate": true,
+          "probe_metrics": [
+            {
+              "id": "te_train-00000-of-00004_000018",
+              "text": "బాబూ ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి.",
+              "asr_transcript": "బాబు ఇది పద్మం కాదు అసిధరా చక్రం అన్నాడు నరకవాసి",
+              "metrics": {
+                "reference_normalized": "బాబూ ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి",
+                "hypothesis_normalized": "బాబు ఇది పద్మం కాదు అసిధరా చక్రం అన్నాడు నరకవాసి",
+                "word_edit_distance": 2,
+                "reference_word_count": 8,
+                "hypothesis_word_count": 8,
+                "wer": 0.25,
+                "character_edit_distance": 2,
+                "reference_character_count": 42,
+                "hypothesis_character_count": 41,
+                "cer": 0.047619047619047616
+              },
+              "source_duration_seconds": 6.2719375,
+              "generated_duration_seconds": 5.735328798185941,
+              "generated_to_source_duration_ratio": 0.9144429130848228,
+              "wav_sha256": "21e86269be1b4ae77fb598837102b80d9d1417490f6c159ba59718220dca1fd0",
+              "source_wav_sha256": "738d86aa5a705a9fce125dce7d4a72801edb1cffe16f71337938c379f630de77",
+              "finite": true,
+              "rms": 0.07762554908321127,
+              "peak": 0.586761474609375,
+              "pcm_rail_hits": 0,
+              "prediction_sha256": "7cc0a5517a39eca3b705113d22a53d8f6471cedccbe460a365523cce69ae3b85",
+              "zero_duration_phone_count": 3,
+              "plot_sha256": {
+                "duration": "50cb07b2c5bc7c9d7105b74acdaa2f017ea77d9b4912567a5a904bf58e35a208",
+                "pitch": "d4fe3880bec33e9f94a1ea3f9de005ef4889f5b9b829c2fb84e12c7bdd6c72eb",
+                "energy": "064dbd6f362a18cbea87ea27d2ea45070375a04c65f208825065c559439b5934"
+              }
+            },
+            {
+              "id": "te_train-00000-of-00004_000044",
+              "text": "భార్యకు తన భర్త ఇంకో పెళ్ళి చేసుకోబోతున్నాడని తెలిసింది తన భర్త ఎదుట ఏడిచి ఈ పెళ్ళి జరగటానికి వీల్లేదన్నది.",
+              "asr_transcript": "భారియకు తనభర్త ఇంకో పెళ్లి జేసు కోబోతున్నాడని తిలిసింది తనభర్త యదుటా ఏడిచ్చి ఈ పెళ్లి జరగటానికి వీలేదన్నది",
+              "metrics": {
+                "reference_normalized": "భార్యకు తన భర్త ఇంకో పెళ్ళి చేసుకోబోతున్నాడని తెలిసింది తన భర్త ఎదుట ఏడిచి ఈ పెళ్ళి జరగటానికి వీల్లేదన్నది",
+                "hypothesis_normalized": "భారియకు తనభర్త ఇంకో పెళ్లి జేసు కోబోతున్నాడని తిలిసింది తనభర్త యదుటా ఏడిచ్చి ఈ పెళ్లి జరగటానికి వీలేదన్నది",
+                "word_edit_distance": 12,
+                "reference_word_count": 15,
+                "hypothesis_word_count": 14,
+                "wer": 0.8,
+                "character_edit_distance": 11,
+                "reference_character_count": 92,
+                "hypothesis_character_count": 93,
+                "cer": 0.11956521739130435
+              },
+              "source_duration_seconds": 11.6938125,
+              "generated_duration_seconds": 10.89015873015873,
+              "generated_to_source_duration_ratio": 0.9312752988094114,
+              "wav_sha256": "1acda2f3cc768ea53c02774f1f55189c1b7bb92bd53126e2a00ba64520aa55b6",
+              "source_wav_sha256": "d43483965fdb6c29eed07b5b2f6c66f6624a04d36724f68703a0e095d438585b",
+              "finite": true,
+              "rms": 0.07851538609691869,
+              "peak": 0.550201416015625,
+              "pcm_rail_hits": 0,
+              "prediction_sha256": "ae7d966326734191c2a56be22da7f2e10ab176638140f9f197d41a97c55bd24b",
+              "zero_duration_phone_count": 7,
+              "plot_sha256": {
+                "duration": "ac32310bf5625f8ef8a7a56d5c27dbfc5973469c5388e7bd6179c3b5a43e2ce4",
+                "pitch": "8e9cb687798d6e044df4b7d1771fbef428fa178045efb8326e6df18ba867d804",
+                "energy": "69502779c72b6bd7377f24aefd9c0c7df6cf5ddf122efe5158651a56d48688e9"
+              }
+            },
+            {
+              "id": "te_train-00000-of-00004_000156",
+              "text": "వాడు దరిద్రుడైతే నేను అజ్ఞానిని క్షమించు తల్లీ అంటూ మండోదరి భర్త బోర్లాపడి ఏడిచాడు.",
+              "asr_transcript": "వాడు దరిద్రు డయితే నేను అగ్నాని నిక్షమించు తల్లి అంటు మండో దరి భర్తా బోరిలా పడి ఏడి చాడు",
+              "metrics": {
+                "reference_normalized": "వాడు దరిద్రుడైతే నేను అజ్ఞానిని క్షమించు తల్లీ అంటూ మండోదరి భర్త బోర్లాపడి ఏడిచాడు",
+                "hypothesis_normalized": "వాడు దరిద్రు డయితే నేను అగ్నాని నిక్షమించు తల్లి అంటు మండో దరి భర్తా బోరిలా పడి ఏడి చాడు",
+                "word_edit_distance": 13,
+                "reference_word_count": 11,
+                "hypothesis_word_count": 15,
+                "wer": 1.1818181818181819,
+                "character_edit_distance": 8,
+                "reference_character_count": 72,
+                "hypothesis_character_count": 74,
+                "cer": 0.1111111111111111
+              },
+              "source_duration_seconds": 8.9190625,
+              "generated_duration_seconds": 8.753922902494331,
+              "generated_to_source_duration_ratio": 0.9814846462275973,
+              "wav_sha256": "1b223ac5a0226966e25511eb40401781c7d416a6ac7c460dd136617e6131db05",
+              "source_wav_sha256": "0a04e73d0ec9824e55a30220b103a185d9866de4399fb7cf2c49fab9bb8da467",
+              "finite": true,
+              "rms": 0.09034280922762797,
+              "peak": 0.489105224609375,
+              "pcm_rail_hits": 0,
+              "prediction_sha256": "a039c7e88a5a9e10dfe4fc44615416b092f7720cacf61d6d4a1f8c34076c3b5b",
+              "zero_duration_phone_count": 1,
+              "plot_sha256": {
+                "duration": "65b2b11eeb1d1bea7d8943dc5a2344a5ed8cabbeca263e63b7a17f86cacf7f3e",
+                "pitch": "153a7a63ea3b6652d16f3f834a852343ba2dfd7919588d837f540b5e7256bfb6",
+                "energy": "66e7a6c8d532b4256efe0bb957b9cf8c8bca74787ff2b7038549201752026c3b"
+              }
+            }
+          ]
+        }
+      ],
+      "source_recording_asr_control": {
+        "scope": "Same recognizer/settings on original held-out recordings; reference text not supplied to decoder.",
+        "aggregate": {
+          "sample_count": 3,
+          "word_edit_distance": 23,
+          "reference_word_count": 34,
+          "wer": 0.6764705882352942,
+          "character_edit_distance": 18,
+          "reference_character_count": 206,
+          "cer": 0.08737864077669903,
+          "aggregation": "micro-average within this language"
+        },
+        "samples": [
+          {
+            "id": "te_train-00000-of-00004_000018",
+            "text": "బాబూ ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి.",
+            "language": "te",
+            "wav_path": "te_train-00000-of-00004_000018.wav",
+            "wav_sha256": "738d86aa5a705a9fce125dce7d4a72801edb1cffe16f71337938c379f630de77",
+            "duration_seconds": 6.2719375,
+            "asr_transcript": "బాబు ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి",
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 6.08,
+                "text": " బాబు ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి"
+              }
+            ],
+            "metrics": {
+              "reference_normalized": "బాబూ ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి",
+              "hypothesis_normalized": "బాబు ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి",
+              "word_edit_distance": 1,
+              "reference_word_count": 8,
+              "hypothesis_word_count": 8,
+              "wer": 0.125,
+              "character_edit_distance": 1,
+              "reference_character_count": 42,
+              "hypothesis_character_count": 42,
+              "cer": 0.023809523809523808
+            }
+          },
+          {
+            "id": "te_train-00000-of-00004_000044",
+            "text": "భార్యకు తన భర్త ఇంకో పెళ్ళి చేసుకోబోతున్నాడని తెలిసింది తన భర్త ఎదుట ఏడిచి ఈ పెళ్ళి జరగటానికి వీల్లేదన్నది.",
+            "language": "te",
+            "wav_path": "te_train-00000-of-00004_000044.wav",
+            "wav_sha256": "d43483965fdb6c29eed07b5b2f6c66f6624a04d36724f68703a0e095d438585b",
+            "duration_seconds": 11.6938125,
+            "asr_transcript": "భార్యకు తనభర్టా ఇంకో పెల్డి చేసుకో బోతునాడని తెలిసింది తనభర్టా యదుటా ఏడిచి ఈ పెల్డి జరగటానికి వీల్లే దన్నది",
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 11.4,
+                "text": " భార్యకు తనభర్టా ఇంకో పెల్డి చేసుకో బోతునాడని తెలిసింది తనభర్టా యదుటా ఏడిచి ఈ పెల్డి జరగటానికి వీల్లే దన్నది"
+              }
+            ],
+            "metrics": {
+              "reference_normalized": "భార్యకు తన భర్త ఇంకో పెళ్ళి చేసుకోబోతున్నాడని తెలిసింది తన భర్త ఎదుట ఏడిచి ఈ పెళ్ళి జరగటానికి వీల్లేదన్నది",
+              "hypothesis_normalized": "భార్యకు తనభర్టా ఇంకో పెల్డి చేసుకో బోతునాడని తెలిసింది తనభర్టా యదుటా ఏడిచి ఈ పెల్డి జరగటానికి వీల్లే దన్నది",
+              "word_edit_distance": 11,
+              "reference_word_count": 15,
+              "hypothesis_word_count": 15,
+              "wer": 0.7333333333333333,
+              "character_edit_distance": 12,
+              "reference_character_count": 92,
+              "hypothesis_character_count": 93,
+              "cer": 0.13043478260869565
+            }
+          },
+          {
+            "id": "te_train-00000-of-00004_000156",
+            "text": "వాడు దరిద్రుడైతే నేను అజ్ఞానిని క్షమించు తల్లీ అంటూ మండోదరి భర్త బోర్లాపడి ఏడిచాడు.",
+            "language": "te",
+            "wav_path": "te_train-00000-of-00004_000156.wav",
+            "wav_sha256": "0a04e73d0ec9824e55a30220b103a185d9866de4399fb7cf2c49fab9bb8da467",
+            "duration_seconds": 8.9190625,
+            "asr_transcript": "వాడు దరిద్రు డయితే నేను అగ్ఞానిని క్షమించు తల్లి అంటు మండో దరి భర్త బోర్లా పడి ఏడి చాడు",
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 8.56,
+                "text": " వాడు దరిద్రు డయితే నేను అగ్ఞానిని క్షమించు తల్లి అంటు మండో దరి భర్త బోర్లా పడి ఏడి చాడు"
+              }
+            ],
+            "metrics": {
+              "reference_normalized": "వాడు దరిద్రుడైతే నేను అజ్ఞానిని క్షమించు తల్లీ అంటూ మండోదరి భర్త బోర్లాపడి ఏడిచాడు",
+              "hypothesis_normalized": "వాడు దరిద్రు డయితే నేను అగ్ఞానిని క్షమించు తల్లి అంటు మండో దరి భర్త బోర్లా పడి ఏడి చాడు",
+              "word_edit_distance": 11,
+              "reference_word_count": 11,
+              "hypothesis_word_count": 15,
+              "wer": 1.0,
+              "character_edit_distance": 5,
+              "reference_character_count": 72,
+              "hypothesis_character_count": 73,
+              "cer": 0.06944444444444445
+            }
+          }
+        ]
+      }
+    }
+  },
+  "English_country_list_silence_diagnostic": {
+    "status": "DIAGNOSTIC_ONLY_GATE_UNCHANGED",
+    "id": "en_test-00000-of-00003_000970",
+    "reference_text": "Brazil, Cambodia, Japan, Spain, Greece.",
+    "note": "Non-silence intervals are derived from BFA source alignment / model-predicted phone durations with SIL labels; they are not human-marked speech or an acoustic intelligibility judgment. The pre-frozen duration gate uses full source duration and is not changed by this diagnostic.",
+    "hop_length": 256,
+    "feature_sample_rate_hz": 22050,
+    "source_audio_full_duration_seconds": 5.974625,
+    "source_feature_sha256": "bbd321df55072862023b69642f76403f4307ad2350495ffcc0087079d82863bb",
+    "vocabulary_sha256": "584ab7171f103e62920787b97fa2fbf65eaf514995ad9f781ac0a01fc68f0631",
+    "source_alignment": {
+      "total_aligned_frames": 515,
+      "total_aligned_seconds": 5.979138321995465,
+      "first_non_silence_phone_start_seconds": 0.011609977324263039,
+      "last_non_silence_phone_end_seconds": 5.944308390022676,
+      "non_silence_phone_span_seconds": 5.932698412698413,
+      "summed_non_silence_phone_seconds": 4.446621315192743,
+      "silence_label_seconds": 1.5325170068027212,
+      "zero_duration_non_silence_phones": 0
+    },
+    "candidates": {
+      "best1500": {
+        "total_aligned_frames": 207,
+        "total_aligned_seconds": 2.403265306122449,
+        "first_non_silence_phone_start_seconds": 0.034829931972789115,
+        "last_non_silence_phone_end_seconds": 2.3103854875283445,
+        "non_silence_phone_span_seconds": 2.2755555555555556,
+        "summed_non_silence_phone_seconds": 2.2291156462585033,
+        "silence_label_seconds": 0.17414965986394557,
+        "zero_duration_non_silence_phones": 0,
+        "prediction_sha256": "985224cc20a105ea10128656aeeb585a50925da9583b8fb68325fa3465f31a30",
+        "non_silence_span_ratio_to_source_alignment": 0.3835616438356165,
+        "summed_non_silence_phone_ratio_to_source_alignment": 0.5013054830287207
+      },
+      "later7000": {
+        "total_aligned_frames": 252,
+        "total_aligned_seconds": 2.9257142857142857,
+        "first_non_silence_phone_start_seconds": 0.046439909297052155,
+        "last_non_silence_phone_end_seconds": 2.8676643990929707,
+        "non_silence_phone_span_seconds": 2.8212244897959184,
+        "summed_non_silence_phone_seconds": 2.391655328798186,
+        "silence_label_seconds": 0.5340589569160997,
+        "zero_duration_non_silence_phones": 0,
+        "prediction_sha256": "3897c095ee0bce4dd042b613851c834ddbb0c2e627da502d1b64050f056a104f",
+        "non_silence_span_ratio_to_source_alignment": 0.47553816046966735,
+        "summed_non_silence_phone_ratio_to_source_alignment": 0.5378590078328983
+      }
+    }
+  },
+  "interpretation_limit": "Three probes per language support only this narrow comparison. ASR errors, tokenization, speaker/profile grouping, and timing differences remain confounders. This comparison does not isolate the cause of total-validation-loss behavior or prove that zero-duration SIL pitch loss caused the ranking."
+}

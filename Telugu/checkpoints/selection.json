@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-05T11:41:34.788798+00:00",
+  "selected_file": "selected.pt",
+  "selected_sha256": "7f32328011ab47edda7eadc67dc4331ce4e1a9f11a74fdc771b79e638f72f0bf",
+  "selected_step": 2000,
+  "selection_basis": "fixed_validation_comparison",
+  "rationale": "The fixed validation comparison is inconclusive: later WER worsens while CER improves. Retain the original minimum-total-validation checkpoint. This choice does not establish native-listener speech quality.",
+  "validation_probe_manifest_sha256": "3a6d89d4f99c3b51b969a7b6f2b20c4d56d7ac699d9f9c3e9245fdaa6181047f",
+  "probe_ids": [
+    "te_train-00000-of-00004_000018",
+    "te_train-00000-of-00004_000044",
+    "te_train-00000-of-00004_000156"
+  ],
+  "candidates": [
+    {
+      "label": "minimum_total",
+      "step": 2000,
+      "sha256": "7f32328011ab47edda7eadc67dc4331ce4e1a9f11a74fdc771b79e638f72f0bf",
+      "wer": 0.7352941176470589,
+      "cer": 0.12135922330097088,
+      "duration_ratio_min": 0.9124115134390715,
+      "duration_ratio_max": 0.9671659047043831,
+      "valid_audio": true,
+      "passes_quality_gate": true
+    },
+    {
+      "label": "later_fixed",
+      "step": 6000,
+      "sha256": "87563a2ee631af8c2c1881e0588e8b04c76a5606e3792986c8ea631db86cf6d9",
+      "wer": 0.7941176470588235,
+      "cer": 0.10194174757281553,
+      "duration_ratio_min": 0.9144429130848228,
+      "duration_ratio_max": 0.9814846462275973,
+      "valid_audio": true,
+      "passes_quality_gate": true
+    }
+  ],
+  "source_controls": {
+    "wer": 0.6764705882352942,
+    "cer": 0.08737864077669903
+  },
+  "decision": "baseline_retained_inconclusive",
+  "quality_gate_passed": false,
+  "protocol_note": "Earlier assignment-ASR diagnostics motivated this post-hoc review; the assignment set is not a pristine untouched test. Exactly three validation prompts and two checkpoints were then fixed before later-candidate evaluation. The frozen rule remains inconclusive. No native listening was performed. English artifact preference is an explicitly disclosed best-available decision despite the failed duration gate; no threshold or score was changed.",
+  "frozen_criterion": {
+    "frozen_utc": "2026-11-05T11:37:41.788844+00:00",
+    "scope": "Exactly the existing frozen three project-validation probes per language; compare the baseline and the one supplied later checkpoint only. No assignment test samples or additional checkpoint search.",
+    "score_rule": "Prefer the candidate with strictly lower micro-averaged WER, provided micro-averaged CER does not increase, and it has no severe artifact/coverage/duration failure. If scores conflict, tie, or neither candidate satisfies the gates, mark inconclusive rather than infer human quality.",
+    "severe_failure_rules": [
+      "Missing or nonfinite WAV/prediction artifact or zero/silent generated waveform (RMS <= 1e-5).",
+      "Empty ASR transcript.",
+      "Any generated/source duration ratio below 0.5 or above 2.0."
+    ],
+    "threshold_note": "Broad internal screening thresholds, fixed before later-candidate inference; not perceptually validated quality thresholds.",
+    "asr": "Pinned faster-whisper large-v3-turbo 0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf, CPU int8, language forced, beam 5, temperature 0, no prompt/hotwords.",
+    "selection_warning": "A choice applies only among these two supplied checkpoints on these three validation probes. No human-listening or native-quality claim."
+  },
+  "per_probe_comparison": [
+    {
+      "label": "baseline",
+      "probes": [
+        {
+          "id": "te_train-00000-of-00004_000018",
+          "text": "బాబూ ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి.",
+          "asr_transcript": "బాబు ఇది పద్మం కాదు అసి ధరా చక్రం అన్నాడు నరకవాది",
+          "metrics": {
+            "reference_normalized": "బాబూ ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి",
+            "hypothesis_normalized": "బాబు ఇది పద్మం కాదు అసి ధరా చక్రం అన్నాడు నరకవాది",
+            "word_edit_distance": 4,
+            "reference_word_count": 8,
+            "hypothesis_word_count": 9,
+            "wer": 0.5,
+            "character_edit_distance": 3,
+            "reference_character_count": 42,
+            "hypothesis_character_count": 41,
+            "cer": 0.07142857142857142
+          },
+          "source_duration_seconds": 6.2719375,
+          "generated_duration_seconds": 6.060408163265306,
+          "generated_to_source_duration_ratio": 0.9662736854863917,
+          "wav_sha256": "9826c437540b353d90c64ed2989b47f7f7726b31d38700b99643d83190140bfe",
+          "source_wav_sha256": "738d86aa5a705a9fce125dce7d4a72801edb1cffe16f71337938c379f630de77",
+          "finite": true,
+          "rms": 0.05353668124469103,
+          "peak": 0.34588623046875,
+          "pcm_rail_hits": 0,
+          "prediction_sha256": "84840fd194e32bd77e6b27e619a1966af9f8df951454a025cfa111cb8803d50a",
+          "zero_duration_phone_count": 2,
+          "plot_sha256": {
+            "duration": "4f91070d3cd1fac5afd358df6a410dc83bd22705410d8ee3a424e5df7b727973",
+            "pitch": "215d5f54e285ee9a6f59ac0f4d9e750a759b6c9c7376c6d0045cdb9a3887fae9",
+            "energy": "22f77b43d7fc63b4915d5156425b67038f0885a89f906711962e1e533aaa3516"
+          }
+        },
+        {
+          "id": "te_train-00000-of-00004_000044",
+          "text": "భార్యకు తన భర్త ఇంకో పెళ్ళి చేసుకోబోతున్నాడని తెలిసింది తన భర్త ఎదుట ఏడిచి ఈ పెళ్ళి జరగటానికి వీల్లేదన్నది.",
+          "asr_transcript": "భార్యకు తనబర్తా ఇంకో పెళ్లి చేసుకో పోతునాడని తెలిసింది తనబర్తా యదు టగేడిచి ఈ పెళ్లి జరగటానికి విలేదన్నది",
+          "metrics": {
+            "reference_normalized": "భార్యకు తన భర్త ఇంకో పెళ్ళి చేసుకోబోతున్నాడని తెలిసింది తన భర్త ఎదుట ఏడిచి ఈ పెళ్ళి జరగటానికి వీల్లేదన్నది",
+            "hypothesis_normalized": "భార్యకు తనబర్తా ఇంకో పెళ్లి చేసుకో పోతునాడని తెలిసింది తనబర్తా యదు టగేడిచి ఈ పెళ్లి జరగటానికి విలేదన్నది",
+            "word_edit_distance": 11,
+            "reference_word_count": 15,
+            "hypothesis_word_count": 14,
+            "wer": 0.7333333333333333,
+            "character_edit_distance": 15,
+            "reference_character_count": 92,
+            "hypothesis_character_count": 91,
+            "cer": 0.16304347826086957
+          },
+          "source_duration_seconds": 11.6938125,
+          "generated_duration_seconds": 10.669569160997732,
+          "generated_to_source_duration_ratio": 0.9124115134390715,
+          "wav_sha256": "3fbc10e39aea97504358df11468d187c585fed32067daec8e02ac1fc8046c558",
+          "source_wav_sha256": "d43483965fdb6c29eed07b5b2f6c66f6624a04d36724f68703a0e095d438585b",
+          "finite": true,
+          "rms": 0.05866966924244334,
+          "peak": 0.412200927734375,
+          "pcm_rail_hits": 0,
+          "prediction_sha256": "6927e22899d41c4a970694ac0c86897e2b139913cc7874dc07161769244c602e",
+          "zero_duration_phone_count": 2,
+          "plot_sha256": {
+            "duration": "50535f252ffe45d876e27fd41589a96a439adea4ad48830f2692feca731e7d32",
+            "pitch": "f4e7a125f45e45d6bf151f1af846d4da0c5f8042a28793a47388f56349ac1775",
+            "energy": "e3088f48f1ab6b127d911b11fa5d96975339f49b087dd2be6b879e126552e36d"
+          }
+        },
+        {
+          "id": "te_train-00000-of-00004_000156",
+          "text": "వాడు దరిద్రుడైతే నేను అజ్ఞానిని క్షమించు తల్లీ అంటూ మండోదరి భర్త బోర్లాపడి ఏడిచాడు.",
+          "asr_transcript": "వాడు దరిద్రుడేతే నేను వాగ్నానిని క్షమించు తల్లి అంటు మండో దరి భర్త బోర్లా పడి ఏడి చాడు",
+          "metrics": {
+            "reference_normalized": "వాడు దరిద్రుడైతే నేను అజ్ఞానిని క్షమించు తల్లీ అంటూ మండోదరి భర్త బోర్లాపడి ఏడిచాడు",
+            "hypothesis_normalized": "వాడు దరిద్రుడేతే నేను వాగ్నానిని క్షమించు తల్లి అంటు మండో దరి భర్త బోర్లా పడి ఏడి చాడు",
+            "word_edit_distance": 10,
+            "reference_word_count": 11,
+            "hypothesis_word_count": 14,
+            "wer": 0.9090909090909091,
+            "character_edit_distance": 7,
+            "reference_character_count": 72,
+            "hypothesis_character_count": 73,
+            "cer": 0.09722222222222222
+          },
+          "source_duration_seconds": 8.9190625,
+          "generated_duration_seconds": 8.626213151927438,
+          "generated_to_source_duration_ratio": 0.9671659047043831,
+          "wav_sha256": "18f412d62492520dc82669ec9f0b99556cdd33caad87c2ae2328ee6d114a4d43",
+          "source_wav_sha256": "0a04e73d0ec9824e55a30220b103a185d9866de4399fb7cf2c49fab9bb8da467",
+          "finite": true,
+          "rms": 0.06876609296262307,
+          "peak": 0.402740478515625,
+          "pcm_rail_hits": 0,
+          "prediction_sha256": "16f201cbaf7fdd474bc85347d051c60353ae6721e66064c7deb8f2ff905b228a",
+          "zero_duration_phone_count": 2,
+          "plot_sha256": {
+            "duration": "eff0350dcb7d382155312c0cf8c4a15e80565803153f5d4537c537bf2c2196a6",
+            "pitch": "31fbd8baa883043abbca786f4027e30de4c429aeb68d227e3357b11f9ed77ac8",
+            "energy": "19725c36042551e3558b3da542877aa6646c8c40e210433e19707a5aaf586af0"
+          }
+        }
+      ]
+    },
+    {
+      "label": "later",
+      "probes": [
+        {
+          "id": "te_train-00000-of-00004_000018",
+          "text": "బాబూ ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి.",
+          "asr_transcript": "బాబు ఇది పద్మం కాదు అసిధరా చక్రం అన్నాడు నరకవాసి",
+          "metrics": {
+            "reference_normalized": "బాబూ ఇది పద్మం కాదు అసిధారా చక్రం అన్నాడు నరకవాసి",
+            "hypothesis_normalized": "బాబు ఇది పద్మం కాదు అసిధరా చక్రం అన్నాడు నరకవాసి",
+            "word_edit_distance": 2,
+            "reference_word_count": 8,
+            "hypothesis_word_count": 8,
+            "wer": 0.25,
+            "character_edit_distance": 2,
+            "reference_character_count": 42,
+            "hypothesis_character_count": 41,
+            "cer": 0.047619047619047616
+          },
+          "source_duration_seconds": 6.2719375,
+          "generated_duration_seconds": 5.735328798185941,
+          "generated_to_source_duration_ratio": 0.9144429130848228,
+          "wav_sha256": "21e86269be1b4ae77fb598837102b80d9d1417490f6c159ba59718220dca1fd0",
+          "source_wav_sha256": "738d86aa5a705a9fce125dce7d4a72801edb1cffe16f71337938c379f630de77",
+          "finite": true,
+          "rms": 0.07762554908321127,
+          "peak": 0.586761474609375,
+          "pcm_rail_hits": 0,
+          "prediction_sha256": "7cc0a5517a39eca3b705113d22a53d8f6471cedccbe460a365523cce69ae3b85",
+          "zero_duration_phone_count": 3,
+          "plot_sha256": {
+            "duration": "50cb07b2c5bc7c9d7105b74acdaa2f017ea77d9b4912567a5a904bf58e35a208",
+            "pitch": "d4fe3880bec33e9f94a1ea3f9de005ef4889f5b9b829c2fb84e12c7bdd6c72eb",
+            "energy": "064dbd6f362a18cbea87ea27d2ea45070375a04c65f208825065c559439b5934"
+          }
+        },
+        {
+          "id": "te_train-00000-of-00004_000044",
+          "text": "భార్యకు తన భర్త ఇంకో పెళ్ళి చేసుకోబోతున్నాడని తెలిసింది తన భర్త ఎదుట ఏడిచి ఈ పెళ్ళి జరగటానికి వీల్లేదన్నది.",
+          "asr_transcript": "భారియకు తనభర్త ఇంకో పెళ్లి జేసు కోబోతున్నాడని తిలిసింది తనభర్త యదుటా ఏడిచ్చి ఈ పెళ్లి జరగటానికి వీలేదన్నది",
+          "metrics": {
+            "reference_normalized": "భార్యకు తన భర్త ఇంకో పెళ్ళి చేసుకోబోతున్నాడని తెలిసింది తన భర్త ఎదుట ఏడిచి ఈ పెళ్ళి జరగటానికి వీల్లేదన్నది",
+            "hypothesis_normalized": "భారియకు తనభర్త ఇంకో పెళ్లి జేసు కోబోతున్నాడని తిలిసింది తనభర్త యదుటా ఏడిచ్చి ఈ పెళ్లి జరగటానికి వీలేదన్నది",
+            "word_edit_distance": 12,
+            "reference_word_count": 15,
+            "hypothesis_word_count": 14,
+            "wer": 0.8,
+            "character_edit_distance": 11,
+            "reference_character_count": 92,
+            "hypothesis_character_count": 93,
+            "cer": 0.11956521739130435
+          },
+          "source_duration_seconds": 11.6938125,
+          "generated_duration_seconds": 10.89015873015873,
+          "generated_to_source_duration_ratio": 0.9312752988094114,
+          "wav_sha256": "1acda2f3cc768ea53c02774f1f55189c1b7bb92bd53126e2a00ba64520aa55b6",
+          "source_wav_sha256": "d43483965fdb6c29eed07b5b2f6c66f6624a04d36724f68703a0e095d438585b",
+          "finite": true,
+          "rms": 0.07851538609691869,
+          "peak": 0.550201416015625,
+          "pcm_rail_hits": 0,
+          "prediction_sha256": "ae7d966326734191c2a56be22da7f2e10ab176638140f9f197d41a97c55bd24b",
+          "zero_duration_phone_count": 7,
+          "plot_sha256": {
+            "duration": "ac32310bf5625f8ef8a7a56d5c27dbfc5973469c5388e7bd6179c3b5a43e2ce4",
+            "pitch": "8e9cb687798d6e044df4b7d1771fbef428fa178045efb8326e6df18ba867d804",
+            "energy": "69502779c72b6bd7377f24aefd9c0c7df6cf5ddf122efe5158651a56d48688e9"
+          }
+        },
+        {
+          "id": "te_train-00000-of-00004_000156",
+          "text": "వాడు దరిద్రుడైతే నేను అజ్ఞానిని క్షమించు తల్లీ అంటూ మండోదరి భర్త బోర్లాపడి ఏడిచాడు.",
+          "asr_transcript": "వాడు దరిద్రు డయితే నేను అగ్నాని నిక్షమించు తల్లి అంటు మండో దరి భర్తా బోరిలా పడి ఏడి చాడు",
+          "metrics": {
+            "reference_normalized": "వాడు దరిద్రుడైతే నేను అజ్ఞానిని క్షమించు తల్లీ అంటూ మండోదరి భర్త బోర్లాపడి ఏడిచాడు",
+            "hypothesis_normalized": "వాడు దరిద్రు డయితే నేను అగ్నాని నిక్షమించు తల్లి అంటు మండో దరి భర్తా బోరిలా పడి ఏడి చాడు",
+            "word_edit_distance": 13,
+            "reference_word_count": 11,
+            "hypothesis_word_count": 15,
+            "wer": 1.1818181818181819,
+            "character_edit_distance": 8,
+            "reference_character_count": 72,
+            "hypothesis_character_count": 74,
+            "cer": 0.1111111111111111
+          },
+          "source_duration_seconds": 8.9190625,
+          "generated_duration_seconds": 8.753922902494331,
+          "generated_to_source_duration_ratio": 0.9814846462275973,
+          "wav_sha256": "1b223ac5a0226966e25511eb40401781c7d416a6ac7c460dd136617e6131db05",
+          "source_wav_sha256": "0a04e73d0ec9824e55a30220b103a185d9866de4399fb7cf2c49fab9bb8da467",
+          "finite": true,
+          "rms": 0.09034280922762797,
+          "peak": 0.489105224609375,
+          "pcm_rail_hits": 0,
+          "prediction_sha256": "a039c7e88a5a9e10dfe4fc44615416b092f7720cacf61d6d4a1f8c34076c3b5b",
+          "zero_duration_phone_count": 1,
+          "plot_sha256": {
+            "duration": "65b2b11eeb1d1bea7d8943dc5a2344a5ed8cabbeca263e63b7a17f86cacf7f3e",
+            "pitch": "153a7a63ea3b6652d16f3f834a852343ba2dfd7919588d837f540b5e7256bfb6",
+            "energy": "66e7a6c8d532b4256efe0bb957b9cf8c8bca74787ff2b7038549201752026c3b"
+          }
+        }
+      ]
+    }
+  ]
+}

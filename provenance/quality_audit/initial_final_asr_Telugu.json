@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-05T11:45:18.007739+00:00",
+  "language": "te",
+  "language_name": "Telugu",
+  "interpretation": "These are ASR hypotheses and text-comparison error rates, not ground-truth transcripts or a pronunciation score. Errors can arise from the recognizer, the synthesized speech, or text conventions. A low WER/CER does not establish correct stress, homograph sense, pronunciation, naturalness, or timing. A high WER/CER does not by itself prove a TTS error. Human listening is required.",
+  "normalization": "Unicode NFC; casefold; remove apostrophes and zero-width joiners; replace other punctuation/symbols with spaces; collapse whitespace; preserve Unicode letters, combining marks and digits. No spelling repairs, number/date/time expansion, transliteration, or correction of the deliberate input anomalies. WER uses whitespace-separated words; CER uses Unicode code points excluding whitespace (not grapheme clusters, so Telugu vowel signs count separately).",
+  "source": {
+    "samples_path": "test_samples.json",
+    "samples_sha256": "9c42693394a9eea8fe953c8c71a3801945235e9baf697c5d5b8acdb0df382339",
+    "inference_manifest_path": "inference_manifest.json",
+    "inference_manifest_sha256": "b3fe28f6dcb620669d5d171d8722433524be19bc0e7e606d4a17e5182d525cd4",
+    "checkpoint_sha256": "7f32328011ab47edda7eadc67dc4331ce4e1a9f11a74fdc771b79e638f72f0bf"
+  },
+  "model": {
+    "engine": "faster-whisper / CTranslate2 local inference",
+    "requested_model": "large-v3-turbo",
+    "repository_id": "mobiuslabsgmbh/faster-whisper-large-v3-turbo",
+    "requested_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "resolved_revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "revision_source": "Hugging Face cached snapshot directory; no network query",
+    "model_file_sha256": {
+      "config.json": "b0253ea6c0d3bea6b1e19e91a02acfd3b53f4467362efcb5a3e6b16c9b3a9b7e",
+      "model.bin": "e76620f83d5f5b69efd3d87e3dc180c1bd21df9fbebacfd4335e5e1efcc018da",
+      "preprocessor_config.json": "7ccc62c6f2765af1f3b46c00c9b5894426835a05021c8b9c01eecb6dfb542711",
+      "tokenizer.json": "297b13372ac43916285644fb9687add3cc62ee2a1adb60da3dc25cc94c1871fd",
+      "vocabulary.json": "c69260f2ab26d659b7c398f9a2b2b48ed0df16c3b47d7326782fd9cba71690c1"
+    },
+    "requested_device": "cpu",
+    "requested_compute_type": "int8",
+    "cpu_threads": 4,
+    "versions": {
+      "python": "3.11.18",
+      "faster-whisper": "1.2.1",
+      "ctranslate2": "4.8.5",
+      "huggingface-hub": "2.4.0",
+      "av": "18.1.0",
+      "tokenizers": "0.23.3",
+      "numpy": "2.4.6"
+    },
+    "audio_uploaded": false
+  },
+  "decoding": {
+    "language": "te",
+    "language_is_forced": true,
+    "task": "transcribe",
+    "beam_size": 5,
+    "temperature": 0.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "initial_prompt": null,
+    "hotwords": null,
+    "note": "Reference text is not supplied as a decoding prompt."
+  },
+  "aggregate": {
+    "sample_count": 5,
+    "word_edit_distance": 32,
+    "reference_word_count": 37,
+    "wer": 0.8648648648648649,
+    "character_edit_distance": 57,
+    "reference_character_count": 229,
+    "cer": 0.24890829694323144,
+    "aggregation": "micro-average within this language"
+  },
+  "samples": [
+    {
+      "id": "T1",
+      "text": "న్యూరోఫార్మకోలాజికల్ పరిశోధనలో నూతన ఔషధాల ప్రభావాన్ని విశ్లేషించారు.",
+      "language": "te",
+      "wav_path": "T1.wav",
+      "wav_sha256": "7bcaf769e08a38d49bfd48b6a48f73865c53ccc266ea462e9af867d26b4c8ef4",
+      "duration_seconds": 7.465215419501134,
+      "asr_transcript": "నివ్రు ధార్మా కోలాధి కల్ పరిసో ధనలో నోతన అఉషధాల ప్రభావాన్ని విస్లే శించారు",
+      "segments": [
+        {
+          "start_seconds": 0.0,
+          "end_seconds": 6.98,
+          "text": " నివ్రు ధార్మా కోలాధి కల్ పరిసో ధనలో నోతన అఉషధాల ప్రభావాన్ని విస్లే శించారు"
+        }
+      ],
+      "metrics": {
+        "reference_normalized": "న్యూరోఫార్మకోలాజికల్ పరిశోధనలో నూతన ఔషధాల ప్రభావాన్ని విశ్లేషించారు",
+        "hypothesis_normalized": "నివ్రు ధార్మా కోలాధి కల్ పరిసో ధనలో నోతన అఉషధాల ప్రభావాన్ని విస్లే శించారు",
+        "word_edit_distance": 10,
+        "reference_word_count": 6,
+        "hypothesis_word_count": 11,
+        "wer": 1.6666666666666667,
+        "character_edit_distance": 13,
+        "reference_character_count": 62,
+        "hypothesis_character_count": 64,
+        "cer": 0.20967741935483872
+      }
+    },
+    {
+      "id": "T2a",
+      "text": "తాడుపై అతని పట్టు చాలా బలంగా ఉంది.",
+      "language": "te",
+      "wav_path": "T2a.wav",
+      "wav_sha256": "dd64d03e4d677e473662fd841ed22f38c65cede6e8661172b353321622154b08",
+      "duration_seconds": 4.051882086167801,
+      "asr_transcript": "తాడు పై అతని పటు జాలా బలంగా ఉంది",
+      "segments": [
+        {
+          "start_seconds": 0.0,
+          "end_seconds": 3.58,
+          "text": " తాడు పై అతని పటు జాలా బలంగా ఉంది"
+        }
+      ],
+      "metrics": {
+        "reference_normalized": "తాడుపై అతని పట్టు చాలా బలంగా ఉంది",
+        "hypothesis_normalized": "తాడు పై అతని పటు జాలా బలంగా ఉంది",
+        "word_edit_distance": 4,
+        "reference_word_count": 6,
+        "hypothesis_word_count": 7,
+        "wer": 0.6666666666666666,
+        "character_edit_distance": 3,
+        "reference_character_count": 28,
+        "hypothesis_character_count": 26,
+        "cer": 0.10714285714285714
+      }
+    },
+    {
+      "id": "T2b",
+      "text": "ఆమె పట్టు చీరను ధరించి వేడుకకు వచ్చింది.",
+      "language": "te",
+      "wav_path": "T2b.wav",
+      "wav_sha256": "462b0133e54ec0d402a0f89fd7ffb3af594af6cd675ea71dc9e6a2377a36b614",
+      "duration_seconds": 4.435011337868481,
+      "asr_transcript": "ఆమె పట్టు చీరను ధరించి వేడు కకు వచ్చింది",
+      "segments": [
+        {
+          "start_seconds": 0.0,
+          "end_seconds": 3.94,
+          "text": " ఆమె పట్టు చీరను ధరించి వేడు కకు వచ్చింది"
+        }
+      ],
+      "metrics": {
+        "reference_normalized": "ఆమె పట్టు చీరను ధరించి వేడుకకు వచ్చింది",
+        "hypothesis_normalized": "ఆమె పట్టు చీరను ధరించి వేడు కకు వచ్చింది",
+        "word_edit_distance": 2,
+        "reference_word_count": 6,
+        "hypothesis_word_count": 7,
+        "wer": 0.3333333333333333,
+        "character_edit_distance": 0,
+        "reference_character_count": 34,
+        "hypothesis_character_count": 34,
+        "cer": 0.0
+      }
+    },
+    {
+      "id": "T3",
+      "text": "పులి అడ విలో నిశ్శబ్దంగా నడిచింది.",
+      "language": "te",
+      "wav_path": "T3.wav",
+      "wav_sha256": "8bfcbec1b50f6745b9a3df80fdc4fe19a6de9d28991618408a85fd597cadbb51",
+      "duration_seconds": 3.355283446712018,
+      "asr_transcript": "పూలి తడవిలో నిస్షబ్దంగా నడి జింది.",
+      "segments": [
+        {
+          "start_seconds": 0.0,
+          "end_seconds": 2.82,
+          "text": " పూలి తడవిలో నిస్షబ్దంగా నడి జింది."
+        }
+      ],
+      "metrics": {
+        "reference_normalized": "పులి అడ విలో నిశ్శబ్దంగా నడిచింది",
+        "hypothesis_normalized": "పూలి తడవిలో నిస్షబ్దంగా నడి జింది",
+        "word_edit_distance": 5,
+        "reference_word_count": 5,
+        "hypothesis_word_count": 5,
+        "wer": 1.0,
+        "character_edit_distance": 5,
+        "reference_character_count": 29,
+        "hypothesis_character_count": 29,
+        "cer": 0.1724137931034483
+      }
+    },
+    {
+      "id": "T4",
+      "text": "ఈ సమావేశం 2026 నవంబర్ 12వ తేదీ ఉదయం 10:45 గంటలకు ప్రారంభమవుతుంది, సమయానికి సిద్ధంగా ఉంచండి.",
+      "language": "te",
+      "wav_path": "T4.wav",
+      "wav_sha256": "0bdde4849332b01985da7441f039785fc4e513e08b768b476bc492259f0ab493",
+      "duration_seconds": 12.364625850340136,
+      "asr_transcript": "ఈ సమావేసం రెండు వలిరవ్యారు నవంబర పన్న్యండవ తేది ఉదయం పదినలు హేదు గంటలకు ప్రారంభమవు తుంది సమయానికి సిధంగా ఉంచండి",
+      "segments": [
+        {
+          "start_seconds": 0.0,
+          "end_seconds": 11.86,
+          "text": " ఈ సమావేసం రెండు వలిరవ్యారు నవంబర పన్న్యండవ తేది ఉదయం పదినలు హేదు గంటలకు ప్రారంభమవు తుంది సమయానికి సిధంగా ఉంచండి"
+        }
+      ],
+      "metrics": {
+        "reference_normalized": "ఈ సమావేశం 2026 నవంబర్ 12వ తేదీ ఉదయం 10 45 గంటలకు ప్రారంభమవుతుంది సమయానికి సిద్ధంగా ఉంచండి",
+        "hypothesis_normalized": "ఈ సమావేసం రెండు వలిరవ్యారు నవంబర పన్న్యండవ తేది ఉదయం పదినలు హేదు గంటలకు ప్రారంభమవు తుంది సమయానికి సిధంగా ఉంచండి",
+        "word_edit_distance": 11,
+        "reference_word_count": 14,
+        "hypothesis_word_count": 16,
+        "wer": 0.7857142857142857,
+        "character_edit_distance": 36,
+        "reference_character_count": 76,
+        "hypothesis_character_count": 96,
+        "cer": 0.47368421052631576
+      }
+    }
+  ]
+}

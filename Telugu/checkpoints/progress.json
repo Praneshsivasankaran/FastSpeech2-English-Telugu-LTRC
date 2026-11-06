@@ -1,0 +1,46 @@
+{
+  "step": 7451,
+  "total_target_steps": 10000,
+  "elapsed_seconds": 103.07717806496657,
+  "median_step_seconds": 0.13815703499130905,
+  "validation": {
+    "total": 3.252282822775148,
+    "mel": 0.5790597211523175,
+    "postnet_mel": 0.5788122521891139,
+    "pitch": 1.5207983958554219,
+    "energy": 0.22403700073168487,
+    "duration": 0.34957545275386437,
+    "examples": 241,
+    "aggregation": "mean_per_utterance"
+  },
+  "best_validation": 3.203568074218465,
+  "benchmark_only": false,
+  "split_audit": {
+    "production_duration_gate": true,
+    "train_examples": 1177,
+    "validation_examples": 241,
+    "train_seconds": 18005.32843750001,
+    "validation_seconds": 3614.102500000002,
+    "train_speakers": 1,
+    "validation_speakers": 1,
+    "train_speaker_ids": [
+      0
+    ],
+    "validation_speaker_ids": [
+      0
+    ],
+    "fingerprint_version": 2,
+    "overlap_checks": "passed",
+    "train_manifest_sha256": "9a5b93185e7fe6677b26912084893a1d68d3a57f90faabaf0490afaaa8ba3ea7",
+    "validation_manifest_sha256": "cac58a1f3c87829f81dc7352aed9814d2e22f7bc4bc2ab390b636e58ac46cefe"
+  },
+  "recovery_history": [
+    {
+      "checkpoint_step": 7000,
+      "audit_file": "recovery/20261105T113856.586549Z-beac4a58/audit.json",
+      "discarded_training_records": 496,
+      "discarded_validation_records": 0
+    }
+  ],
+  "termination_reason": "signal:SIGTERM"
+}

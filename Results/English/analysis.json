@@ -1,0 +1,780 @@
+{
+  "schema_version": 1,
+  "scope": "assignment inference evidence",
+  "language": "English",
+  "created_at_utc": "2026-11-06T12:02:57.955195+00:00",
+  "source": {
+    "test_samples_sha256": "b1764a90ac2edd1d97bf37fd83c753a63dd2ac325dc31a21753b26ca9a987079",
+    "config_sha256": "659c66202917f7073c24142fff5c4146b12597a240f42c877d42a3cf8d71d33d",
+    "checkpoint_sha256": "48a2bc893c5192a7559408d4843a1d2f99b5bfab6196691edb636c6803ea7bac",
+    "checkpoint_step": 8842,
+    "checkpoint_file": "selected.pt",
+    "checkpoint_selection": {
+      "schema_version": 1,
+      "created_utc": "2026-11-06T11:59:28.727940+00:00",
+      "selected_file": "selected.pt",
+      "selected_sha256": "48a2bc893c5192a7559408d4843a1d2f99b5bfab6196691edb636c6803ea7bac",
+      "selected_step": 8842,
+      "selection_basis": "fixed_validation_comparison",
+      "rationale": "Select final checkpoint 8842 for improved fixed-validation recognition (WER 15.38%, CER 11.19% versus step-7000 38.46%/30.60%) and enable sentence context to correct the known conduct verb-vowel target. Retain normal energy and duration inference. Although SIL-energy-zero improved the three validation probes, it worsened assignment recognition and was rejected. Neither a perfect speech-quality claim nor a passed old timing gate is made.",
+      "validation_probe_manifest_sha256": "ece858ca512c3727fc795406b38f4b839fd8e2e66695966fee9c85c4f6b282ed",
+      "probe_ids": [
+        "en_test-00000-of-00003_000970",
+        "en_test-00000-of-00003_002008",
+        "en_test-00001-of-00003_001541"
+      ],
+      "candidates": [
+        {
+          "label": "minimum_total",
+          "step": 1500,
+          "sha256": "17ad591e4ef9e269df9e3da05737fb4ea52d35d1b5eec7f1229ff3231446afcc",
+          "wer": 0.6923076923076923,
+          "cer": 0.4552238805970149,
+          "duration_ratio_min": 0.4022453804418602,
+          "duration_ratio_max": 0.8581853613090596,
+          "valid_audio": true,
+          "passes_quality_gate": false
+        },
+        {
+          "label": "later_fixed",
+          "step": 8842,
+          "sha256": "48a2bc893c5192a7559408d4843a1d2f99b5bfab6196691edb636c6803ea7bac",
+          "wer": 0.15384615384615385,
+          "cer": 0.11194029850746269,
+          "duration_ratio_min": 0.48969002836400377,
+          "duration_ratio_max": 0.9185195151759786,
+          "valid_audio": true,
+          "passes_quality_gate": false,
+          "inference_recipe": {
+            "frontend": "sentence_context_v1",
+            "zero_sil_energy": false,
+            "duration_control": 1.0,
+            "raw_energy_preserved": true,
+            "stress_markers_encoded": false
+          }
+        }
+      ],
+      "source_controls": {
+        "wer": 0.07692307692307693,
+        "cer": 0.014925373134328358
+      },
+      "decision": "posthoc_validation_improvement",
+      "quality_gate_passed": false,
+      "protocol_note": "Exploratory post-hoc refinement, not a blind test: initial assignment-ASR concerns motivated fixed-validation diagnostics and causal ablations. Both assignment and validation outputs were examined. Earlier selection records are preserved as selection_v1.json and selection_v2.json. Duration scaling and zero-SIL-energy conditioning were tested and rejected; final controls remain 1.0 and raw energy is used. Context corrects vowel targets but stress markers remain unencoded.",
+      "frozen_criterion": {
+        "frozen_utc": "2026-11-05T11:37:41.788844+00:00",
+        "scope": "Exactly the existing frozen three project-validation probes per language; compare the baseline and the one supplied later checkpoint only. No assignment test samples or additional checkpoint search.",
+        "score_rule": "Prefer the candidate with strictly lower micro-averaged WER, provided micro-averaged CER does not increase, and it has no severe artifact/coverage/duration failure. If scores conflict, tie, or neither candidate satisfies the gates, mark inconclusive rather than infer human quality.",
+        "severe_failure_rules": [
+          "Missing or nonfinite WAV/prediction artifact or zero/silent generated waveform (RMS <= 1e-5).",
+          "Empty ASR transcript.",
+          "Any generated/source duration ratio below 0.5 or above 2.0."
+        ],
+        "threshold_note": "Broad internal screening thresholds, fixed before later-candidate inference; not perceptually validated quality thresholds.",
+        "asr": "Pinned faster-whisper large-v3-turbo 0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf, CPU int8, language forced, beam 5, temperature 0, no prompt/hotwords.",
+        "selection_warning": "A choice applies only among these two supplied checkpoints on these three validation probes. No human-listening or native-quality claim."
+      },
+      "per_probe_comparison": [
+        {
+          "label": "baseline",
+          "probes": [
+            {
+              "id": "en_test-00000-of-00003_000970",
+              "text": "Brazil, Cambodia, Japan, Spain, Greece.",
+              "asr_transcript": "Was it a movie Japan's game race?",
+              "metrics": {
+                "reference_normalized": "brazil cambodia japan spain greece",
+                "hypothesis_normalized": "was it a movie japans game race",
+                "word_edit_distance": 7,
+                "reference_word_count": 5,
+                "hypothesis_word_count": 7,
+                "wer": 1.4,
+                "character_edit_distance": 14,
+                "reference_character_count": 30,
+                "hypothesis_character_count": 25,
+                "cer": 0.4666666666666667
+              },
+              "source_duration_seconds": 5.974625,
+              "generated_duration_seconds": 2.403265306122449,
+              "generated_to_source_duration_ratio": 0.4022453804418602,
+              "wav_sha256": "308b54b3c0808594a9c066c376b5de499c04e550e88bd557b5037768a4b1fbac",
+              "source_wav_sha256": "97d138733e9d50c164324c41b71fa4c04952fe723c3ec1a1d5b801e04fbcb469",
+              "finite": true,
+              "rms": 0.05448443677089007,
+              "peak": 0.280120849609375,
+              "pcm_rail_hits": 0,
+              "prediction_sha256": "985224cc20a105ea10128656aeeb585a50925da9583b8fb68325fa3465f31a30",
+              "zero_duration_phone_count": 1,
+              "plot_sha256": {
+                "duration": "3ec75b1f5a25e946b387e99036ff09fa2d1a4e1445e7aa96f23cf815b0b380b6",
+                "pitch": "bdd45d1930cb3c3f1b3d7fb46aa68baaf8d5616be17badda48da3912a214a41c",
+                "energy": "33f17abe2fac17e0caf3dc818d5df822289dbb78317c657d9d8583ee0453772c"
+              }
+            },
+            {
+              "id": "en_test-00000-of-00003_002008",
+              "text": "eat seasonal fruits and use these flowers for worshipping and so on.",
+              "asr_transcript": "It's seasoning, fruits and beans, these flowers for worshipping them, so on.",
+              "metrics": {
+                "reference_normalized": "eat seasonal fruits and use these flowers for worshipping and so on",
+                "hypothesis_normalized": "its seasoning fruits and beans these flowers for worshipping them so on",
+                "word_edit_distance": 4,
+                "reference_word_count": 12,
+                "hypothesis_word_count": 12,
+                "wer": 0.3333333333333333,
+                "character_edit_distance": 15,
+                "reference_character_count": 56,
+                "hypothesis_character_count": 60,
+                "cer": 0.26785714285714285
+              },
+              "source_duration_seconds": 5.30875,
+              "generated_duration_seconds": 4.307301587301588,
+              "generated_to_source_duration_ratio": 0.8113589050721145,
+              "wav_sha256": "ce97c6c540c62ad4f081d09973872a6acfc50f1b891fe15b0cbf763034d2989a",
+              "source_wav_sha256": "4e67e99a2885855f621d68d5b13f4bf69272bb47906a87f1d0c1f69652d46fd2",
+              "finite": true,
+              "rms": 0.05022583001997992,
+              "peak": 0.258514404296875,
+              "pcm_rail_hits": 0,
+              "prediction_sha256": "771dce6ee92612d330ce825e2572056fc9098b951e17240b1305adf401d8bb40",
+              "zero_duration_phone_count": 0,
+              "plot_sha256": {
+                "duration": "677904b5ca809ef73c14035e8b040ba73a6b93ecac270fa2f1dc39a6fbcba3e8",
+                "pitch": "d5a2632d937b6782cff67aecaeadd506356ec576b210202e85ea2f15c627068c",
+                "energy": "69daf518c59ed551b1343276f17bf18f450df8e7d06637c763aac42c8b942cec"
+              }
+            },
+            {
+              "id": "en_test-00001-of-00003_001541",
+              "text": "Especially this Yaksha Gana and its various versions are",
+              "asr_transcript": "Especially this reaction from the analytics release washing store.",
+              "metrics": {
+                "reference_normalized": "especially this yaksha gana and its various versions are",
+                "hypothesis_normalized": "especially this reaction from the analytics release washing store",
+                "word_edit_distance": 7,
+                "reference_word_count": 9,
+                "hypothesis_word_count": 9,
+                "wer": 0.7777777777777778,
+                "character_edit_distance": 32,
+                "reference_character_count": 48,
+                "hypothesis_character_count": 57,
+                "cer": 0.6666666666666666
+              },
+              "source_duration_seconds": 4.1803125,
+              "generated_duration_seconds": 3.5874829931972787,
+              "generated_to_source_duration_ratio": 0.8581853613090596,
+              "wav_sha256": "31f950624902c1d0edb11a29fb55d5be5ebb2f0dc0f686f4f2947b563de0f092",
+              "source_wav_sha256": "3415c9104675ce5249dcd3af4ad059d2ccb08f0bbb79d1a30332c68917acd048",
+              "finite": true,
+              "rms": 0.045843633397326215,
+              "peak": 0.236968994140625,
+              "pcm_rail_hits": 0,
+              "prediction_sha256": "f81fa2b38d7419f309889a10e499c9d595027114a99d1d079c3991ef52c2b140",
+              "zero_duration_phone_count": 0,
+              "plot_sha256": {
+                "duration": "af90cc7c30b1b9841201ca5c27e93aaffb11de9235f48b48b44d067ded1d1115",
+                "pitch": "6177517a9ad232a61a1ea70bcade83bddf5a7f93bcd9fdb278e812b49249573b",
+                "energy": "e980dda75c45ac0783762b03572744427e3e9676bed772792a5c8a60d832b8a5"
+              }
+            }
+          ]
+        },
+        {
+          "label": "later_fixed",
+          "checkpoint_step": 8842,
+          "inference_recipe": {
+            "frontend": "sentence_context_v1",
+            "zero_sil_energy": false,
+            "duration_control": 1.0,
+            "raw_energy_preserved": true,
+            "stress_markers_encoded": false
+          },
+          "probes": [
+            {
+              "id": "en_test-00000-of-00003_000970",
+              "text": "Brazil, Cambodia, Japan, Spain, Greece.",
+              "asr_transcript": "Brazil, Cambodia, Japan, Spain, Greece.",
+              "metrics": {
+                "reference_normalized": "brazil cambodia japan spain greece",
+                "hypothesis_normalized": "brazil cambodia japan spain greece",
+                "word_edit_distance": 0,
+                "reference_word_count": 5,
+                "hypothesis_word_count": 5,
+                "wer": 0.0,
+                "character_edit_distance": 0,
+                "reference_character_count": 30,
+                "hypothesis_character_count": 30,
+                "cer": 0.0
+              },
+              "source_duration_seconds": 5.974625,
+              "generated_duration_seconds": 2.9257142857142857,
+              "generated_to_source_duration_ratio": 0.48969002836400377,
+              "wav_sha256": "a277b90d794ee15726828f27e8bb68f39c78af6914a731ee776a64d0fd353253",
+              "source_wav_sha256": "97d138733e9d50c164324c41b71fa4c04952fe723c3ec1a1d5b801e04fbcb469"
+            },
+            {
+              "id": "en_test-00000-of-00003_002008",
+              "text": "eat seasonal fruits and use these flowers for worshipping and so on.",
+              "asr_transcript": "Keep seasonal fruits and use these flowers for worshipping and so on.",
+              "metrics": {
+                "reference_normalized": "eat seasonal fruits and use these flowers for worshipping and so on",
+                "hypothesis_normalized": "keep seasonal fruits and use these flowers for worshipping and so on",
+                "word_edit_distance": 1,
+                "reference_word_count": 12,
+                "hypothesis_word_count": 12,
+                "wer": 0.08333333333333333,
+                "character_edit_distance": 3,
+                "reference_character_count": 56,
+                "hypothesis_character_count": 57,
+                "cer": 0.05357142857142857
+              },
+              "source_duration_seconds": 5.30875,
+              "generated_duration_seconds": 4.876190476190477,
+              "generated_to_source_duration_ratio": 0.9185195151759786,
+              "wav_sha256": "e19d0a0e6a101c73f0249f87761715e37e1184aec1c70d835a6e4335093e4eb3",
+              "source_wav_sha256": "4e67e99a2885855f621d68d5b13f4bf69272bb47906a87f1d0c1f69652d46fd2"
+            },
+            {
+              "id": "en_test-00001-of-00003_001541",
+              "text": "Especially this Yaksha Gana and its various versions are",
+              "asr_transcript": "especially this faction one and its various Russians are...",
+              "metrics": {
+                "reference_normalized": "especially this yaksha gana and its various versions are",
+                "hypothesis_normalized": "especially this faction one and its various russians are",
+                "word_edit_distance": 3,
+                "reference_word_count": 9,
+                "hypothesis_word_count": 9,
+                "wer": 0.3333333333333333,
+                "character_edit_distance": 12,
+                "reference_character_count": 48,
+                "hypothesis_character_count": 48,
+                "cer": 0.25
+              },
+              "source_duration_seconds": 4.1803125,
+              "generated_duration_seconds": 3.7151927437641725,
+              "generated_to_source_duration_ratio": 0.8887356492521007,
+              "wav_sha256": "c6cc3af7d081e2d234492392126f366179cd58e7174619f1c4a2297d16f2ffd0",
+              "source_wav_sha256": "3415c9104675ce5249dcd3af4ad059d2ccb08f0bbb79d1a30332c68917acd048"
+            }
+          ]
+        }
+      ],
+      "inference_recipe": {
+        "frontend": "sentence_context_v1",
+        "zero_sil_energy": false,
+        "duration_control": 1.0,
+        "raw_energy_preserved": true,
+        "stress_markers_encoded": false
+      },
+      "quality_evidence": {
+        "sil_energy": "provenance/quality_audit/sil_energy_zero_asr.json",
+        "contextual_frontend": "provenance/quality_audit/contextual_frontend_comparison.json",
+        "prior_selection": "English/checkpoints/selection_v1.json",
+        "rejected_sil_override": "provenance/quality_audit/causal_energy_8842.json",
+        "context_causal": "provenance/quality_audit/causal_context_7000.json"
+      }
+    },
+    "inference_manifest_sha256": "68dd144ad8bd1d6afd118145b127418df9bac9a32cf5596b60aaae9f4afdcaca",
+    "sample_rate_hz": 22050,
+    "hop_length": 256
+  },
+  "limitations": [
+    "These are objective artifact measurements, not subjective speech-quality scores.",
+    "Predicted pitch and spectral energy are not measured waveform F0 and RMS.",
+    "WORLD uses 60–600 Hz search bounds; its voicing/F0 estimates can be wrong on synthesized audio.",
+    "Full-scale PCM samples indicate rail hits; lost peaks cannot be recovered from the written WAV.",
+    "Silence maxima refer to predicted SIL runs, not silence independently detected in audio."
+  ],
+  "samples": [
+    {
+      "id": "E1",
+      "text": "The antidisestablishmentarianism movement gained considerable momentum during the parliamentary proceedings.",
+      "checkpoint_step": 8842,
+      "prediction": {
+        "sha256": "c3b5bd7ff55d6d807484d540d3695926b8c0a39a85410cc2ab9d720f0a1d389e",
+        "phone_count": 97,
+        "non_sil_phone_count": 86,
+        "zero_duration_phone_count": 6,
+        "zero_duration_non_sil_phone_count": 0,
+        "mel_frame_count": 601,
+        "duration_seconds": 6.977596371882086,
+        "non_sil_duration_seconds": 6.4203174603174595,
+        "sil_duration_seconds": 0.5572789115646258,
+        "max_phone": {
+          "phone_index": 95,
+          "phone": "z",
+          "duration_frames": 17,
+          "duration_seconds": 0.19736961451247165
+        },
+        "pause_run_count": 11,
+        "max_pause": {
+          "start_phone_index": 86,
+          "end_phone_index_inclusive": 86,
+          "duration_frames": 30,
+          "duration_seconds": 0.34829931972789113
+        },
+        "predicted_variance": {
+          "source": "acoustic-model phone-level predictions, denormalized at inference",
+          "selection": "All non-SIL phones; duration-weighted means exclude zero-duration phones",
+          "energy_units": "linear spectral energy (not waveform RMS)",
+          "pitch_hz_non_sil": {
+            "count": 86,
+            "min": 160.8377227783203,
+            "p05": 170.7018165588379,
+            "mean": 202.4459203675736,
+            "median": 199.520751953125,
+            "p95": 247.07160186767578,
+            "max": 261.92193603515625,
+            "std": 23.963751016357435,
+            "nonpositive_count": 0,
+            "duration_weighted_mean": 201.1632243427187
+          },
+          "energy_non_sil": {
+            "count": 86,
+            "min": 4.160160064697266,
+            "p05": 6.657018661499023,
+            "mean": 24.977536611778792,
+            "median": 24.887192726135254,
+            "p95": 46.056761741638184,
+            "max": 64.40123748779297,
+            "std": 12.073000390922184,
+            "nonpositive_count": 0,
+            "duration_weighted_mean": 25.627055585492155
+          }
+        }
+      },
+      "wav": {
+        "sha256": "3151530f01bc6666112ac85972831567a747c1464dd7877fa4ebcb7efa40e2eb",
+        "sample_rate_hz": 22050,
+        "channels": 1,
+        "encoding": "PCM_16",
+        "sample_count": 153856,
+        "duration_seconds": 6.977596371882086,
+        "rms": 0.057201771548226484,
+        "rms_dbfs": -24.85181041655027,
+        "peak": 0.4276123046875,
+        "dc_mean": 7.681144454118218e-05,
+        "full_scale_sample_count": 0,
+        "clipping_fraction_at_pcm_rails": 0.0,
+        "clipping_definition": "Samples at or beyond the positive/negative encoding rails. A rail hit alone does not establish pre-encoding clipping.",
+        "positive_rail": 0.999969482421875,
+        "negative_rail": -1.0
+      },
+      "acoustic_f0": {
+        "status": "measured",
+        "algorithm": "WORLD DIO + StoneMask",
+        "f0_floor_hz": 60.0,
+        "f0_ceiling_hz": 600.0,
+        "frame_period_ms": 11.609977324263038,
+        "source": "decoded generated WAV",
+        "scope": "entire waveform, including pauses",
+        "frame_count": 602,
+        "voiced_frame_count": 508,
+        "voiced_fraction": 0.8438538205980066,
+        "voiced_f0_hz": {
+          "count": 508,
+          "min": 145.6537686068934,
+          "p05": 169.088306656142,
+          "mean": 200.05784266504054,
+          "median": 197.63810988989724,
+          "p95": 242.24532048260383,
+          "max": 267.1974269992667,
+          "std": 23.75389749269206
+        },
+        "interpretation": "Extractor voicing decisions and F0 estimates; not a quality or intelligibility score."
+      }
+    },
+    {
+      "id": "E2a",
+      "text": "The orchestra's conduct during the ceremony was praised by the audience.",
+      "checkpoint_step": 8842,
+      "prediction": {
+        "sha256": "e1cb555b71e5cfddefe07fc3c5ab614d8d2b7b8c1a7873982179c7632f9ee5a5",
+        "phone_count": 61,
+        "non_sil_phone_count": 49,
+        "zero_duration_phone_count": 7,
+        "zero_duration_non_sil_phone_count": 0,
+        "mel_frame_count": 352,
+        "duration_seconds": 4.08671201814059,
+        "non_sil_duration_seconds": 3.8312925170068026,
+        "sil_duration_seconds": 0.25541950113378686,
+        "max_phone": {
+          "phone_index": 4,
+          "phone": "ɔːɹ",
+          "duration_frames": 16,
+          "duration_seconds": 0.18575963718820862
+        },
+        "pause_run_count": 12,
+        "max_pause": {
+          "start_phone_index": 0,
+          "end_phone_index_inclusive": 0,
+          "duration_frames": 12,
+          "duration_seconds": 0.13931972789115646
+        },
+        "predicted_variance": {
+          "source": "acoustic-model phone-level predictions, denormalized at inference",
+          "selection": "All non-SIL phones; duration-weighted means exclude zero-duration phones",
+          "energy_units": "linear spectral energy (not waveform RMS)",
+          "pitch_hz_non_sil": {
+            "count": 49,
+            "min": 146.68255615234375,
+            "p05": 160.20313720703126,
+            "mean": 191.00156262456153,
+            "median": 190.19277954101562,
+            "p95": 224.0170928955078,
+            "max": 232.17410278320312,
+            "std": 19.651214484443592,
+            "nonpositive_count": 0,
+            "duration_weighted_mean": 189.9437014030688
+          },
+          "energy_non_sil": {
+            "count": 49,
+            "min": 5.073732376098633,
+            "p05": 6.319577026367188,
+            "mean": 23.75868507307403,
+            "median": 21.688995361328125,
+            "p95": 45.15769119262693,
+            "max": 75.96833801269531,
+            "std": 14.3094002236427,
+            "nonpositive_count": 0,
+            "duration_weighted_mean": 27.0992568767432
+          }
+        }
+      },
+      "wav": {
+        "sha256": "3dd3601c70e9e37f13bc19edc0369ab99d9a903d7d629dad6c9ee1b888ba9f75",
+        "sample_rate_hz": 22050,
+        "channels": 1,
+        "encoding": "PCM_16",
+        "sample_count": 90112,
+        "duration_seconds": 4.08671201814059,
+        "rms": 0.06658549455283999,
+        "rms_dbfs": -23.53240740511876,
+        "peak": 0.48876953125,
+        "dc_mean": 0.00010390376502817327,
+        "full_scale_sample_count": 0,
+        "clipping_fraction_at_pcm_rails": 0.0,
+        "clipping_definition": "Samples at or beyond the positive/negative encoding rails. A rail hit alone does not establish pre-encoding clipping.",
+        "positive_rail": 0.999969482421875,
+        "negative_rail": -1.0
+      },
+      "acoustic_f0": {
+        "status": "measured",
+        "algorithm": "WORLD DIO + StoneMask",
+        "f0_floor_hz": 60.0,
+        "f0_ceiling_hz": 600.0,
+        "frame_period_ms": 11.609977324263038,
+        "source": "decoded generated WAV",
+        "scope": "entire waveform, including pauses",
+        "frame_count": 353,
+        "voiced_frame_count": 310,
+        "voiced_fraction": 0.8781869688385269,
+        "voiced_f0_hz": {
+          "count": 310,
+          "min": 88.96567570687641,
+          "p05": 158.12725578134874,
+          "mean": 189.06318965852248,
+          "median": 184.5484437301428,
+          "p95": 228.81877484198642,
+          "max": 263.7334944523756,
+          "std": 23.823243041955227
+        },
+        "interpretation": "Extractor voicing decisions and F0 estimates; not a quality or intelligibility score."
+      }
+    },
+    {
+      "id": "E2b",
+      "text": "The researchers will conduct an experiment to evaluate the proposed method.",
+      "checkpoint_step": 8842,
+      "prediction": {
+        "sha256": "a9d9246b6b17ba646dc5a179e4c9993b6e1806c562978b0e1d136fd31e4f26e9",
+        "phone_count": 68,
+        "non_sil_phone_count": 56,
+        "zero_duration_phone_count": 7,
+        "zero_duration_non_sil_phone_count": 0,
+        "mel_frame_count": 381,
+        "duration_seconds": 4.423401360544218,
+        "non_sil_duration_seconds": 4.249251700680272,
+        "sil_duration_seconds": 0.1741496598639456,
+        "max_phone": {
+          "phone_index": 7,
+          "phone": "ɜː",
+          "duration_frames": 16,
+          "duration_seconds": 0.18575963718820862
+        },
+        "pause_run_count": 12,
+        "max_pause": {
+          "start_phone_index": 67,
+          "end_phone_index_inclusive": 67,
+          "duration_frames": 9,
+          "duration_seconds": 0.10448979591836735
+        },
+        "predicted_variance": {
+          "source": "acoustic-model phone-level predictions, denormalized at inference",
+          "selection": "All non-SIL phones; duration-weighted means exclude zero-duration phones",
+          "energy_units": "linear spectral energy (not waveform RMS)",
+          "pitch_hz_non_sil": {
+            "count": 56,
+            "min": 161.55645751953125,
+            "p05": 166.23052978515625,
+            "mean": 192.02533149719238,
+            "median": 188.37281799316406,
+            "p95": 224.91823959350586,
+            "max": 242.61587524414062,
+            "std": 18.960892991140156,
+            "nonpositive_count": 0,
+            "duration_weighted_mean": 192.480701800904
+          },
+          "energy_non_sil": {
+            "count": 56,
+            "min": 4.537097930908203,
+            "p05": 6.607240676879883,
+            "mean": 22.967305489948817,
+            "median": 21.727834701538086,
+            "p95": 41.54068470001221,
+            "max": 50.4134521484375,
+            "std": 12.034025103624938,
+            "nonpositive_count": 0,
+            "duration_weighted_mean": 23.845414377952533
+          }
+        }
+      },
+      "wav": {
+        "sha256": "4ad4bdaa7dabade174fd09b67f5e529be9ca67b3a25107dba5bc4e75feb85719",
+        "sample_rate_hz": 22050,
+        "channels": 1,
+        "encoding": "PCM_16",
+        "sample_count": 97536,
+        "duration_seconds": 4.423401360544218,
+        "rms": 0.05540310040230067,
+        "rms_dbfs": -25.12931862242242,
+        "peak": 0.4840087890625,
+        "dc_mean": 7.143984316528e-05,
+        "full_scale_sample_count": 0,
+        "clipping_fraction_at_pcm_rails": 0.0,
+        "clipping_definition": "Samples at or beyond the positive/negative encoding rails. A rail hit alone does not establish pre-encoding clipping.",
+        "positive_rail": 0.999969482421875,
+        "negative_rail": -1.0
+      },
+      "acoustic_f0": {
+        "status": "measured",
+        "algorithm": "WORLD DIO + StoneMask",
+        "f0_floor_hz": 60.0,
+        "f0_ceiling_hz": 600.0,
+        "frame_period_ms": 11.609977324263038,
+        "source": "decoded generated WAV",
+        "scope": "entire waveform, including pauses",
+        "frame_count": 382,
+        "voiced_frame_count": 328,
+        "voiced_fraction": 0.8586387434554974,
+        "voiced_f0_hz": {
+          "count": 328,
+          "min": 141.98842963298023,
+          "p05": 164.9820169218973,
+          "mean": 192.26151342546888,
+          "median": 186.79404316153267,
+          "p95": 239.23654005895773,
+          "max": 253.12942805045785,
+          "std": 22.17628060378478
+        },
+        "interpretation": "Extractor voicing decisions and F0 estimates; not a quality or intelligibility score."
+      }
+    },
+    {
+      "id": "E3",
+      "text": "The rhyth m of the orchestra changed unexpectedly.",
+      "checkpoint_step": 8842,
+      "prediction": {
+        "sha256": "c1f02c12eab63f411f403327f7e6095f5aaee745aaaf875421cf9dd58fc6fbb6",
+        "phone_count": 45,
+        "non_sil_phone_count": 36,
+        "zero_duration_phone_count": 4,
+        "zero_duration_non_sil_phone_count": 0,
+        "mel_frame_count": 234,
+        "duration_seconds": 2.716734693877551,
+        "non_sil_duration_seconds": 2.5541950113378684,
+        "sil_duration_seconds": 0.16253968253968254,
+        "max_phone": {
+          "phone_index": 17,
+          "phone": "ɔːɹ",
+          "duration_frames": 19,
+          "duration_seconds": 0.22058956916099773
+        },
+        "pause_run_count": 9,
+        "max_pause": {
+          "start_phone_index": 44,
+          "end_phone_index_inclusive": 44,
+          "duration_frames": 10,
+          "duration_seconds": 0.11609977324263039
+        },
+        "predicted_variance": {
+          "source": "acoustic-model phone-level predictions, denormalized at inference",
+          "selection": "All non-SIL phones; duration-weighted means exclude zero-duration phones",
+          "energy_units": "linear spectral energy (not waveform RMS)",
+          "pitch_hz_non_sil": {
+            "count": 36,
+            "min": 169.24708557128906,
+            "p05": 178.51089096069336,
+            "mean": 197.9701279534234,
+            "median": 198.28012084960938,
+            "p95": 217.5022315979004,
+            "max": 220.13076782226562,
+            "std": 11.873643586696128,
+            "nonpositive_count": 0,
+            "duration_weighted_mean": 198.17358495538886
+          },
+          "energy_non_sil": {
+            "count": 36,
+            "min": 5.082330703735352,
+            "p05": 6.099933624267578,
+            "mean": 21.810197353363037,
+            "median": 23.83152198791504,
+            "p95": 35.4675874710083,
+            "max": 41.573829650878906,
+            "std": 10.748957514681859,
+            "nonpositive_count": 0,
+            "duration_weighted_mean": 23.752226248654452
+          }
+        }
+      },
+      "wav": {
+        "sha256": "86923aa5c3c6dd11a8c567fa2948b8fae434e03d23fe3c60b50c4945449e3ecb",
+        "sample_rate_hz": 22050,
+        "channels": 1,
+        "encoding": "PCM_16",
+        "sample_count": 59904,
+        "duration_seconds": 2.716734693877551,
+        "rms": 0.055092303027656095,
+        "rms_dbfs": -25.178181448051138,
+        "peak": 0.301513671875,
+        "dc_mean": 9.703228616306925e-05,
+        "full_scale_sample_count": 0,
+        "clipping_fraction_at_pcm_rails": 0.0,
+        "clipping_definition": "Samples at or beyond the positive/negative encoding rails. A rail hit alone does not establish pre-encoding clipping.",
+        "positive_rail": 0.999969482421875,
+        "negative_rail": -1.0
+      },
+      "acoustic_f0": {
+        "status": "measured",
+        "algorithm": "WORLD DIO + StoneMask",
+        "f0_floor_hz": 60.0,
+        "f0_ceiling_hz": 600.0,
+        "frame_period_ms": 11.609977324263038,
+        "source": "decoded generated WAV",
+        "scope": "entire waveform, including pauses",
+        "frame_count": 235,
+        "voiced_frame_count": 196,
+        "voiced_fraction": 0.8340425531914893,
+        "voiced_f0_hz": {
+          "count": 196,
+          "min": 166.83487325518493,
+          "p05": 173.4326531097096,
+          "mean": 197.82791489226256,
+          "median": 198.1743930704178,
+          "p95": 223.85433348955647,
+          "max": 241.9376979222812,
+          "std": 16.413754600786806
+        },
+        "interpretation": "Extractor voicing decisions and F0 estimates; not a quality or intelligibility score."
+      }
+    },
+    {
+      "id": "E4",
+      "text": "The meeting will start at 10:45 AM on 12 November 2026, so andaroo should arrive on time.",
+      "checkpoint_step": 8842,
+      "prediction": {
+        "sha256": "efdeb31a916011af70abd3cb8661e104ceaa3fb854e088d04c8928c4b01a38e1",
+        "phone_count": 100,
+        "non_sil_phone_count": 81,
+        "zero_duration_phone_count": 11,
+        "zero_duration_non_sil_phone_count": 0,
+        "mel_frame_count": 676,
+        "duration_seconds": 7.848344671201814,
+        "non_sil_duration_seconds": 7.233015873015874,
+        "sil_duration_seconds": 0.615328798185941,
+        "max_phone": {
+          "phone_index": 53,
+          "phone": "ɚ",
+          "duration_frames": 22,
+          "duration_seconds": 0.25541950113378686
+        },
+        "pause_run_count": 19,
+        "max_pause": {
+          "start_phone_index": 73,
+          "end_phone_index_inclusive": 73,
+          "duration_frames": 23,
+          "duration_seconds": 0.26702947845804986
+        },
+        "predicted_variance": {
+          "source": "acoustic-model phone-level predictions, denormalized at inference",
+          "selection": "All non-SIL phones; duration-weighted means exclude zero-duration phones",
+          "energy_units": "linear spectral energy (not waveform RMS)",
+          "pitch_hz_non_sil": {
+            "count": 81,
+            "min": 168.07427978515625,
+            "p05": 179.40040588378906,
+            "mean": 209.3061790937259,
+            "median": 209.07308959960938,
+            "p95": 245.52056884765625,
+            "max": 275.86944580078125,
+            "std": 21.358552903212843,
+            "nonpositive_count": 0,
+            "duration_weighted_mean": 207.97619143955973
+          },
+          "energy_non_sil": {
+            "count": 81,
+            "min": 5.413921356201172,
+            "p05": 7.142814636230469,
+            "mean": 25.076310381477263,
+            "median": 25.936979293823242,
+            "p95": 49.444984436035156,
+            "max": 64.67924499511719,
+            "std": 13.674202478561373,
+            "nonpositive_count": 0,
+            "duration_weighted_mean": 27.432222600541948
+          }
+        }
+      },
+      "wav": {
+        "sha256": "7a4f9ea147beb569880d075860582c8ba0214b57df54ebe8f4b58f55d791c544",
+        "sample_rate_hz": 22050,
+        "channels": 1,
+        "encoding": "PCM_16",
+        "sample_count": 173056,
+        "duration_seconds": 7.848344671201814,
+        "rms": 0.06921439174680256,
+        "rms_dbfs": -23.19607186624969,
+        "peak": 0.5433349609375,
+        "dc_mean": 6.917912579147067e-05,
+        "full_scale_sample_count": 0,
+        "clipping_fraction_at_pcm_rails": 0.0,
+        "clipping_definition": "Samples at or beyond the positive/negative encoding rails. A rail hit alone does not establish pre-encoding clipping.",
+        "positive_rail": 0.999969482421875,
+        "negative_rail": -1.0
+      },
+      "acoustic_f0": {
+        "status": "measured",
+        "algorithm": "WORLD DIO + StoneMask",
+        "f0_floor_hz": 60.0,
+        "f0_ceiling_hz": 600.0,
+        "frame_period_ms": 11.609977324263038,
+        "source": "decoded generated WAV",
+        "scope": "entire waveform, including pauses",
+        "frame_count": 677,
+        "voiced_frame_count": 586,
+        "voiced_fraction": 0.8655834564254062,
+        "voiced_f0_hz": {
+          "count": 586,
+          "min": 70.17886524664132,
+          "p05": 168.2340236606846,
+          "mean": 205.86994260104086,
+          "median": 205.50639360962813,
+          "p95": 252.16136862637654,
+          "max": 307.1039274719842,
+          "std": 27.513584774482553
+        },
+        "interpretation": "Extractor voicing decisions and F0 estimates; not a quality or intelligibility score."
+      }
+    }
+  ]
+}

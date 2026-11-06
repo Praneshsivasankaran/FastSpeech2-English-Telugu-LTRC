@@ -1,0 +1,174 @@
+{
+  "recorded_date": "2026-11-05",
+  "status": "data import verified; no claim of completed model training",
+  "reference": {
+    "repository": "https://github.com/ming024/FastSpeech2",
+    "commit": "d4e79eb52e8b01d24703b2dfc0385544092958f3",
+    "code_license": "MIT"
+  },
+  "datasets": {
+    "en": {
+      "repository": "https://huggingface.co/datasets/ai4bharat/Svarah",
+      "revision": "ebbf7777fe771490696a3f7b007097606fa8c924",
+      "original_split": "test",
+      "measured_rows": 6656,
+      "measured_seconds": 34611.99768749999,
+      "sample_rate": 16000,
+      "channels": 1,
+      "files": [
+        {
+          "name": "test-00000-of-00003.parquet",
+          "bytes": 365063447,
+          "sha256": "ac8fc08edabe47dd0ef915276bc0fab51ec1037c65794c7be8f98c5bc746d1db",
+          "rows": 2219
+        },
+        {
+          "name": "test-00001-of-00003.parquet",
+          "bytes": 360392442,
+          "sha256": "2adf4c4ce1e69e457f44d3af0756b3965bd05fca409b4cd27528ef5804502fba",
+          "rows": 2219
+        },
+        {
+          "name": "test-00002-of-00003.parquet",
+          "bytes": 369542701,
+          "sha256": "1cb3f5c6aa0c18e8c6d106f0be6129a35ddaeeb9fc6977ecb059b8f36033fd23",
+          "rows": 2218
+        }
+      ],
+      "license": "CC-BY-4.0 (source card)",
+      "access": "gated; reproducer accepts terms with own account",
+      "conditioning": {
+        "groups": 115,
+        "kind": "hashed demographic profile proxy",
+        "speaker_identity_verified": false,
+        "source_claimed_speakers": 117
+      },
+      "caveat": "These are candidate corpus totals, not final split durations.",
+      "pinned_source_verification": {
+        "checked_utc": "2026-11-05T10:44:21.039647+00:00",
+        "metadata_url": "https://huggingface.co/api/datasets/ai4bharat/Svarah/tree/ebbf7777fe771490696a3f7b007097606fa8c924/data?expand=true",
+        "files": [
+          {
+            "file": "test-00000-of-00003.parquet",
+            "expected_sha256": "ac8fc08edabe47dd0ef915276bc0fab51ec1037c65794c7be8f98c5bc746d1db",
+            "actual_sha256": "ac8fc08edabe47dd0ef915276bc0fab51ec1037c65794c7be8f98c5bc746d1db",
+            "expected_bytes": 365063447,
+            "actual_bytes": 365063447,
+            "metadata_git_blob_oid": "3924ce14a187aca38d34f6a0ce3681cf77f8e90f",
+            "reconstructed_lfs_pointer_git_blob_oid": "3924ce14a187aca38d34f6a0ce3681cf77f8e90f",
+            "lfspointer_git_blob_match": true,
+            "expected_hash_method": "official expanded tree securityFileStatus digest; verified against Git LFS pointer blob oid",
+            "pass": true
+          },
+          {
+            "file": "test-00001-of-00003.parquet",
+            "expected_sha256": "2adf4c4ce1e69e457f44d3af0756b3965bd05fca409b4cd27528ef5804502fba",
+            "actual_sha256": "2adf4c4ce1e69e457f44d3af0756b3965bd05fca409b4cd27528ef5804502fba",
+            "expected_bytes": 360392442,
+            "actual_bytes": 360392442,
+            "metadata_git_blob_oid": "5d4b9c97f6a55e10ec1aea159a71132040b9bd88",
+            "reconstructed_lfs_pointer_git_blob_oid": "5d4b9c97f6a55e10ec1aea159a71132040b9bd88",
+            "lfspointer_git_blob_match": true,
+            "expected_hash_method": "official expanded tree securityFileStatus digest; verified against Git LFS pointer blob oid",
+            "pass": true
+          },
+          {
+            "file": "test-00002-of-00003.parquet",
+            "expected_sha256": "1cb3f5c6aa0c18e8c6d106f0be6129a35ddaeeb9fc6977ecb059b8f36033fd23",
+            "actual_sha256": "1cb3f5c6aa0c18e8c6d106f0be6129a35ddaeeb9fc6977ecb059b8f36033fd23",
+            "expected_bytes": 369542701,
+            "actual_bytes": 369542701,
+            "metadata_git_blob_oid": "354a075516d06a990c53001be66b50296fca457f",
+            "reconstructed_lfs_pointer_git_blob_oid": "354a075516d06a990c53001be66b50296fca457f",
+            "lfspointer_git_blob_match": true,
+            "expected_hash_method": "official expanded tree securityFileStatus digest; verified against Git LFS pointer blob oid",
+            "pass": true
+          }
+        ],
+        "all_pass": true
+      }
+    },
+    "te": {
+      "repository": "https://huggingface.co/datasets/SPRINGLab/IndicTTS_Telugu",
+      "revision": "7ab3c18491bef3f5d4e820c2701b5f78f54031d6",
+      "original_split": "train",
+      "source_rows_inspected": 4288,
+      "measured_candidate_rows": 3139,
+      "measured_candidate_seconds": 48074.63243750001,
+      "sample_rate": 16000,
+      "channels": 1,
+      "files": [
+        {
+          "name": "train-00000-of-00004.parquet",
+          "bytes": 1200192373,
+          "sha256": "eaebe44956d2a70e1e5d533227bdb3c85b1a228775f16055ec0e37aba66590a6",
+          "rows": 2144
+        },
+        {
+          "name": "train-00001-of-00004.parquet",
+          "bytes": 1363647665,
+          "sha256": "36941881bfb45e0e91c7aa3cdeb16b95d2e2431b870ae7decf59572a4e5c5c1f",
+          "rows": 2144
+        }
+      ],
+      "selection": {
+        "gender_label": 0,
+        "voice": "female",
+        "speaker_id": 0,
+        "min_seconds_inclusive": 1,
+        "max_seconds_inclusive": 30
+      },
+      "normalized_duplicate_text_groups": 7,
+      "extra_duplicate_rows": 15,
+      "license": "IIT Madras IndicTTS custom EULA",
+      "license_url": "https://www.iitm.ac.in/donlab/indictts/downloads/license.pdf",
+      "license_mirror_reviewed": "https://huggingface.co/k-m-irfan/Fastspeech2_HS_Flask_API/blob/main/license.pdf",
+      "official_license_byte_match_verified": false,
+      "source_card_discrepancy": "Card claims 8.74h total/48kHz; first shard measures11.649929h and selected embedded WAVs are16kHz. Full-corpus duration not measured.",
+      "caveat": "Candidate pool, not final training or validation set.",
+      "pinned_source_verification": {
+        "checked_utc": "2026-11-05T10:44:22.775960+00:00",
+        "metadata_url": "https://huggingface.co/api/datasets/SPRINGLab/IndicTTS_Telugu/tree/7ab3c18491bef3f5d4e820c2701b5f78f54031d6/data?expand=true",
+        "files": [
+          {
+            "file": "train-00000-of-00004.parquet",
+            "expected_sha256": "eaebe44956d2a70e1e5d533227bdb3c85b1a228775f16055ec0e37aba66590a6",
+            "actual_sha256": "eaebe44956d2a70e1e5d533227bdb3c85b1a228775f16055ec0e37aba66590a6",
+            "expected_bytes": 1200192373,
+            "actual_bytes": 1200192373,
+            "metadata_git_blob_oid": "324d6af2b635fe86de2e5f4fce9602a58fa6c8f4",
+            "reconstructed_lfs_pointer_git_blob_oid": "324d6af2b635fe86de2e5f4fce9602a58fa6c8f4",
+            "lfspointer_git_blob_match": true,
+            "expected_hash_method": "official LFS oid",
+            "pass": true
+          },
+          {
+            "file": "train-00001-of-00004.parquet",
+            "expected_sha256": "36941881bfb45e0e91c7aa3cdeb16b95d2e2431b870ae7decf59572a4e5c5c1f",
+            "actual_sha256": "36941881bfb45e0e91c7aa3cdeb16b95d2e2431b870ae7decf59572a4e5c5c1f",
+            "expected_bytes": 1363647665,
+            "actual_bytes": 1363647665,
+            "metadata_git_blob_oid": "687a734edfc1f4862af9ae56ed57cd2904ae5168",
+            "reconstructed_lfs_pointer_git_blob_oid": "687a734edfc1f4862af9ae56ed57cd2904ae5168",
+            "lfspointer_git_blob_match": true,
+            "expected_hash_method": "official LFS oid",
+            "pass": true
+          }
+        ],
+        "all_pass": true
+      }
+    }
+  },
+  "alignment_models": [
+    {
+      "repository": "Tabahi/CUPE-3-en",
+      "revision": "cf87be29456f00f71bcfcd0f1c0e37d48e719e33"
+    },
+    {
+      "repository": "Tabahi/CUPE-3-mls7",
+      "revision": "7c1cfc128fdd9799b247b912c264822d8efcf993",
+      "telugu_zero_shot": true
+    }
+  ],
+  "privacy": "No account credentials, original corpus audio or private assignment PDF included in public project."
+}
