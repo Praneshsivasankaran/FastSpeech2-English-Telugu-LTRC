@@ -1,0 +1,134 @@
+{
+  "verified_utc": "2026-11-06T12:12:04.048473+00:00",
+  "repository": "https://github.com/Praneshsivasankaran/FastSpeech2-English-Telugu-LTRC",
+  "all_passed": true,
+  "checks": [
+    {
+      "file": "README.md",
+      "status": 200,
+      "bytes": 22148,
+      "sha256": "ce6af20c567b5df37d5c6fa52cbfb235a8a32d07bd65b027e6444074aeca06fd",
+      "authenticated": false
+    },
+    {
+      "file": "Report/Technical_Report.pdf",
+      "status": 200,
+      "bytes": 1062289,
+      "sha256": "b88f2ddb567f1e0077b86d400c664770ae9056affffdbfe108d641a6ec65a095",
+      "authenticated": false
+    },
+    {
+      "file": "English/test_samples.json",
+      "status": 200,
+      "bytes": 709,
+      "sha256": "b1764a90ac2edd1d97bf37fd83c753a63dd2ac325dc31a21753b26ca9a987079",
+      "authenticated": false
+    },
+    {
+      "file": "Telugu/test_samples.json",
+      "status": 200,
+      "bytes": 1020,
+      "sha256": "9c42693394a9eea8fe953c8c71a3801945235e9baf697c5d5b8acdb0df382339",
+      "authenticated": false
+    },
+    {
+      "file": "Results/English/test_generated_audios/E1.wav",
+      "status": 200,
+      "bytes": 307756,
+      "sha256": "3151530f01bc6666112ac85972831567a747c1464dd7877fa4ebcb7efa40e2eb",
+      "authenticated": false
+    },
+    {
+      "file": "Results/English/test_generated_audios/E2a.wav",
+      "status": 200,
+      "bytes": 180268,
+      "sha256": "3dd3601c70e9e37f13bc19edc0369ab99d9a903d7d629dad6c9ee1b888ba9f75",
+      "authenticated": false
+    },
+    {
+      "file": "Results/English/test_generated_audios/E2b.wav",
+      "status": 200,
+      "bytes": 195116,
+      "sha256": "4ad4bdaa7dabade174fd09b67f5e529be9ca67b3a25107dba5bc4e75feb85719",
+      "authenticated": false
+    },
+    {
+      "file": "Results/English/test_generated_audios/E3.wav",
+      "status": 200,
+      "bytes": 119852,
+      "sha256": "86923aa5c3c6dd11a8c567fa2948b8fae434e03d23fe3c60b50c4945449e3ecb",
+      "authenticated": false
+    },
+    {
+      "file": "Results/English/test_generated_audios/E4.wav",
+      "status": 200,
+      "bytes": 346156,
+      "sha256": "7a4f9ea147beb569880d075860582c8ba0214b57df54ebe8f4b58f55d791c544",
+      "authenticated": false
+    },
+    {
+      "file": "Results/Telugu/test_generated_audios/T1.wav",
+      "status": 200,
+      "bytes": 329260,
+      "sha256": "7bcaf769e08a38d49bfd48b6a48f73865c53ccc266ea462e9af867d26b4c8ef4",
+      "authenticated": false
+    },
+    {
+      "file": "Results/Telugu/test_generated_audios/T2a.wav",
+      "status": 200,
+      "bytes": 178732,
+      "sha256": "dd64d03e4d677e473662fd841ed22f38c65cede6e8661172b353321622154b08",
+      "authenticated": false
+    },
+    {
+      "file": "Results/Telugu/test_generated_audios/T2b.wav",
+      "status": 200,
+      "bytes": 195628,
+      "sha256": "462b0133e54ec0d402a0f89fd7ffb3af594af6cd675ea71dc9e6a2377a36b614",
+      "authenticated": false
+    },
+    {
+      "file": "Results/Telugu/test_generated_audios/T3.wav",
+      "status": 200,
+      "bytes": 148012,
+      "sha256": "8bfcbec1b50f6745b9a3df80fdc4fe19a6de9d28991618408a85fd597cadbb51",
+      "authenticated": false
+    },
+    {
+      "file": "Results/Telugu/test_generated_audios/T4.wav",
+      "status": 200,
+      "bytes": 545324,
+      "sha256": "0bdde4849332b01985da7441f039785fc4e513e08b768b476bc492259f0ab493",
+      "authenticated": false
+    },
+    {
+      "file": "English_best.pt",
+      "status": 200,
+      "bytes": 421596509,
+      "sha256": "17ad591e4ef9e269df9e3da05737fb4ea52d35d1b5eec7f1229ff3231446afcc",
+      "authenticated": false
+    },
+    {
+      "file": "English_latest.pt",
+      "status": 200,
+      "bytes": 421638671,
+      "sha256": "48a2bc893c5192a7559408d4843a1d2f99b5bfab6196691edb636c6803ea7bac",
+      "authenticated": false
+    },
+    {
+      "file": "Telugu_best.pt",
+      "status": 200,
+      "bytes": 421207857,
+      "sha256": "7f32328011ab47edda7eadc67dc4331ce4e1a9f11a74fdc771b79e638f72f0bf",
+      "authenticated": false
+    },
+    {
+      "file": "Telugu_latest.pt",
+      "status": 200,
+      "bytes": 421249563,
+      "sha256": "9320935fa44c5bf0a40022a3405d3cdf5a4427bff2e60c90f3769e8aed76635f",
+      "authenticated": false
+    }
+  ],
+  "verified_repository_commit": "f2a53fd4fa07cc746749770b525597d09f75edde"
+}

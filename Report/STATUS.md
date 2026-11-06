@@ -2,7 +2,7 @@
 
 The final report candidate and hash-bound observations are complete locally for
 the frozen recipe below. The strict full-workspace evidence check passes.
-Confirm the latest PDF rendering and integrity checks before publication.
+The final 14-page PDF was rendered and visually reviewed; integrity and public download checks passed. The form confirmed receipt on 6 November 2026.
 Status audit: 6 November 2026.
 
 Actual local evidence is available:
@@ -44,4 +44,4 @@ tensors, nonzero WAVs and ASR text similarity must not be described as proving
 good speech. The report includes actual per-sample measurements,
 selection rationale, source-ASR controls, failures, and language-specific limits.
 
-The final completeness/integrity checks must be rerun after any change. Public hosting and assignment submission remain separate approval-dependent actions.
+The final completeness/integrity checks must be rerun after any artifact change. Public hosting and assignment submission completed with user approval. The submitted PDF hash and confirmation status are recorded in `provenance/submission_status.json`; objective failures and the unperformed listening review remain disclosed.

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Verify or atomically download the release checkpoints using only Python's stdlib.
 
-The checked-in manifest has no release URL until publication is approved. Use
+The checked-in manifest records the published, verified release URL. Use
 --verify-only for a strictly local check, or --base-url HTTPS_RELEASE_DOWNLOAD_URL
-once assets are published. Existing valid files are preserved without rewriting.
+to override the download location. Existing valid files are preserved without rewriting.
 """
 from __future__ import annotations
 import argparse

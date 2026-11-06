@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "base_url": "https://github.com/Praneshsivasankaran/FastSpeech2-English-Telugu-LTRC/releases/download/assignment-v1",
-  "publication_status": "approved_pending_upload",
+  "publication_status": "published_anonymous_download_verified",
   "assets": [
     {
       "name": "English_best.pt",

@@ -1,0 +1,11 @@
+{
+  "status": "submitted_confirmed",
+  "confirmation_text": "Your response has been recorded.",
+  "confirmation_verified_utc": "2026-11-06T12:14:37Z",
+  "form_title": "Assignment submission form for Research Assistant position at IIIT Hyderabad",
+  "repository": "https://github.com/Praneshsivasankaran/FastSpeech2-English-Telugu-LTRC",
+  "submitted_report": "Report/Technical_Report.pdf",
+  "submitted_report_sha256": "b88f2ddb567f1e0077b86d400c664770ae9056affffdbfe108d641a6ec65a095",
+  "submitted_repository_commit": "f2a53fd4fa07cc746749770b525597d09f75edde",
+  "quality_note": "Training and artifact checks completed. Native listening was not performed; speech quality is not certified as perfect."
+}
